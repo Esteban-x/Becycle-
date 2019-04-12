@@ -6,6 +6,8 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
 use App\Entity\Bike;
+use App\Entity\Accessory;
+
 
 class AppFixtures extends Fixture
 {
@@ -19,6 +21,18 @@ class AppFixtures extends Fixture
             $bike->setPrice(mt_rand(500, 800));
             $bike->setImage('http://placeimg.com/640/480/people');   
             $manager->persist($bike);
+        }
+        $manager->flush();
+
+        for($i=1;$i<10;$i++)
+        {
+            $accessory = new Accessory();
+            $accessory->setName('Accessoire n°'.$i);
+            $accessory->setDescription('voici un très bon accessoire pour la randonné en velo sur de grandes distances.');
+            $accessory->setPrice(mt_rand(6, 20));
+            $accessory->setImage('https://placeimg.com/640/480/tech');
+            $accessory->setCaract('polyvalent');
+            $manager->persist($accessory);
         }
 
         $manager->flush();
