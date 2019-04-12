@@ -9,7 +9,15 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {{ include('_navbar.html.twig')}}
-        {% block body %}{% endblock %}
+    {{  include('_navbar.html.twig') }}
+
+              {% block body %}{% endblock %}
+
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="text-white text-center m-0">Copyright &copy; {{ 'now' | date('Y') }}</p>
+            </div>
+        </footer>
+        
     </body>
 </html>
