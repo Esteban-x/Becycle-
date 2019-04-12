@@ -11,6 +11,7 @@
                             </button>
                 
                             <div class="collapse navbar-collapse" id="navbSupportedContent">
+                            {% set route = app.request.attributes.get('_route')%}
                                <ul class="navbar-nav mr-auto ml-auto">
                                     <li class="nav-item {{route == 'home' ? "active"}}">
                                         <a class="nav-link " href="{{path('home')}}">Acceuil</a>
