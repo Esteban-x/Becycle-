@@ -3,18 +3,30 @@
 {% block title %}Hello BikesController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="container">
+    <div class="col">
+        <div class="row">
+                {% for bike in bikes %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="{{bike.image}}" alt="Photo du vélo">
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="{{path('bike', {'id': bike.id })}}" title="Voir le vélo">{{ bike.name }}</a></h4>
+                            <p class="card-text">{{bike.description}}</p>
+                            
+                            <div class="row">
+                                    <h2 title="{{bike.price}}" class="price">{{bike.price}} &euro;</h2>
+                                <div class="col">
+                                    <a href="{{path('bike', {'id': bike.id })}}" title="En savoir plus sur ce vélo" class="btn btn-success ">Plus d'infos</a>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Symfony/Becycle/src/Controller/BikesController.php'|file_link(0) }}">src/Controller/BikesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Symfony/Becycle/templates/bikes/index.html.twig'|file_link(0) }}">templates/bikes/index.html.twig</a></code></li>
-    </ul>
+                {% endfor %}
+        </div>
+   </div>
 </div>
 {% endblock %}
