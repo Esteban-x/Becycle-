@@ -19,6 +19,16 @@ class BikeRepository extends ServiceEntityRepository
         parent::__construct($registry, Bike::class);
     }
 
+    public function findBy_id($id)
+    {
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->where('p.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery();
+          return $queryBuilder->execute();
+  
+    }
+
     // /**
     //  * @return Bike[] Returns an array of Bike objects
     //  */

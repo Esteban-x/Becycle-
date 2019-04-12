@@ -6,20 +6,32 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BikeRepository;
 use App\Entity\Bike;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class BikesController extends AbstractController
 {
     /**
      * @Route("/bikes", name="bikes")
+     * @return Response
      */
-    public function bikes(BikeRepository $bikerepo)
+    public function bikes(BikeRepository $bikerepo, PaginatorInterface $paginator, Request $request) : Response
     {   
-        $bikes = $bikerepo->findAll();
+         $bikes = $bikerepo->findAll();
+         
+        dump($request);
 
+        $pagination = $paginator->paginate(
+           $bikes, 
+
+        $request->query->getInt('page', 1),9
         
+        );
         return $this->render('bikes/bikes.html.twig', [
             'controller_name' => 'BikesController',
-            'bikes' => $bikes
+            'bikes' => $bikes,
+            'pagination' => $pagination
         ]);
     }
 
