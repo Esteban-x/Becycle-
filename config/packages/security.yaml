@@ -3,9 +3,13 @@ security:
     providers:
         in_memory: { memory: ~ }
         my_provider:
-            memory:
-                users:
-                    chaussette: { password: 'adminpass', roles: [ 'ROLE_ADMIN' ] }
+            entity:
+                class: App\Entity\User
+                property: username
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+            cost: 12
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

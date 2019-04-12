@@ -5,11 +5,12 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -24,6 +25,11 @@ class User
      * @Assert\Length(max=255)
      */
     private $fullname;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $username;
 
     /**
      * @ORM\Column(type="text")
@@ -60,6 +66,10 @@ class User
      * @Assert\Date()
      */
     private $birthdate;
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles;
 
     public function getId(): ?int
     {
@@ -136,5 +146,56 @@ class User
         $this->birthdate = $birthdate;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRoles(): array
+    {
+        if (empty($this->roles)) {
+            $this->roles[] = 'ROLE_USER';
+        }
+
+        return $this->roles;
+    }
+
+    /**
+     * @param mixed $roles
+     */
+    public function setRoles($roles): void
+    {
+        if (!is_array($roles)) {
+            $this->roles[] = $roles;
+
+            return;
+        }
+
+        $this->roles = $roles;
+    }
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username): void
+    {
+        $this->username = $username;
     }
 }
