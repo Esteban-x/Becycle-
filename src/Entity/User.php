@@ -20,7 +20,7 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, options={"default":"concat(`firstname`,' ',`lastname`)"})
+     * @ORM\Column(type="string", length=255, nullable=true, options={"default":"concat(`firstname`,' ',`lastname`)"})
      * @Assert\NotBlank()
      * @Assert\Length(max=255)
      */
@@ -66,10 +66,12 @@ class User implements UserInterface
      * @Assert\Date()
      */
     private $birthdate;
+
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="array")
      */
-    private $roles;
+    private $roles = [];
+
 
     public function getId(): ?int
     {
@@ -148,31 +150,6 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getRoles(): array
-    {
-        if (empty($this->roles)) {
-            $this->roles[] = 'ROLE_USER';
-        }
-
-        return $this->roles;
-    }
-
-    /**
-     * @param mixed $roles
-     */
-    public function setRoles($roles): void
-    {
-        if (!is_array($roles)) {
-            $this->roles[] = $roles;
-
-            return;
-        }
-
-        $this->roles = $roles;
-    }
     public function getSalt()
     {
         return null;
@@ -197,5 +174,17 @@ class User implements UserInterface
     public function setUsername($username): void
     {
         $this->username = $username;
+    }
+
+    public function getRoles(): ?array
+    {
+        return $this->roles;
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 }

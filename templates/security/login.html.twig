@@ -8,6 +8,7 @@
         </div>
     {% endif %}
     {{ form_widget(form) }}
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
     <button class="btn btn-primary">se connecter</button>
     {{ form_end(form) }}
 {% endblock %}

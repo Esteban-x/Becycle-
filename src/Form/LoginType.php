@@ -17,7 +17,6 @@ class LoginType extends AbstractType
         $builder
             ->add('email', EmailType::class)
             ->add('password', PasswordType::class)
-            ->add('_csrf_token', HiddenType::class)
         ;
     }
 
