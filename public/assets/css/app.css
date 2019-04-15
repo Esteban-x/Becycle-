@@ -103,12 +103,19 @@ h1 {
 }
 
 p {
+<<<<<<< HEAD
+    
+    text-align: justify;
+    font-family: 'Comfortaa', cursive;
+}#myBtn {
+=======
     text-align: justify;
     font-family: 'Comfortaa', cursive;
 }
     margin-left: 20%;
 }
 #myBtn {
+>>>>>>> de6a35483e747c3266e531f62d5ed065f4db7726
     display: none;
     position: fixed;
     bottom: 20px;
