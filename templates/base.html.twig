@@ -9,6 +9,7 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+        <link href="{{ asset('assets/css/typeahead.css') }}" rel="stylesheet">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -28,11 +29,6 @@
             {% endfor %}
 
                  {# {% block body %} {% endblock %}#}
-
-
-
-
-
             {% block flash %}
                 {% for flash_message in app.session.flashbag.get('success') %}
                     <div class="container alert alert-success" role="alert">
@@ -72,7 +68,33 @@
 
         <script src="{{asset('assets/js/base.js')}}"></script>
         {% block javascript %}
+<script>
+                $('#form_query').typeahead({
+                    hint: true
+                },
+                {
+                    name: 'bikes',
+                    source: bikes.ttAdapter(),
+                    display: 'bike_name',
+                    templates: {
+                        suggestion: function (data){
 
+                        return `
+                            <a href="/bike/{id}">
+                            <span>`+bikes.bike_name+`</span></a>
+                            `
+                                  
+                    },
+                    footer: function (query)
+                    {
+                        return '<div class="text-center">Plus d\'info sur le: '+query.query+'</div>' 
+                    }
+
+                }
+            })   
+             
+       </script> 
         {% endblock %}
     </body>
 </html>
+            

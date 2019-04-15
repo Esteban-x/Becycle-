@@ -23,14 +23,24 @@ class AppFixtures extends Fixture
         $this->passwordEncoder = $passwordEncoder;
     }
     public function load(ObjectManager $manager)
-    {
-        for($i=1;$i<30;$i++)
+    {   
+        $bikes = [
+            'TREK MADONE SLR 8 2019 ', 'TREK MADONE SL 6 2019', 'H6L Tempest blue', 'm6l acier vitesses lagoon blue', 'M6L Acier Flame lacquer', 'Townie Go! 8D Ladies', 'Loft Go 8I', 'Café Moto Go! Men\'s',
+            'FX 2 WSD Disc 2019', 'Travel 2019', 'Editor 2019', 'Loft 7i Ladies\'EQ', 'FX 3 Disc 2019', 'DS 2 WSD 2019', 'SPEEDSTER 50', 'DOMANE AL 2', 'SPEEDSTER 40', 'CONDESSA SPEEDSTER 35',
+            'AXI SPORT', 'AUDACIO 100 CP', 'STREETLAND 28', "COMFORT 42", "COMFORT 40", "X KROSS LADY TY300 3X7", "X KROSS MAN TY300 3X7", "KATU 50", "COMFORT 42 pack", "FX 1", "COMFORT 30", "COMFORT 32",
+            'FX 1 STAGGER', 'TREKKING 100', 'TREKKING 100 FEMME', 'LUNAPIENA 28"LADY 7V REVO', 'LUNAPIENA 28"MAN 7V REVO', 'X KROSS LADY ACERA 3X7', 'X KROSS MAN ACERA 3X7', 'BLUECITY 28" MAN 3X7 STI',
+            'BLUECITY 28" LADY 3X7 STI'
+        ];
+
+
+        for ($i = 0; $i < count($bikes); $i++)
         {
             $bike = new Bike();
-            $bike->setName('Velo n°'.$i);
-            $bike->setDescription('Ce velo est exceptionel, il est equipé de pneus interactive et d\'une selle supert confort flex therma ainsi que 5vitesses homologué');
+            $bikeName = $bikes[$i];
+            $bike->setName($bikeName);
+            $bike->setDescription('Ce vélo est exceptionel, il est equipé de pneus interactifs et d\'une selle super confort flex therma ainsi que 5 vitesses');
             $bike->setPrice(mt_rand(500, 800));
-            $bike->setImage('http://placeimg.com/640/480/people');   
+            $bike->setImage('http://placeimg.com/740/480/tech');   
             $manager->persist($bike);
         }
         $manager->flush();

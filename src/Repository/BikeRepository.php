@@ -26,7 +26,20 @@ class BikeRepository extends ServiceEntityRepository
             ->setParameter('id', $id)
             ->getQuery();
           return $queryBuilder->execute();
-  
+
+    }
+
+    /**
+    * @return Bike[] Returns an array of Bike objects
+    */
+    public function findByName($value)
+    {
+       return $this->createQueryBuilder('p')
+            ->andWhere('p.Name like :query')
+            ->setParameter('query', "%" . $value . "%")
+            ->getQuery()
+            ->getResult();
+
     }
 
     // /**
