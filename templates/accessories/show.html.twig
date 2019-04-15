@@ -3,5 +3,43 @@
 {% block title %}Hello AccessoriesController!{% endblock %}
 
 {% block body %}
-<h1>ff</h1>
+<div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="card bg-light mb-3">
+                    <div class="card-body">
+                        <a href="" data-toggle="modal" data-target="#productModal">
+                            <img class="img-fluid" src="{{accessory.image}}" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-lg-6 add_to_cart_block">
+                    <div class="card bg-light mb-3">
+                        <div class="card-body">
+                            <h1>{{accessory.name}}</h1>
+                            <p>{{accessory.description}}</p>
+                        </div>
+                    </div>
+                            
+                           
+                    <div class="card bg-light mb-3">
+                        <div class="card-body">
+                            <h1>{{accessory.name}}</h1>
+                            <form method="get" action="cart.html">
+                                    <p>Caractéristique principale</p>
+                                <div class="row">
+                                <h2>{{accessory.price }}&euro;</h2>
+                                <a href="cart.html" class="btn btn-success btn-lg text-uppercase">
+                                    <i class="fa fa-shopping-cart"></i> Ajouter au panier
+                                </a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
