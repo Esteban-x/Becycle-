@@ -2,15 +2,26 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
 use App\Entity\Bike;
 use App\Entity\Accessory;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
 class AppFixtures extends Fixture
 {
+    /**
+     * @var UserPasswordEncoderInterface
+     */
+    private $passwordEncoder;
+
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
     public function load(ObjectManager $manager)
     {
         for($i=1;$i<30;$i++)
@@ -35,6 +46,26 @@ class AppFixtures extends Fixture
             $manager->persist($accessory);
         }
 
+        $users = [];
+        $faker = Faker\Factory::create();
+
+        for ($i = 1; $i <= 10; $i++) {
+            $username = (1 === $i) ? 'admin' : 'user-'.$i;
+            $roles = (1 === $i) ? ['ROLE_ADMIN'] : ['ROLE_USER'];
+
+            $user = new User();
+            $user->setUsername($username);
+            $user->setRoles($roles);
+            $user->setPassword(
+                $this->passwordEncoder->encodePassword($user, 'test')
+            );
+            $user->setEmail($faker->email);
+            $user->setFirstname($faker->firstName);
+            $user->setLastname($faker->lastName);
+            $user->setBirthdate($faker->dateTimeThisCentury);
+            $manager->persist($user);
+            $users[$i] = $user;
+        }
         $manager->flush();
     }
 }
