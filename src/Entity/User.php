@@ -21,7 +21,6 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true, options={"default":"concat(`firstname`,' ',`lastname`)"})
-     * @Assert\NotBlank()
      * @Assert\Length(max=255)
      */
     private $fullname;
@@ -34,7 +33,6 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
-     * @UserPassword()
      */
     private $password;
 
@@ -72,7 +70,10 @@ class User implements UserInterface
      */
     private $roles = [];
 
-
+    public function __construct()
+    {
+        $this->roles = array('ROLE_USER');
+    }
     public function getId(): ?int
     {
         return $this->id;
