@@ -58,8 +58,7 @@ class AppFixtures extends Fixture
             $user->setPassword(
                 $this->passwordEncoder->encodePassword($user, 'test')
             );
-            $user->setEmail($faker->email);
-            $user->setUsername($user->getEmail());
+            $user->setUsername($faker->email);
             $user->setFirstname($faker->firstName);
             $user->setLastname($faker->lastName);
             $user->setBirthdate($faker->dateTimeThisCentury);

@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity("username")
+ * @ORM\HasLifecycleCallbacks()
  */
 class User implements UserInterface
 {
@@ -20,13 +23,16 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true, options={"default":"concat(`firstname`,' ',`lastname`)"})
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Length(max=255)
      */
     private $fullname;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=255)
+     * @Assert\Email()
      */
     private $username;
 
@@ -36,13 +42,6 @@ class User implements UserInterface
      */
     private $password;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank()
-     * @Assert\Length(max=255)
-     * @Assert\Email()
-     */
-    private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -84,6 +83,15 @@ class User implements UserInterface
         return $this->fullname;
     }
 
+    /**
+     * @ORM\PrePersist
+     */
+    public function setFullnameBis()
+    {
+        $this->fullname = $this->getFirstname() ." ". $this->getLastname();
+
+        return $this;
+    }
     public function setFullname(string $fullname): self
     {
         $this->fullname = $fullname;
@@ -99,18 +107,6 @@ class User implements UserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
 
         return $this;
     }
