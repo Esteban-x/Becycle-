@@ -2,7 +2,7 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: ~ }
-        my_provider:
+        user_provider:
             entity:
                 class: App\Entity\User
                 property: username
@@ -16,6 +16,11 @@ security:
             security: false
         main:
             anonymous: true
+            logout: true
+            provider: user_provider
+            guard:
+                authenticators:
+                    - App\Security\LoginAuthenticator
 
             # activate different ways to authenticate
 
@@ -30,3 +35,4 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }

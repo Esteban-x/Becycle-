@@ -49,12 +49,11 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
     {
         $request->getSession()->set(
             Security::LAST_USERNAME,
-            $request->get('email')
+            $request->get('login[email]')
         );
-
         return [
-            'username' => $request->get('email'),
-            'password' => $request->get('password')
+            'username' => $request->get('login')['email'],
+            'password' => $request->get('login')['password']
         ];
     }
 
@@ -87,14 +86,13 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
     }
 
     /**
-     * Si l'utilisateur est bien connecté, on le redirige
-     * vers la liste des produits.
+     * Si l'utilisateur est bien connecté, on le redirige.
      */
     public function onAuthenticationSuccess(
         Request $request,
         TokenInterface $token,
         $providerKey
     ) {
-        return new RedirectResponse($this->router->generate('product_list'));
+        return new RedirectResponse($this->router->generate('home'));
     }
 }

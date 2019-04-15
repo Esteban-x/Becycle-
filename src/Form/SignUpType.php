@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,7 +20,11 @@ class SignUpType extends AbstractType
             ->add('firstname', TextType::class)
             ->add('lastname', TextType::class)
             ->add('email', EmailType::class)
-            ->add('password', PasswordType::class)
+            ->add('password', RepeatedType::class, array(
+                            'type' => PasswordType::class,
+                            'first_options'  => array('label' => 'Password'),
+                            'second_options' => array('label' => 'Repeat Password')
+            ))
             ->add('birthdate', DateType::class)
         ;
     }
