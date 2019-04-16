@@ -18,6 +18,7 @@ class Orders
 
     /**
      * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
      */
     private $id_user;
 
