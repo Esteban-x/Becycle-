@@ -27,7 +27,40 @@
                 {% endfor %}
             {% endfor %}
 
-                  {% block body %}{% endblock %}
+                 {# {% block body %} {% endblock %}#}
+
+
+
+
+
+            {% block flash %}
+                {% for flash_message in app.session.flashbag.get('success') %}
+                    <div class="container alert alert-success" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+                {% for flash_message in app.session.flashbag.get('info') %}
+                    <div class="container alert alert-info" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+                {% for flash_message in app.session.flashbag.get('warning') %}
+                    <div class="container alert alert-warning" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+                {% for flash_message in app.session.flashbag.get('danger') %}
+                    <div class="container alert alert-danger" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+            {% endblock %}
+
+            <div class="container bck1 padded">
+                {% block body %}
+                {% endblock %}
+            </div>
+
         </div>
 
         <footer class="py-5 bg-dark">

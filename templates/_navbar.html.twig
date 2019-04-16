@@ -29,6 +29,20 @@
                                 </ul>
                 
                                 <ul class="navbar-nav">
+
+                                    {% if is_granted('ROLE_USER') %}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{path('logout')}}">Déconnexion</a>
+                                        </li>
+                                    {% else %}
+                                        <li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
+                                            <a class="nav-link" href="{{path('login')}}">Connexion</a>
+                                        </li>
+                                        <li class="nav-item {% if mainNavRegistration is defined %}active{% endif %}">
+                                            <a class="nav-link" href="{{path('signup')}}">Inscription</a>
+                                        </li>
+                                    {% endif %}
+
                                      <li class="nav-item {{route == 'login' ? "active"}}">
                                          <a class="nav-link" href="{{path('login')}}">Mon Compte</a>
                                      </li>
