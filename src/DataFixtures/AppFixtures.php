@@ -3,6 +3,8 @@
 namespace App\DataFixtures;
 
 use App\Entity\Product;
+use App\Entity\Category;
+use App\Entity\Tag;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -54,6 +56,32 @@ class AppFixtures extends Fixture
             $accessory->setType('polyvalent');
             $manager->persist($accessory);
         }
+
+        $categories = [
+            'Vtt', 'Vtc', 'Ville', 'Electrique'
+        ];
+
+        for($i=0;$i<count($categories);$i++)
+        {
+            $category = new Category();
+            $categoryname = $categories[$i];
+            $category->setName($categoryname);
+            $manager->persist($category);
+        }
+
+        $tags = [
+            'Homme', 'Femme', 'Enfant'
+        ];
+
+        for($i=0;$i<count($tags);$i++)
+        {
+            $tag = new Tag();
+            $tagname = $tags[$i];
+            $tag->setName($tagname);
+            $manager->persist($tag);
+        }
+
+
 
         $users = [];
         $faker = Faker\Factory::create();

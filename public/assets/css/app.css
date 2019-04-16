@@ -1,3 +1,18 @@
+.list-group{
+
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.list-group .list-group-item{
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    
+    }
+
 
 #brand{
     font-family: 'Acme', sans-serif;

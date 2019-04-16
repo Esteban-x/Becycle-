@@ -27,7 +27,7 @@ $(document).ready(()=>{
         {
           return{
             bike_id: bike.id,
-            bike_name: bike.Name,
+            bike_name: bike.name,
           }
         })
       }
@@ -45,10 +45,10 @@ $(document).ready(()=>{
           suggestion: function (data)
           {
             return `
-                                    <a href='/bike/`+data.bike_id+`'>
+                    <a href='/bike/`+data.bike_id+`'>
                                         
-                                        <span>`+data.bike_name+`</span>
-                                    </a>
+                      <span>`+data.bike_name+`</span>
+                    </a>
                             `
           }
         },

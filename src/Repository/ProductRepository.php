@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Product;
+use App\Entity\BikeSearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -34,32 +35,28 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
-    // /**
-    //  * @return Product[] Returns an array of Product objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Product
+    public function findBy_id($id)
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->where('p.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery();
+          return $queryBuilder->execute();
     }
+    /**
+    * @return Bike[] Returns an array of Bike objects
     */
+    public function findByName($value)
+    {
+       return $this->createQueryBuilder('p')
+            ->andWhere('p.name like :query')
+            ->setParameter('query', "%" . $value . "%")
+            ->getQuery()
+            ->getResult();
+    }
+
+   
+ 
+   
 }
