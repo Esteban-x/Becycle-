@@ -103,19 +103,12 @@ h1 {
 }
 
 p {
-<<<<<<< HEAD
-    
     text-align: justify;
     font-family: 'Comfortaa', cursive;
-}#myBtn {
-=======
-    text-align: justify;
-    font-family: 'Comfortaa', cursive;
-}
+
     margin-left: 20%;
 }
 #myBtn {
->>>>>>> de6a35483e747c3266e531f62d5ed065f4db7726
     display: none;
     position: fixed;
     bottom: 20px;
@@ -134,3 +127,16 @@ p {
   #myBtn:hover {
     background-color: #555;
   }
+
+.nav-link{
+    text-shadow: 1px 1px 23px black;
+}
+
+.nav-link:hover{
+    text-shadow: 1px 3px 10px black;
+    color: #D6FFF1;
+}
+
+.active{
+color: #68FAC8;
+}
