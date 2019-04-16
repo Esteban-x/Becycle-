@@ -51,8 +51,6 @@ class SecurityController extends AbstractController
         $user = new User();
         $form = $this->createForm(LoginType::class, $user);
         $form->handleRequest($request);
-
-        //$this->addFlash("success", "Vous êtes bien connecté.");
         return $this->render('security/login.html.twig', [
             'form' => $form->createView(),
             'last_username' => $lastUsername,
