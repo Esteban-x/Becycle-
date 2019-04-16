@@ -50,7 +50,6 @@ class AppFixtures extends Fixture
         $faker = Faker\Factory::create();
 
         for ($i = 1; $i <= 10; $i++) {
-            //$username = (1 === $i) ? 'admin' : 'user-'.$i;
             $roles = (1 === $i) ? ['ROLE_ADMIN'] : ['ROLE_USER'];
 
             $user = new User();
@@ -58,7 +57,7 @@ class AppFixtures extends Fixture
             $user->setPassword(
                 $this->passwordEncoder->encodePassword($user, 'test')
             );
-            $user->setUsername($faker->email);
+            $user->setUsername((1 === $i) ? 'admin@admin.admin' : $faker->email);
             $user->setFirstname($faker->firstName);
             $user->setLastname($faker->lastName);
             $user->setBirthdate($faker->dateTimeThisCentury);
