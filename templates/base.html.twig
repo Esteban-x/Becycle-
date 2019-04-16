@@ -27,31 +27,7 @@
                     </div>
                 {% endfor %}
             {% endfor %}
-
-                 {# {% block body %} {% endblock %}#}
-            {% block flash %}
-                {% for flash_message in app.session.flashbag.get('success') %}
-                    <div class="container alert alert-success" role="alert">
-                        {{ flash_message }}
-                    </div>
-                {% endfor %}
-                {% for flash_message in app.session.flashbag.get('info') %}
-                    <div class="container alert alert-info" role="alert">
-                        {{ flash_message }}
-                    </div>
-                {% endfor %}
-                {% for flash_message in app.session.flashbag.get('warning') %}
-                    <div class="container alert alert-warning" role="alert">
-                        {{ flash_message }}
-                    </div>
-                {% endfor %}
-                {% for flash_message in app.session.flashbag.get('danger') %}
-                    <div class="container alert alert-danger" role="alert">
-                        {{ flash_message }}
-                    </div>
-                {% endfor %}
-            {% endblock %}
-
+            <div class="container bck1 padded">
                 {% block body %}
                 {% endblock %}
            
@@ -68,56 +44,10 @@
         
 
         {% block javascript %}
-
        <script src="https://code.jquery.com/jquery-3.4.0.js" type="text/javascript"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.jquery.min.js" type="text/javascript"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/bloodhound.min.js" type="text/javascript"></script>
        <script src="{{asset('assets/js/base.js')}}"></script>
-
-       <script>$(document).ready(()=>{
-  var bikes = new Bloodhound({   
-  datumTokenizer: Bloodhound.tokenizers.whitespace,
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  remote: {
-      url: "{{path('search')}}/%QUERY%",
-      wildcard: '%QUERY%',
-      filter: function (bikes)
-      {
-          return $.map(bikes, function(bike)
-          {
-              return{
-                  bike_id: bike.id,
-                  bike_name: bike.Name,
-              }
-          })
-      }
-  }
-  })
-  bikes.initialize();
-  $('#form_query').typeahead({
-      hint: true
-  },
-  {
-      name: 'bikes',
-      source: bikes.ttAdapter(),
-      display: 'bike_name',
-      templates: {
-          suggestion: function (data)
-          {
-              return `
-                      <a href='{{path('bike')}}/`+data.bike_id+`'>
-                          <span>`+data.bike_name+`</span>
-                      </a>
-              `
-          }
-      },
-      footer: function (query)
-      {
-          return '<div class="text-center">Plus d\'info sur le: '+query.query+'</div>' 
-      }
-  }
-)   
-})</script>
         {% endblock %}
 
     </body>
