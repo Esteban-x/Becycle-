@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,10 +23,6 @@ class OrderProducts
      */
     private $id_order;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $id_product;
 
     /**
      * @ORM\Column(type="integer")
@@ -40,6 +38,16 @@ class OrderProducts
      * @ORM\Column(type="integer")
      */
     private $total;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Product", inversedBy="orderProducts")
+     */
+    private $id_products;
+
+    public function __construct()
+    {
+        $this->id_products = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -58,17 +66,6 @@ class OrderProducts
         return $this;
     }
 
-    public function getIdProduct(): ?int
-    {
-        return $this->id_product;
-    }
-
-    public function setIdProduct(int $id_product): self
-    {
-        $this->id_product = $id_product;
-
-        return $this;
-    }
 
     public function getQty(): ?int
     {
@@ -102,6 +99,32 @@ class OrderProducts
     public function setTotal(int $total): self
     {
         $this->total = $total;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Product[]
+     */
+    public function getIdProducts(): Collection
+    {
+        return $this->id_products;
+    }
+
+    public function addIdProduct(Product $idProduct): self
+    {
+        if (!$this->id_products->contains($idProduct)) {
+            $this->id_products[] = $idProduct;
+        }
+
+        return $this;
+    }
+
+    public function removeIdProduct(Product $idProduct): self
+    {
+        if ($this->id_products->contains($idProduct)) {
+            $this->id_products->removeElement($idProduct);
+        }
 
         return $this;
     }

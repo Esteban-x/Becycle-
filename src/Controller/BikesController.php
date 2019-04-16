@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BikeRepository;
-use App\Entity\Bike;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,11 +21,10 @@ class BikesController extends AbstractController
      * @Route("/bikes", name="bikes")
      * @return Response
      */
-    public function bikes(BikeRepository $bikerepo, PaginatorInterface $paginator, Request $request) : Response
+    public function bikes(ProductRepository $bikerepo, PaginatorInterface $paginator, Request $request) : Response
     {   
-         $bikes = $bikerepo->findAll();
-         
-        dump($request);
+         $bikes = $bikerepo->findAllBikes();
+
 
         $pagination = $paginator->paginate(
            $bikes, 
@@ -49,7 +49,7 @@ class BikesController extends AbstractController
         $bike = null;
 
         if ($id) {
-            $bike = $em->getRepository(Bike::class)->findOneBy(['id' => $id]);
+            $bike = $em->getRepository(Product::class)->findOneBy(['id' => $id]);
         }
 
         return $this->render('/bikes/show.html.twig', [

@@ -2,12 +2,11 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Product;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
-use App\Entity\Bike;
-use App\Entity\Accessory;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
@@ -35,24 +34,24 @@ class AppFixtures extends Fixture
 
         for ($i = 0; $i < count($bikes); $i++)
         {
-            $bike = new Bike();
+            $bike = new Product();
             $bikeName = $bikes[$i];
             $bike->setName($bikeName);
             $bike->setDescription('Ce vélo est exceptionel, il est equipé de pneus interactifs et d\'une selle super confort flex therma ainsi que 5 vitesses');
             $bike->setPrice(mt_rand(500, 800));
-            $bike->setImage('http://placeimg.com/740/480/tech');   
+            $bike->setImage('http://placeimg.com/740/480/tech');
+            $bike->setType('bike');
             $manager->persist($bike);
         }
-        $manager->flush();
 
         for($i=1;$i<10;$i++)
         {
-            $accessory = new Accessory();
+            $accessory = new Product();
             $accessory->setName('Accessoire n°'.$i);
             $accessory->setDescription('voici un très bon accessoire pour la randonné en velo sur de grandes distances.');
             $accessory->setPrice(mt_rand(6, 20));
             $accessory->setImage('https://placeimg.com/640/480/tech');
-            $accessory->setCaract('polyvalent');
+            $accessory->setType('polyvalent');
             $manager->persist($accessory);
         }
 
