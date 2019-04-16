@@ -127,3 +127,16 @@ p {
   #myBtn:hover {
     background-color: #555;
   }
+
+.nav-link{
+    text-shadow: 1px 1px 23px black;
+}
+
+.nav-link:hover{
+    text-shadow: 1px 3px 10px black;
+    color: #D6FFF1;
+}
+
+.active{
+color: #68FAC8;
+}

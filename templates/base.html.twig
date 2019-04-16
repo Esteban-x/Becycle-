@@ -68,7 +68,9 @@
 
         <script src="{{asset('assets/js/base.js')}}"></script>
         {% block javascript %}
-<script>
+  <script>
+                
+
                 $('#form_query').typeahead({
                     hint: true
                 },
@@ -77,13 +79,15 @@
                     source: bikes.ttAdapter(),
                     display: 'bike_name',
                     templates: {
-                        suggestion: function (data){
-
-                        return `
-                            <a href="/bike/{id}">
-                            <span>`+bikes.bike_name+`</span></a>
+                        suggestion: function (data)
+                        {
+                            return `
+                                    <a href='{{path('bike')}}/`+data.bike_id+`'>
+                                        
+                                        <span>`+data.bike_name+`</span>
+                                    </a>
                             `
-                                  
+                        }
                     },
                     footer: function (query)
                     {
@@ -91,8 +95,9 @@
                     }
 
                 }
-            })   
-             
+            )   
+        
+
        </script> 
         {% endblock %}
     </body>

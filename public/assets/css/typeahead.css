@@ -1,6 +1,12 @@
 span.twitter-typeahead .tt-menu {
     cursor: pointer;
   }
+
+  .typeahead{
+    border: 0.5px;
+    border-radius: 4%;
+    box-shadow: 1px 1px 10px;
+  }
   
   .dropdown-menu, span.twitter-typeahead .tt-menu {
     position: absolute;
