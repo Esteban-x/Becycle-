@@ -1,6 +1,6 @@
 {% block body %}
-<header class="main-header">
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header>
+     <nav onscroll="scrollFuncNav()" id="scrollbar" title="scrollbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
                         <div class="container">
                             <a class="navbar-brand" href="{{path('home')}}">
                                 <span id="brand"><i class="fas fa-bike"></i>&nbsp;&nbsp;Becycle&copy;</span>
@@ -10,7 +10,7 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                 
-                            <div class="collapse navbar-collapse" id="navbSupportedContent">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             {% set route = app.request.attributes.get('_route')%}
                                <ul class="navbar-nav mr-auto ml-auto">
                                     <li class="nav-item {{route == 'home' ? "active"}}">
@@ -41,3 +41,5 @@
     </nav>
 </header>
 {% endblock body %}
+
+

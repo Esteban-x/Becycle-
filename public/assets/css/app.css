@@ -1,5 +1,8 @@
-/* Home _ fade images */
+body {
+    padding-top: 60px;
+}
 
+/* Home _ fade images */
 
 
 .slide {
@@ -103,19 +106,13 @@ h1 {
 }
 
 p {
-<<<<<<< HEAD
-    
-    text-align: justify;
-    font-family: 'Comfortaa', cursive;
-}#myBtn {
-=======
     text-align: justify;
     font-family: 'Comfortaa', cursive;
 }
-    margin-left: 20%;
-}
+
+/* Bouton "haut de page" */
+
 #myBtn {
->>>>>>> de6a35483e747c3266e531f62d5ed065f4db7726
     display: none;
     position: fixed;
     bottom: 20px;
@@ -134,3 +131,15 @@ p {
   #myBtn:hover {
     background-color: #555;
   }
+
+
+/* Navbar position */
+
+#scrollbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    transition: top 0.3s;
+}
