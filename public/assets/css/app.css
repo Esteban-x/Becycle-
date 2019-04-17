@@ -1,5 +1,23 @@
-.list-group{
+.card-text{
+    text-align: left;
+}
+.description{
+    text-align: left;
+}
 
+.bike-logo{
+    margin-right: 30px;
+}
+
+.category-link{
+    font-family: 'Francois One', cursive;
+    font-size: 21px ;
+    color: #233D4D;}
+
+.category-link:hover{
+    font-family: 'Francois One', cursive;
+    font-size: 21px ;
+    color: #051926;   
 }
 
 a:hover{
@@ -10,12 +28,10 @@ a:hover{
     padding: 30px;
     text-align: center;
     text-transform: uppercase;
-    
     }
 
-
 #brand{
-    font-family: 'Acme', sans-serif;
+    font-family: 'Francois One', sans-serif;
    
 }
 
@@ -123,11 +139,29 @@ h1 {
     font-size: 26px;
 }
 
+h4 .card-link{
+    font-family: 'Francois One', cursive;
+    font-size: 21px ;
+    color: #233D4D;
+    border-block-end: rgba(7, 45, 64, 0.1) 4px solid;
+    border-radius: 5px;
+    padding: 0;
+}
+
+h4 .card-link:hover{
+    font-family: 'Francois One', cursive;
+    font-size: 21px ;
+    color: #051926;
+    border-block-end: rgba(7, 45, 64, 0.2) 4px solid;
+    border-radius: 8px;
+    padding: 0.4px;
+}
+
+
 p {
     text-align: justify;
     font-family: 'Comfortaa', cursive;
-
-    margin-left: 20%;
+    
 }
 #myBtn {
     display: none;
@@ -138,15 +172,19 @@ p {
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: #3B71B2;
+    background-color: #343a40;
     color: #D4E1E8;
     cursor: pointer;
     padding: 15px;
+    margin-bottom: 10px;
     border-radius: 4px;
+    box-shadow: black 1px 1px 5px;
   }
   
   #myBtn:hover {
-    background-color: #555;
+    background-color: #212529;
+    box-shadow: black 1px 1px 13px;
+    
   }
 
 .nav-link{

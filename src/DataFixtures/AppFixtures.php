@@ -33,21 +33,22 @@ class AppFixtures extends Fixture
             'BLUECITY 28" LADY 3X7 STI'
         ];
 
-
+      
         
         $categories = [
-            'Vtt', 'Vtc', 'Ville', 'Electrique'
+            ['Vtt', 'vtt.png'], ['Vtc', 'vtc.png' ], ['Ville', 'ville.png'], ['Electrique', 'electric.png']
         ];
 
         $j=[];
-
+       
 
 
         for($i=1;$i<=count($categories);$i++)
         {
             $category = new Category();
-            $categoryname = $categories[$i-1];
+            $categoryname = $categories[$i-1][0];
             $category->setName($categoryname);
+            $category->setLogo($categories[$i-1][1]);
             $manager->persist($category);
             $j[$i] = $category;
         }
@@ -78,17 +79,7 @@ class AppFixtures extends Fixture
         }
 
 
-        $tags = [
-            'Homme', 'Femme', 'Enfant'
-        ];
-
-        for($i=0;$i<count($tags);$i++)
-        {
-            $tag = new Tag();
-            $tagname = $tags[$i];
-            $tag->setName($tagname);
-            $manager->persist($tag);
-        }
+        
 
         $users = [];
         $faker = Faker\Factory::create();

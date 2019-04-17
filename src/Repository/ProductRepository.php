@@ -44,6 +44,16 @@ class ProductRepository extends ServiceEntityRepository
             ->getQuery();
           return $queryBuilder->execute();
     }
+
+    public function findByCategory_id($category)
+    {
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->where('p.category = :category')
+            ->setParameter('category', $category)
+            ->getQuery();
+          return $queryBuilder->execute();
+  
+    }
     /**
     * @return Bike[] Returns an array of Bike objects
     */
@@ -56,24 +66,26 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    public function findByCategory($pcategory)
+
+    public function findAllProdCatId($id)
     {
         $queryBuilder = $this->createQueryBuilder('p')
-            ->andWhere('p.category = :pcategory')
-            ->setParameter('pcategory', $pcategory)
-            ->getQuery();
-          return $queryBuilder->execute();
+            ->andWhere('p.category = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult();
     }
 
-    public function findByCategory_id($category)
-    {
-        $queryBuilder = $this->createQueryBuilder('p')
-            ->where('p.category = :category')
-            ->setParameter('category', $category)
-            ->getQuery();
-          return $queryBuilder->execute();
-  
+    public function findAllProdTagId($tid){
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.tag= :tid')
+            ->setParameter('tid', $tid)
+            ->getQuery()
+            ->getResult()
+            ;
     }
+
+    
 
    
  

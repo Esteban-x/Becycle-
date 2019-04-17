@@ -8,20 +8,14 @@
         <div class="row">
             <div class="col-12 col-sm-3">
                 <div class="card bg-light mb-3">
-                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Catégories</div>
+                    <div class="card-header bg-dark text-white text-uppercase"><i class="fa fa-list"></i> Catégories</div>
                     <ul class="list-group category_block">
 
                         {% for category in categorys %}
-                        <li class="list-group-item"><a href="{{path('bikes', {'id': category.id })}}">{{category.name}}</a></li>
+                        <li class="list-group-item"><a class="category-link" href="{{path('bikes', {'id': category.id })}}"><img class="bike-logo" src="{{asset('assets/image/logos/'~category.logo)}}" alt="">{{category.name}}</a></li>
                         {% endfor %}
                     </ul>
-                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i>Type</div>
-                    <ul class="list-group category_block">
-
-                            {% for tag in tags %}
-                            <li class="list-group-item"><a href="#">{{tag.Name}}</a></li>
-                            {% endfor %}
-                        </ul>
+                    
                 </div>
             </div>
             <div class="col">
@@ -33,13 +27,13 @@
                             <div class="card">
                                 <img class="card-img-top" src="{{bike.image}}" alt="Photo du vélo">
                                 <div class="card-body">
-                                    <h4 class="card-title"><a href="{{path('bike', {'id': bike.id })}}" title="Voir le vélo">{{ bike.name }}</a></h4>
+                                    <h4 class="card-title"><a class="card-link" href="{{path('bike', {'id': bike.id })}}" title="Voir le vélo">{{ bike.name }}</a></h4>
                                     <p class="card-text">{{bike.description}}</p>
                                     
                                     <div class="row">
                                             <h2 title="{{bike.price}}" class="price">{{bike.price}} &euro;</h2>
                                         <div class="col">
-                                            <a href="{{path('bike', {'id': bike.id })}}" title="En savoir plus sur ce vélo" class="btn btn-success ">Plus d'infos</a>
+                                            <a href="{{path('bike', {'id': bike.id })}}" title="En savoir plus sur ce vélo" class="btn btn-dark "><i class="fas fa-info-circle"></i>&nbspPlus d'infos</a>
                                         </div>                               
                                     </div>
                                 </div>

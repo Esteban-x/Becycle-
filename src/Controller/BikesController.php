@@ -21,50 +21,53 @@ use App\Form\BikeSearchType;
 class BikesController extends AbstractController
 {
     /**
-     * @Route("/bikes/{id}", name="bikes")
+     * @Route("/bikes/{id?}", name="bikes")
      * @return Response
      * @param $id
      */
     public function bikes(ProductRepository $prodrepo, CategoryRepository $catrepo, TagRepository $tagrepo, PaginatorInterface $paginator, Request $request, $id = false) : Response
     {   
-        $tags = $tagrepo->findAll();
+        $tag = $tagrepo->findAll();
         $category = $catrepo->findAll();
-        $bikes = $prodrepo->findAllBikes();
-         
-       if($id)
-       {
-           $bikes = $prodrepo->findByCategory_id($id);
-           $categoryname = array_values(array_filter($category, function($category)use($id){
-               return $category->getId() == $id;
-           }));
-           $categoryname = $categoryname[0]->getName();
-       }
-
-       else 
-       {
-           $bikes = $prodrepo->findAll();
-           $categoryname = 'Catégories';
-       }
-
+        
+        if ($id)
+        {
+            $bikes = $prodrepo->findByCategory_id($id);
+            $categoryname =  array_values(array_filter($category, function($category)use ($id){
+                return $category->getId() == $id;
+            }));
+            
+            $categoryname = $categoryname[0]->getName();
+            
+        }
+        else
+        {
+            $bikes = $prodrepo->findAllBikes();
+            $categoryname = 'Catégories';
+        }
+       
         $pagination = $paginator->paginate(
            $bikes, 
 
         $request->query->getInt('page', 1),9
         
         );
+        
+        dump($pagination);
         return $this->render('bikes/bikes.html.twig', [
             'controller_name' => 'BikesController',
             'bikes' => $bikes,
             'pagination' => $pagination,
             'categorys' => $category,
-            'tags' => $tags,
-            'currentcat' => $categoryname
+            'tags' => $tag,
+            'currentcategory' => $categoryname   
+            
             
         ]);
     }
 
     /**
-     * @Route("/bike/{id?}", name="bike", methods={"GET"})
+     * @Route("/bike/show/{id?}", name="bike", methods={"GET"})
      * 
      */
     public function showProduct(Request $request, $id)
@@ -73,7 +76,7 @@ class BikesController extends AbstractController
         $bike = null;
 
         if ($id) {
-            $bike = $em->getRepository(Bike::class)->findOneBy(['id' => $id]);
+            $bike = $em->getRepository(Product::class)->findOneBy(['id' => $id]);
         }
 
         return $this->render('/bikes/show.html.twig', [
