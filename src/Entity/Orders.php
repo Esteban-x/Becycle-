@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,21 +18,12 @@ class Orders
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="integer")
-     * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     */
-    private $id_user;
 
     /**
      * @ORM\Column(type="string", length=32, nullable=true)
      */
     private $sess_user;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $id_address;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -62,22 +55,33 @@ class Orders
      */
     private $payment_state;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="orders")
+     */
+    private $id_user;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", inversedBy="orders")
+     */
+    private $id_adress;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\OrderProducts", mappedBy="id_order", orphanRemoval=true)
+     */
+    private $orderProducts;
+
+
+
+    public function __construct()
+    {
+        $this->orderProducts = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getIdUser(): ?int
-    {
-        return $this->id_user;
-    }
-
-    public function setIdUser(int $id_user): self
-    {
-        $this->id_user = $id_user;
-
-        return $this;
-    }
 
     public function getSessUser(): ?string
     {
@@ -91,17 +95,6 @@ class Orders
         return $this;
     }
 
-    public function getIdAddress(): ?int
-    {
-        return $this->id_address;
-    }
-
-    public function setIdAddress(?int $id_address): self
-    {
-        $this->id_address = $id_address;
-
-        return $this;
-    }
 
     public function getTotal(): ?int
     {
@@ -174,4 +167,61 @@ class Orders
 
         return $this;
     }
+
+    public function getIdUser(): ?user
+    {
+        return $this->id_user;
+    }
+
+    public function setIdUser(?user $id_user): self
+    {
+        $this->id_user = $id_user;
+
+        return $this;
+    }
+
+    public function getIdAdress(): ?address
+    {
+        return $this->id_adress;
+    }
+
+    public function setIdAdress(?address $id_adress): self
+    {
+        $this->id_adress = $id_adress;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|OrderProducts[]
+     */
+    public function getOrderProducts(): Collection
+    {
+        return $this->orderProducts;
+    }
+
+    public function addOrderProduct(OrderProducts $orderProduct): self
+    {
+        if (!$this->orderProducts->contains($orderProduct)) {
+            $this->orderProducts[] = $orderProduct;
+            $orderProduct->setIdOrder($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrderProduct(OrderProducts $orderProduct): self
+    {
+        if ($this->orderProducts->contains($orderProduct)) {
+            $this->orderProducts->removeElement($orderProduct);
+            // set the owning side to null (unless already changed)
+            if ($orderProduct->getIdOrder() === $this) {
+                $orderProduct->setIdOrder(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }

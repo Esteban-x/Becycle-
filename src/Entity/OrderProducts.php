@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,10 +16,6 @@ class OrderProducts
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $id_order;
 
 
     /**
@@ -40,31 +34,23 @@ class OrderProducts
     private $total;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Product", inversedBy="orderProducts")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="orderProducts")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $id_products;
 
-    public function __construct()
-    {
-        $this->id_products = new ArrayCollection();
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Orders", inversedBy="orderProducts")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $id_order;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getIdOrder(): ?int
-    {
-        return $this->id_order;
-    }
-
-    public function setIdOrder(int $id_order): self
-    {
-        $this->id_order = $id_order;
-
-        return $this;
-    }
 
 
     public function getQty(): ?int
@@ -103,28 +89,26 @@ class OrderProducts
         return $this;
     }
 
-    /**
-     * @return Collection|Product[]
-     */
-    public function getIdProducts(): Collection
+    public function getIdProducts(): ?Product
     {
         return $this->id_products;
     }
 
-    public function addIdProduct(Product $idProduct): self
+    public function setIdProducts(?Product $id_products): self
     {
-        if (!$this->id_products->contains($idProduct)) {
-            $this->id_products[] = $idProduct;
-        }
+        $this->id_products = $id_products;
 
         return $this;
     }
 
-    public function removeIdProduct(Product $idProduct): self
+    public function getIdOrder(): ?Orders
     {
-        if ($this->id_products->contains($idProduct)) {
-            $this->id_products->removeElement($idProduct);
-        }
+        return $this->id_order;
+    }
+
+    public function setIdOrder(?Orders $id_order): self
+    {
+        $this->id_order = $id_order;
 
         return $this;
     }
