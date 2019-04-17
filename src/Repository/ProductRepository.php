@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Product;
+use App\Entity\BikeSearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -34,32 +35,59 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
-    // /**
-    //  * @return Product[] Returns an array of Product objects
-    //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findBy_id($id)
     {
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->andWhere('p.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery();
+          return $queryBuilder->execute();
+    }
+
+    public function findByCategory_id($category)
+    {
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->where('p.category = :category')
+            ->setParameter('category', $category)
+            ->getQuery();
+          return $queryBuilder->execute();
+  
+    }
+    /**
+    * @return Bike[] Returns an array of Bike objects
+    */
+    public function findByName($value)
+    {
+       return $this->createQueryBuilder('p')
+            ->andWhere('p.name like :query')
+            ->setParameter('query', "%" . $value . "%")
+            ->getQuery()
+            ->getResult();
+    }
+
+
+    public function findAllProdCatId($id)
+    {
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->andWhere('p.category = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findAllProdTagId($tid){
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('p.tag= :tid')
+            ->setParameter('tid', $tid)
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Product
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+    
+
+   
+ 
+   
 }

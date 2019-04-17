@@ -19,19 +19,19 @@
         <div class="col-12 col-lg-6 add_to_cart_block">
                 <div class="card bg-light mb-3">
                     <div class="card-body">
-                        <h1>{{bike.name}}</h1>
-                        <p>{{bike.description}}</p>
+                        <h1 class="text-center">{{bike.name}}</h1>
+                        <p class="description">{{bike.description}}</p>
                     </div>
                 </div>
                         
                        
                 <div class="card bg-light mb-3">
                     <div class="card-body">
-                        <h1>{{bike.name}}</h1>
-                                <p>Caractéristique principale</p>
+                        <h1 class="text-center">{{bike.name}}</h1>
+                                <p class="description">Caractéristique principale</p>
                             <div class="row">
-                            <h2>{{bike.price }}&euro;</h2>
-                            <a href="{{ path('addProduct', {'product':bike.id}) }}" class="btn btn-success btn-lg text-uppercase">
+                            <h2 class="bike-price ml-5">{{bike.price }}&euro;</h2>
+                            <a href="{{ path('addProduct', {'product':bike.id}) }}" class="ml-5 btn btn-dark btn-lg btn-panier text-uppercase">
                                 <i class="fa fa-shopping-cart"></i> Ajouter au panier
                             </a>
                         </div>

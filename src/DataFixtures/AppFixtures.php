@@ -3,6 +3,8 @@
 namespace App\DataFixtures;
 
 use App\Entity\Product;
+use App\Entity\Category;
+use App\Entity\Tag;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -31,9 +33,29 @@ class   AppFixtures extends Fixture
             'BLUECITY 28" LADY 3X7 STI'
         ];
 
+      
+        
+        $categories = [
+            ['Vtt', 'vtt.png'], ['Vtc', 'vtc.png' ], ['Ville', 'ville.png'], ['Electrique', 'electric.png']
+        ];
+
+        $j=[];
+       
+
+
+        for($i=1;$i<=count($categories);$i++)
+        {
+            $category = new Category();
+            $categoryname = $categories[$i-1][0];
+            $category->setName($categoryname);
+            $category->setLogo($categories[$i-1][1]);
+            $manager->persist($category);
+            $j[$i] = $category;
+        }
+
 
         for ($i = 0; $i < count($bikes); $i++)
-        {
+        {   
             $bike = new Product();
             $bikeName = $bikes[$i];
             $bike->setName($bikeName);
@@ -41,6 +63,7 @@ class   AppFixtures extends Fixture
             $bike->setPrice(mt_rand(500, 800));
             $bike->setImage('http://placeimg.com/740/480/tech');
             $bike->setType('bike');
+            $bike->setCategory($j[mt_rand(1, 4)]);
             $manager->persist($bike);
         }
 
@@ -54,6 +77,9 @@ class   AppFixtures extends Fixture
             $accessory->setType('polyvalent');
             $manager->persist($accessory);
         }
+
+
+        
 
         $users = [];
         $faker = Faker\Factory::create();

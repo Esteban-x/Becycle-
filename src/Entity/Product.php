@@ -48,6 +48,16 @@ class Product
      */
     private $orderProducts;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
+     */
+    private $category;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tag", inversedBy="products")
+     */
+    private $tag;
+
     public function __construct()
     {
         $this->orderProducts = new ArrayCollection();
@@ -145,6 +155,30 @@ class Product
                 $orderProduct->setIdProducts(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getTag(): ?Tag
+    {
+        return $this->tag;
+    }
+
+    public function setTag(?Tag $tag): self
+    {
+        $this->tag = $tag;
 
         return $this;
     }

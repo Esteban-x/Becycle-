@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Product;
-use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ProductRepository;
+use App\Repository\CategoryRepository;
+use App\Repository\TagRepository;
+use App\Entity\Product;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,33 +15,59 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Entity\BikeSearch;
+use App\Form\BikeSearchType;
 
 class BikesController extends AbstractController
 {
     /**
-     * @Route("/bikes", name="bikes")
+     * @Route("/bikes/{id?}", name="bikes")
      * @return Response
+     * @param $id
      */
-    public function bikes(ProductRepository $bikerepo, PaginatorInterface $paginator, Request $request) : Response
+    public function bikes(ProductRepository $prodrepo, CategoryRepository $catrepo, TagRepository $tagrepo, PaginatorInterface $paginator, Request $request, $id = false) : Response
     {   
-         $bikes = $bikerepo->findAllBikes();
-
-
+        $tag = $tagrepo->findAll();
+        $category = $catrepo->findAll();
+        
+        if ($id)
+        {
+            $bikes = $prodrepo->findByCategory_id($id);
+            $categoryname =  array_values(array_filter($category, function($category)use ($id){
+                return $category->getId() == $id;
+            }));
+            
+            $categoryname = $categoryname[0]->getName();
+            
+        }
+        else
+        {
+            $bikes = $prodrepo->findAllBikes();
+            $categoryname = 'Catégories';
+        }
+       
         $pagination = $paginator->paginate(
            $bikes, 
 
         $request->query->getInt('page', 1),9
         
         );
+        
+        dump($pagination);
         return $this->render('bikes/bikes.html.twig', [
             'controller_name' => 'BikesController',
             'bikes' => $bikes,
-            'pagination' => $pagination
+            'pagination' => $pagination,
+            'categorys' => $category,
+            'tags' => $tag,
+            'currentcategory' => $categoryname   
+            
+            
         ]);
     }
 
     /**
-     * @Route("/bike/{id?}", name="bike", methods={"GET"})
+     * @Route("/bike/show/{id?}", name="bike", methods={"GET"})
      * 
      */
     public function showProduct(Request $request, $id)
@@ -56,35 +84,6 @@ class BikesController extends AbstractController
         ]);
     }
 
-    // /**
-    //  * @Route("bikes/recherche", name="search")
-    //  */
-    // public function searchAction(BikeRepository $bikerepo, PaginatorInterface $paginator, Request $request) : Response
-    // {   
-    //     $em = $this->getDoctrine()->getManager();
-
-    //     $motcle = $request->get('motcle');
-
-    //      $bikes = $bikerepo->findBy(
-    //          ['Name' => $motcle],
-    //          ['Price' => 'ASC']
-    //         );
-            
-    //     dump($request);
-
-    //     $pagination = $paginator->paginate(
-    //        $bikes, 
-
-    //     $request->query->getInt('page', 1),9
-        
-    //     );
-    //     return $this->render('bikes/bikes.html.twig', [
-    //         'controller_name' => 'BikesController',
-    //         'bikes' => $bikes,
-    //         'pagination' => $pagination
-    //     ]);
-    // }
-
     /**
      * @Route("bikes/recherche/{_query?}", name="search")
      */
@@ -93,14 +92,12 @@ class BikesController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         
         if($_query)
-        {   $motcle = $request->get('motcle');
-            $data = $em->getRepository(Bike::class)->findByName($_query);
+        {   
+            $data = $em->getRepository(Product::class)->findByName($_query);
         }
         else {
-            $data = $em->getRepository(Bike::class)->findAll();
-        }
-
-        
+            $data = $em->getRepository(Product::class)->findAll();
+        } 
 
         $normalizers = [
             new ObjectNormalizer()
@@ -117,5 +114,5 @@ class BikesController extends AbstractController
         return new JsonResponse($data, 200, [], true);        
     }
 
-
+    
 }
