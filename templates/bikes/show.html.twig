@@ -28,15 +28,13 @@
                 <div class="card bg-light mb-3">
                     <div class="card-body">
                         <h1>{{bike.name}}</h1>
-                        <form method="get" action="cart.html">
                                 <p>Caractéristique principale</p>
                             <div class="row">
                             <h2>{{bike.price }}&euro;</h2>
-                            <a href="cart.html" class="btn btn-success btn-lg text-uppercase">
+                            <a href="{{ path('addProduct', {'product':bike.id}) }}" class="btn btn-success btn-lg text-uppercase">
                                 <i class="fa fa-shopping-cart"></i> Ajouter au panier
                             </a>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>

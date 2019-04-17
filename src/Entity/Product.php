@@ -42,8 +42,9 @@ class Product
      * @ORM\Column(type="string", length=255)
      */
     private $type;
+
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\OrderProducts", mappedBy="id_products")
+     * @ORM\OneToMany(targetEntity="App\Entity\OrderProducts", mappedBy="id_products")
      */
     private $orderProducts;
 
@@ -116,6 +117,7 @@ class Product
 
         return $this;
     }
+
     /**
      * @return Collection|OrderProducts[]
      */
@@ -128,7 +130,7 @@ class Product
     {
         if (!$this->orderProducts->contains($orderProduct)) {
             $this->orderProducts[] = $orderProduct;
-            $orderProduct->addIdProduct($this);
+            $orderProduct->setIdProducts($this);
         }
 
         return $this;
@@ -138,7 +140,10 @@ class Product
     {
         if ($this->orderProducts->contains($orderProduct)) {
             $this->orderProducts->removeElement($orderProduct);
-            $orderProduct->removeIdProduct($this);
+            // set the owning side to null (unless already changed)
+            if ($orderProduct->getIdProducts() === $this) {
+                $orderProduct->setIdProducts(null);
+            }
         }
 
         return $this;
