@@ -38,7 +38,8 @@ class CartController extends AbstractController
     public function addProduct(Product $product): Response
     {
         $this->cart->add($product);
-        return $this->render('cart/index.html.twig');
+        $this->addFlash("success", "Votre ".$product->getName()." a bien été ajouté au panier.");
+        return $this->redirectToRoute('cart');
     }
 
 }

@@ -4,6 +4,7 @@ namespace App\Security;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -28,14 +29,16 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
      * @var CartService
      */
     private $cart;
-
+    private $session;
 
     public function __construct(
         UserPasswordEncoderInterface $passwordEncoder,
         RouterInterface $router,
+        SessionInterface $session,
         CartService $cart
     )
     {
+        $this->session = $session;
         $this->passwordEncoder = $passwordEncoder;
         $this->router = $router;
         $this->cart = $cart;
@@ -72,6 +75,7 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
      */
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
+        $this->session = $this->session->getId();
         return $userProvider->loadUserByUsername($credentials['username']);
     }
 
@@ -101,7 +105,7 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
         TokenInterface $token,
         $providerKey
     ) {
-        $this->cart->checkLogin();exit();
+        $this->cart->checkLogin($this->session);
         return new RedirectResponse($this->router->generate('home'));
     }
 }
