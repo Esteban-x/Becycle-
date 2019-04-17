@@ -61,7 +61,7 @@ $(document).ready(()=>{
           suggestion: function (data)
           {
             return `
-                    <a href='/bike/`+data.bike_id+`'>
+                    <a href='/bike/show/`+data.bike_id+`'>
                                         
                       <span>`+data.bike_name+`</span>
                     </a>

@@ -55,7 +55,7 @@ class ProductRepository extends ServiceEntityRepository
   
     }
     /**
-    * @return Bike[] Returns an array of Bike objects
+    * @return Product[] 
     */
     public function findByName($value)
     {
