@@ -12,7 +12,7 @@
                     <ul class="list-group category_block">
 
                         {% for category in categorys %}
-                        <li class="list-group-item"><a href="#">{{category.name}}</a></li>
+                        <li class="list-group-item"><a href="{{path('bikes', {'id': category.id })}}">{{category.name}}</a></li>
                         {% endfor %}
                     </ul>
                     <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i>Type</div>

@@ -21,18 +21,30 @@ use App\Form\BikeSearchType;
 class BikesController extends AbstractController
 {
     /**
-     * @Route("/bikes", name="bikes")
+     * @Route("/bikes/{id}", name="bikes")
      * @return Response
+     * @param $id
      */
-    public function bikes(ProductRepository $prodrepo, CategoryRepository $catrepo, TagRepository $tagrepo, PaginatorInterface $paginator, Request $request) : Response
+    public function bikes(ProductRepository $prodrepo, CategoryRepository $catrepo, TagRepository $tagrepo, PaginatorInterface $paginator, Request $request, $id = false) : Response
     {   
         $tags = $tagrepo->findAll();
-
-         $category = $catrepo->findAll();
-
-         $bikes = $prodrepo->findAllBikes();
+        $category = $catrepo->findAll();
+        $bikes = $prodrepo->findAllBikes();
          
-        dump($request);
+       if($id)
+       {
+           $bikes = $prodrepo->findByCategory_id($id);
+           $categoryname = array_values(array_filter($category, function($category)use($id){
+               return $category->getId() == $id;
+           }));
+           $categoryname = $categoryname[0]->getName();
+       }
+
+       else 
+       {
+           $bikes = $prodrepo->findAll();
+           $categoryname = 'Catégories';
+       }
 
         $pagination = $paginator->paginate(
            $bikes, 
@@ -45,7 +57,8 @@ class BikesController extends AbstractController
             'bikes' => $bikes,
             'pagination' => $pagination,
             'categorys' => $category,
-            'tags' => $tags
+            'tags' => $tags,
+            'currentcat' => $categoryname
             
         ]);
     }
@@ -68,8 +81,6 @@ class BikesController extends AbstractController
         ]);
     }
 
-    
-
     /**
      * @Route("bikes/recherche/{_query?}", name="search")
      */
@@ -83,9 +94,7 @@ class BikesController extends AbstractController
         }
         else {
             $data = $em->getRepository(Product::class)->findAll();
-        }
-
-        
+        } 
 
         $normalizers = [
             new ObjectNormalizer()
@@ -102,5 +111,5 @@ class BikesController extends AbstractController
         return new JsonResponse($data, 200, [], true);        
     }
 
-
+    
 }

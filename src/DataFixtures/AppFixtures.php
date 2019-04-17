@@ -34,8 +34,27 @@ class AppFixtures extends Fixture
         ];
 
 
-        for ($i = 0; $i < count($bikes); $i++)
+        
+        $categories = [
+            'Vtt', 'Vtc', 'Ville', 'Electrique'
+        ];
+
+        $j=[];
+
+
+
+        for($i=1;$i<=count($categories);$i++)
         {
+            $category = new Category();
+            $categoryname = $categories[$i-1];
+            $category->setName($categoryname);
+            $manager->persist($category);
+            $j[$i] = $category;
+        }
+
+
+        for ($i = 0; $i < count($bikes); $i++)
+        {   
             $bike = new Product();
             $bikeName = $bikes[$i];
             $bike->setName($bikeName);
@@ -43,6 +62,7 @@ class AppFixtures extends Fixture
             $bike->setPrice(mt_rand(500, 800));
             $bike->setImage('http://placeimg.com/740/480/tech');
             $bike->setType('bike');
+            $bike->setCategory($j[mt_rand(1, 4)]);
             $manager->persist($bike);
         }
 
@@ -57,17 +77,6 @@ class AppFixtures extends Fixture
             $manager->persist($accessory);
         }
 
-        $categories = [
-            'Vtt', 'Vtc', 'Ville', 'Electrique'
-        ];
-
-        for($i=0;$i<count($categories);$i++)
-        {
-            $category = new Category();
-            $categoryname = $categories[$i];
-            $category->setName($categoryname);
-            $manager->persist($category);
-        }
 
         $tags = [
             'Homme', 'Femme', 'Enfant'
@@ -80,8 +89,6 @@ class AppFixtures extends Fixture
             $tag->setName($tagname);
             $manager->persist($tag);
         }
-
-
 
         $users = [];
         $faker = Faker\Factory::create();

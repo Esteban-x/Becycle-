@@ -39,7 +39,7 @@ class ProductRepository extends ServiceEntityRepository
     public function findBy_id($id)
     {
         $queryBuilder = $this->createQueryBuilder('p')
-            ->where('p.id = :id')
+            ->andWhere('p.id = :id')
             ->setParameter('id', $id)
             ->getQuery();
           return $queryBuilder->execute();
@@ -54,6 +54,25 @@ class ProductRepository extends ServiceEntityRepository
             ->setParameter('query', "%" . $value . "%")
             ->getQuery()
             ->getResult();
+    }
+
+    public function findByCategory($pcategory)
+    {
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->andWhere('p.category = :pcategory')
+            ->setParameter('pcategory', $pcategory)
+            ->getQuery();
+          return $queryBuilder->execute();
+    }
+
+    public function findByCategory_id($category)
+    {
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->where('p.category = :category')
+            ->setParameter('category', $category)
+            ->getQuery();
+          return $queryBuilder->execute();
+  
     }
 
    
