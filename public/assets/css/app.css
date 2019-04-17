@@ -30,6 +30,12 @@ a:hover{
     text-transform: uppercase;
     }
 
+body {
+    padding-top: 60px;
+}
+
+/* Home _ fade images */
+
 #brand{
     font-family: 'Francois One', sans-serif;
    
@@ -161,12 +167,12 @@ h4 .card-link:hover{
 p {
     text-align: justify;
     font-family: 'Comfortaa', cursive;
-    
 }
+/* Bouton "haut de page" */
 #myBtn {
     display: none;
     position: fixed;
-    bottom: 20px;
+    bottom: 50px;
     right: 30px;
     z-index: 99;
     font-size: 18px;
@@ -187,6 +193,16 @@ p {
     
   }
 
+/* Navbar position */
+
+#scrollbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    transition: top 0.3s;
+}
 .nav-link{
     text-shadow: 1px 1px 23px black;
 }

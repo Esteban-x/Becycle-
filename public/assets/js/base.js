@@ -1,4 +1,9 @@
-window.onscroll = function() {scrollFunction()};
+// Scroll top button
+
+window.onscroll = function(){
+  scrollFunction();
+  scrollFuncNav();
+};
 
 function scrollFunction() {
     console.log ("bonjour");
@@ -13,6 +18,17 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+// Scroll navbar
+
+function scrollFuncNav() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("scrollbar").style.top = "-60px";
+  } else {
+    document.getElementById("scrollbar").style.top = "0";
+  }
+}
+
 
 $(document).ready(()=>{
   var bikes = new Bloodhound({

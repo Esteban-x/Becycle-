@@ -18,7 +18,22 @@ class OrdersRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Orders::class);
     }
-
+    public function findBySession($session){
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.sess_user = :val')
+            ->setParameter('val', $session)
+            ->andWhere('o.order_state = 0')
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+    public function findById($id){
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.id_user = :val')
+            ->setParameter('val', $id)
+            ->andWhere('o.order_state = 0')
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
     // /**
     //  * @return Orders[] Returns an array of Orders objects
     //  */
