@@ -49,10 +49,10 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
     {
         $request->getSession()->set(
             Security::LAST_USERNAME,
-            $request->get('login[email]')
+            $request->get('login[username]')
         );
         return [
-            'username' => $request->get('login')['email'],
+            'username' => $request->get('login')['username'],
             'password' => $request->get('login')['password']
         ];
     }

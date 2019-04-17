@@ -1,13 +1,20 @@
+
 body {
     padding-top: 60px;
 }
 
 /* Home _ fade images */
 
+#brand{
+    font-family: 'Acme', sans-serif;
+   
+}
 
+/* //Slider */
 .slide {
 height: 600px;
 position: relative;
+
 }
 
 .slide1,.slide2,.slide3{
@@ -102,7 +109,9 @@ position: relative;
 h1 {
     text-align: center;
     margin-top: 30px;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Francois One', cursive;
+    text-transform: uppercase;
+    font-size: 26px;
 }
 
 p {
@@ -121,8 +130,8 @@ p {
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: red;
-    color: white;
+    background-color: #3B71B2;
+    color: #D4E1E8;
     cursor: pointer;
     padding: 15px;
     border-radius: 4px;
@@ -131,7 +140,6 @@ p {
   #myBtn:hover {
     background-color: #555;
   }
-
 
 /* Navbar position */
 
@@ -142,4 +150,16 @@ p {
     right: 0;
     z-index: 10;
     transition: top 0.3s;
+}
+.nav-link{
+    text-shadow: 1px 1px 23px black;
+}
+
+.nav-link:hover{
+    text-shadow: 1px 3px 10px black;
+    color: #D6FFF1;
+}
+
+.active{
+color: #68FAC8;
 }

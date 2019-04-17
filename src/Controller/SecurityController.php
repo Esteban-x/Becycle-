@@ -28,7 +28,6 @@ class SecurityController extends AbstractController
         {
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
-            $user->setUsername($user->getEmail());
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
             $manager->flush();
@@ -52,8 +51,6 @@ class SecurityController extends AbstractController
         $user = new User();
         $form = $this->createForm(LoginType::class, $user);
         $form->handleRequest($request);
-
-        //$this->addFlash("success", "Vous êtes bien connecté.");
         return $this->render('security/login.html.twig', [
             'form' => $form->createView(),
             'last_username' => $lastUsername,
@@ -61,7 +58,7 @@ class SecurityController extends AbstractController
         ]);
     }
     /**
-     * @Route("/logout")
+     * @Route("/logout", name="logout")
      */
     public function logout() {}
 }
