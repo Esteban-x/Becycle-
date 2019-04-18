@@ -232,3 +232,30 @@ color: #68FAC8;
     padding-right: 15px; 
     padding-bottom: 15px; 
 }
+
+
+/* Catégories */
+#categories .list-group-item{
+    padding: 20px 15px;
+}
+
+.bouton-categories {
+    color: white;
+}
+
+.bouton-categories:hover {
+    color:rgba(150, 150, 150, 1)
+}
+
+@media (min-width: 768px){
+    #categories {
+        position:fixed;
+    }
+}
+
+
+@media (min-width: 1200px){
+    #categories .list-group-item{
+        padding: 20px 30px;
+    }
+}
