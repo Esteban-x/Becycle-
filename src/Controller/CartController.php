@@ -26,10 +26,14 @@ class CartController extends AbstractController
     public function index()
     {
         $order = $this->cart->getCart();
-        dump($order);
-        return $this->render('cart/index.html.twig', [
-            'cart' => $order,
-        ]);
+
+
+                    dump($order);
+                    return $this->render('cart/index.html.twig', [
+                        'cart' => $order,
+                    ]);
+
+
     }
 
     /**
@@ -44,4 +48,7 @@ class CartController extends AbstractController
         return $this->redirectToRoute('cart');
     }
 
+
+
+    
 }
