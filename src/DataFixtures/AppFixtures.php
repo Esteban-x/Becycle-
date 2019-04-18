@@ -26,11 +26,11 @@ class   AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {   
         $bikes = [
-            'TREK MADONE SLR 8 2019 ', 'TREK MADONE SL 6 2019', 'H6L Tempest blue', 'm6l acier vitesses lagoon blue', 'M6L Acier Flame lacquer', 'Townie Go! 8D Ladies', 'Loft Go 8I', 'Café Moto Go! Men\'s',
-            'FX 2 WSD Disc 2019', 'Travel 2019', 'Editor 2019', 'Loft 7i Ladies\'EQ', 'FX 3 Disc 2019', 'DS 2 WSD 2019', 'SPEEDSTER 50', 'DOMANE AL 2', 'SPEEDSTER 40', 'CONDESSA SPEEDSTER 35',
-            'AXI SPORT', 'AUDACIO 100 CP', 'STREETLAND 28', "COMFORT 42", "COMFORT 40", "X KROSS LADY TY300 3X7", "X KROSS MAN TY300 3X7", "KATU 50", "COMFORT 42 pack", "FX 1", "COMFORT 30", "COMFORT 32",
-            'FX 1 STAGGER', 'TREKKING 100', 'TREKKING 100 FEMME', 'LUNAPIENA 28"LADY 7V REVO', 'LUNAPIENA 28"MAN 7V REVO', 'X KROSS LADY ACERA 3X7', 'X KROSS MAN ACERA 3X7', 'BLUECITY 28" MAN 3X7 STI',
-            'BLUECITY 28" LADY 3X7 STI'
+            ['TREK MADONE SLR 8 2019', 'velo-homme-01.jpg'], ['TREK MADONE SL 6 2019', 'velo-homme-02.jpg'], ['H6L Tempest blue', 'velo-homme-03.jpg'], ['m6l acier vitesses lagoon blue', 'velo-homme-04.jpg'], ['M6L Acier Flame lacquer','velo-homme-05.jpg'], ['Townie Go! 8D Ladies','velo-femme-01.jpg'], ['Loft Go 8I','velo-homme-06.jpg'], ['Café Moto Go! Men\'s','velo-homme-07.jpg'],
+            ['FX 2 WSD Disc 2019','velo-homme-08.jpg'], ['Travel 2019','velo-homme-09.jpg'], ['Editor 2019','velo-homme-10.jpg'], ['Loft 7i Ladies\'EQ','velo-femme-02.jpg'], ['FX 3 Disc 2019','velo-homme-11.jpg'],
+            ['AXI SPORT','velo-homme-12.jpg'], ['AUDACIO 100 CP','velo-homme-13.jpg'], ['STREETLAND 28','velo-homme-14.jpg'], ["COMFORT 42",'velo-homme-15.jpg'],[ "COMFORT 40",'velo-homme-16'], ["X KROSS LADY TY300 3X7",'velo-femme-03.jpg'], ["X KROSS MAN TY300 3X7",'velo-homme-17.jpg'], ["KATU 50 LADY",'velo-femme-04.jpg'], ["COMFORT 42 LADY pack",'velo-femme-05.jpg'], ["FX 1 LADY",'velo-femme-06.jpg'], ["COMFORT 30 ladie's",'velo-femme-07.jpg'], ["COMFORT 32 ladie's",'velo-femme-08.jpg'],
+            ['FX 1 STAGGER','velo-femme-09.jpg'], ['TREKKING 100 FEMME','velo-femme-10.jpg'], ['TREKKING 100 FEMME','velo-femme-11.jpg'], ['LUNAPIENA 28"LADY 7V REVO','velo-femme-12.jpg'], ['LUNAPIENA 28"MAN 7V REVO','velo-homme-03.jpg'],[ 'X KROSS LADY ACERA 3X7','velo-femme-13.jpg'], ['X KROSS MAN ACERA 3X7','velo-homme-08.jpg'], ['BLUECITY 28" FEMME 3X7 STI','velo-femme-14.jpg'],
+            ['BLUECITY 28 ladie\'s','velo-femme-15.jpg'],['LADY 3X7 STI LADY','velo-femme-16.jpg']
         ];
 
       
@@ -57,11 +57,11 @@ class   AppFixtures extends Fixture
         for ($i = 0; $i < count($bikes); $i++)
         {   
             $bike = new Product();
-            $bikeName = $bikes[$i];
+            $bikeName = $bikes[$i][0];
             $bike->setName($bikeName);
-            $bike->setDescription('Ce vélo est exceptionel, il est equipé de pneus interactifs et d\'une selle super confort flex therma ainsi que 5 vitesses');
+            $bike->setDescription('Vélo de très bonne qualité et très confortable.');
             $bike->setPrice(mt_rand(500, 800));
-            $bike->setImage('http://placeimg.com/740/480/tech');
+            $bike->setImage($bikes[$i][1]);
             $bike->setType('bike');
             $bike->setCategory($j[mt_rand(1, 4)]);
             $manager->persist($bike);

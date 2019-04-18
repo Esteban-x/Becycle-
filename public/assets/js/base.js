@@ -62,7 +62,6 @@ $(document).ready(()=>{
           {
             return `
                     <a href='/bike/show/`+data.bike_id+`'>
-                                        
                       <span>`+data.bike_name+`</span>
                     </a>
                             `
