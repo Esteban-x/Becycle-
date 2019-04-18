@@ -10,11 +10,6 @@ use Stripe\Error\Base;
 
 class PaymentController extends AbstractController
 {
-    public function __construct($secretKey)
-    {
-        \Stripe\Stripe::setApiKey($secretKey);
-    }
-
     /**
      * @Route("/payment", name="payment")
      */
@@ -22,12 +17,12 @@ class PaymentController extends AbstractController
     {
 
 
-        $charge = \Stripe\Charge::create([
+       /* $charge = \Stripe\Charge::create([
             'amount' => 999,
             'currency' => 'usd',
             'source' => 'tok_visa',
             'receipt_email' => 'jenny.rosen@example.com',
-        ]);
+        ]);*/
         return $this->render('payment/index.html.twig', [
             'controller_name' => 'PaymentController',
         ]);

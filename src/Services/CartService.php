@@ -122,4 +122,14 @@ class CartService
         }
         return $order;
     }
+    public function getCart(){
+        $user = $this->security->getUser();
+        $order = $this->getOrder($user);
+        if($order != NULL ) {
+            $products = $order->getOrderProducts();
+            return array("order"=> $order, "products"=>$products);
+        }else{
+            return NULL;
+        }
+    }
 }
