@@ -106,7 +106,7 @@ class BikesController extends AbstractController
         });
 
         $normalizers = [
-            $normalizer
+            $normalizer 
         ];
 
         $encoders = [
