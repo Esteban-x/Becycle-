@@ -19,6 +19,8 @@
                                     <h2 title="{{bike.price}}" class="price">{{bike.price}} &euro;</h2>
                                 <div class="col">
                                     <a href="{{path('bike', {'id': bike.id })}}" title="En savoir plus sur ce vélo" class="btn btn-success ">Plus d'infos</a>
+                                    <a href="/product" class="btn btn-dark delete-bike" data-id="{{bike.id}}">Supprimer</a>
+                                    <a href="/product" class="btn btn-dark edit-bike" data-id="{{bike.id}}">Editer</a>
                                 </div>                               
                             </div>
                         </div>
