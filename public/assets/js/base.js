@@ -6,7 +6,7 @@ window.onscroll = function(){
 };
 
 function scrollFunction() {
-    console.log ("bonjour");
+    console.log ("Le nombre de pixels que tu as scroll");
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("myBtn").style.display = "block";
   } else {
@@ -35,7 +35,7 @@ $(document).ready(()=>{
     datumTokenizer: Bloodhound.tokenizers.whitespace,
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
-      url: "bikes/recherche/%QUERY%",
+      url: "/recherche/%QUERY%",
       wildcard: '%QUERY%',
       filter: function (bikes)
       {
@@ -61,8 +61,7 @@ $(document).ready(()=>{
           suggestion: function (data)
           {
             return `
-                    <a href='/bike/`+data.bike_id+`'>
-                                        
+                    <a href='/bike/show/`+data.bike_id+`'>
                       <span>`+data.bike_name+`</span>
                     </a>
                             `

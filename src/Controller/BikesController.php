@@ -53,7 +53,7 @@ class BikesController extends AbstractController
         
         );
         
-        dump($pagination);
+        
         return $this->render('bikes/bikes.html.twig', [
             'controller_name' => 'BikesController',
             'bikes' => $bikes,
@@ -85,7 +85,7 @@ class BikesController extends AbstractController
     }
 
     /**
-     * @Route("bikes/recherche/{_query?}", name="search")
+     * @Route("/recherche/{_query?}", name="search")
      */
     public function handleSearchRequest(Request $request, $_query)
     {
@@ -94,13 +94,19 @@ class BikesController extends AbstractController
         if($_query)
         {   
             $data = $em->getRepository(Product::class)->findByName($_query);
+            
         }
         else {
             $data = $em->getRepository(Product::class)->findAll();
         } 
 
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+
         $normalizers = [
-            new ObjectNormalizer()
+            $normalizer 
         ];
 
         $encoders = [

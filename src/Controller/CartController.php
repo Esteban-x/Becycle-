@@ -66,7 +66,6 @@ class CartController extends AbstractController
         $this->addFlash("success", "Votre ".$product->getName()." a bien été ajouté au panier.");
         return $this->redirectToRoute('cart');
     }
-
     /**
      * @Route("/validate", name="validate")
      */
@@ -74,5 +73,4 @@ class CartController extends AbstractController
     {
 
     }
-
 }
