@@ -8,6 +8,13 @@
 .bike-logo{
     margin-right: 30px;
 }
+body{
+    overflow-x: hidden;
+}
+
+::placeholder{
+    font-size: 15px;
+}
 
 .category-link{
     font-family: 'Francois One', cursive;
@@ -17,8 +24,41 @@
 .category-link:hover{
     font-family: 'Francois One', cursive;
     font-size: 21px ;
-    color: #051926;   
+    text-shadow: 1px 4px 90px black;
+    color: black; 
+    transition: 0.5s;  
 }
+
+.pagination-lg{
+    margin-top: 20px;
+    margin-right: 60px;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color:#343a40;
+    color:#D4E1E8;
+    cursor: pointer;
+    border: #D4E1E8 1px solid;
+    z-index:2;
+  }
+
+  .example .pagination>li>a,
+  .example .pagination>li>span,
+  .example .pagination>li.disabled>span
+   {
+    border: #D4E1E8 1px solid;
+    background-color: #343a40;
+    color: #D4E1E8;
+
+  }
+ 
+  .example .pagination>li.active>span{
+      background-color: #D4E1E8;
+      color: #051926;
+      border: none;
+      
+  }
+ 
 
 a:hover{
     text-decoration: none;
@@ -219,6 +259,7 @@ p {
 .nav-link:hover{
     text-shadow: 1px 3px 10px black;
     color: #D6FFF1;
+    transition: 0.4s;
 }
 
 .active{
