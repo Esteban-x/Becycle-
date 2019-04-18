@@ -85,7 +85,7 @@ class BikesController extends AbstractController
     }
 
     /**
-     * @Route("bikes/recherche/{_query?}", name="search")
+     * @Route("/recherche/{_query?}", name="search")
      */
     public function handleSearchRequest(Request $request, $_query)
     {
@@ -106,7 +106,7 @@ class BikesController extends AbstractController
         });
 
         $normalizers = [
-            $normalizer
+            $normalizer 
         ];
 
         $encoders = [

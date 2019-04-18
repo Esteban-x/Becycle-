@@ -35,7 +35,7 @@ $(document).ready(()=>{
     datumTokenizer: Bloodhound.tokenizers.whitespace,
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
-      url: "bikes/recherche/%QUERY%",
+      url: "/recherche/%QUERY%",
       wildcard: '%QUERY%',
       filter: function (bikes)
       {
