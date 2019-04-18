@@ -3,6 +3,7 @@
 window.onscroll = function(){
   scrollFunction();
   scrollFuncNav();
+  scrollFuncCat();
 };
 
 function scrollFunction() {
@@ -29,6 +30,16 @@ function scrollFuncNav() {
   }
 }
 
+// Scroll catégories
+/*
+function scrollFuncCat() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("categories").style.top = "60px";
+  } else {
+    document.getElementById("categories").style.top = "60px";
+  }
+}
+*/
 
 $(document).ready(()=>{
   var bikes = new Bloodhound({
@@ -75,3 +86,14 @@ $(document).ready(()=>{
       }
   )
 })
+
+/* toggle "Catégories" */
+
+/*
+________________A TERMINER____________________
+function menuCateg() {
+  var element = document.getElementById("collapseCategories");
+  element.className = element.className.replace("collapse show", "collapse");
+}
+_________________________________________________
+*/
