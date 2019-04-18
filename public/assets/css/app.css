@@ -31,7 +31,7 @@ a:hover{
     }
 
 body {
-    padding-top: 60px;
+    padding-top: 55px;
 }
 
 /* Home _ fade images */
@@ -41,7 +41,7 @@ body {
    
 }
 
-/* //Slider */
+/* Slider */
 .slide {
 height: 600px;
 position: relative;
@@ -193,7 +193,7 @@ p {
     
   }
 
-/* Navbar position */
+/* Navbar */
 
 #scrollbar {
     position: fixed;
@@ -214,4 +214,12 @@ p {
 
 .active{
 color: #68FAC8;
+}
+
+/* Show */
+
+#show-zoom {
+    padding-left: 15px;
+    padding-right: 15px; 
+    padding-bottom: 15px; 
 }
