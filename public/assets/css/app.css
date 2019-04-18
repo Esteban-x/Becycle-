@@ -40,6 +40,7 @@ body{
     cursor: pointer;
     border: #D4E1E8 1px solid;
     z-index:2;
+    
   }
 
   .example .pagination>li>a,
@@ -49,7 +50,10 @@ body{
     border: #D4E1E8 1px solid;
     background-color: #343a40;
     color: #D4E1E8;
+  }
 
+  .example .pagination>li>span:hover{
+      background-color: #233D4D;
   }
  
   .example .pagination>li.active>span{
