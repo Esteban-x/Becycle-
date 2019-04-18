@@ -53,11 +53,7 @@ class CartService
     {
         $newprod = true;
         $user = $this->security->getUser();
-        if($user != NULL){
-            $order = $this->ordRepo->findByID($user->getId());
-        }else{
-            $order = $this->ordRepo->findBySession($this->session->getId());
-        }
+        $order = $this->getOrder($user);
 
         if($order == NULL ){
             $order = new Orders();
@@ -77,7 +73,6 @@ class CartService
                 $p->setQty($p->getQty()+1);
                 $p->setTotal($p->getPrice()*$p->getQty());
                 $newprod = false;
-                dump($p);
             }
         }
         if($newprod){
@@ -91,22 +86,50 @@ class CartService
             $this->om->persist($ordProd);
         }
         $this->om->flush();
+        $this->amountTotal();
 
-        /*$products[] = $product ;
-        $this->session->set('products', $products);*/
         return $this;
     }
-    public function checkLogin(){
+    public function checkLogin($sessId){
         $user = $this->security->getUser();
-        dump($user);
         if($user != NULL) {
-            $order = $this->ordRepo->findBySession($this->session->getId());
-            dump($order);
-            dump($this->session->getId());
+            $order = $this->ordRepo->findBySession($sessId);
             if($order != NULL){
                 $order->setIdUser($user);
+                $order->setSessUser($sessId);
                 $this->om->flush();
             }
+        }
+    }
+    public function amountTotal(){
+        $user = $this->security->getUser();
+        $order = $this->getOrder($user);
+        $total = 0;
+        if($order != NULL){
+            $products = $order->getOrderProducts();
+            foreach($products as $p){
+                $total += $p->getTotal();
+            }
+            $order->setTotal($total);
+            $this->om->flush();
+        }
+    }
+    public function getOrder($user){
+        if($user != NULL){
+            $order = $this->ordRepo->findByID($user->getId());
+        }else{
+            $order = $this->ordRepo->findBySession($this->session->getId());
+        }
+        return $order;
+    }
+    public function getCart(){
+        $user = $this->security->getUser();
+        $order = $this->getOrder($user);
+        if($order != NULL ) {
+            $products = $order->getOrderProducts();
+            return array("order"=> $order, "products"=>$products);
+        }else{
+            return NULL;
         }
     }
 }

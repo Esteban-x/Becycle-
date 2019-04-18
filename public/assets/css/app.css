@@ -39,6 +39,8 @@ body {
 #brand{
     font-family: 'Francois One', sans-serif;
    
+   font-size: 20px;
+  
 }
 
 /* Slider */
@@ -163,6 +165,13 @@ h4 .card-link:hover{
     padding: 0.4px;
 }
 
+.main-logo{
+border-radius: 7px;
+opacity: 0.9;
+box-shadow: black 1px 1px 100px;
+height: 30px;
+width: 38px;
+}
 
 p {
     text-align: justify;

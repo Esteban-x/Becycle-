@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CartController!{% endblock %}
+{% block title %}Votre panier{% endblock %}
 
-{#{% block title %}Panier - {{ sitename }}{% endblock %}#}
+{#{% block title %}Cart - {{ sitename }}{% endblock %}#}
 
 {% block body %}
 <style>
@@ -11,13 +11,17 @@
 </style>
 
 
-
-   
-
     <div class="container mb-4">
         <div class="row">
             <div class="col-12">
+
+                {% if cart == null %}
+                    <h1 class="text-center">Il n'y a pas de produit</h1>
+
+
+                {% else %}
                 <div class="table-responsive">
+
                     <table class="table table-striped">
                         <thead>
                         <tr>
@@ -30,28 +34,31 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {#{% for item in cart.get %}#}
+
+
+                        {% for item in cart.products %}
                             <tr>
                                 <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                <td>{#{{ item.product.name }}#}</td>
+                                <td>{{ item.idProducts.name }}</td>
                                 <td>En stock</td>
-                                <td><input class="form-control" type="text" value="{#{{ item.quantity }}#}" /></td>
-                                <td class="text-right">{#{{ item.product.price / 100 }}#} &euro;</td>
+                                <td><input class="form-control" type="text" value="{{ item.qty }}" /></td>
+                                <td class="text-right">{{ item.total  }} &euro;</td>
                                 <td class="text-right">
                                     <a href="{#{{ path('cart_remove', {'id': item.product.id}) }}#}" class="btn btn-sm btn-danger">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>
-                        {#{% endfor %}#}
+                        {% endfor %}
                         <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td>Sous-Total</td>
-                            <td class="text-right">{#{{ cart.subtotal }}#} &euro;</td>
+                            <td class="text-right">{{ cart.order.total }} &euro;</td>
                         </tr>
+
                         <tr>
                             <td></td>
                             <td></td>
@@ -71,15 +78,24 @@
                         </tbody>
                     </table>
                 </div>
+
+                {% endif %}
             </div>
+
+
+
+
             <div class="col mb-2">
                 <div class="row">
                     <div class="col-sm-12  col-md-6">
-                        <button class="btn btn-block btn-light">Continuer vos achats</button>
+                        <a href="{{ path('bikes') }}" class="btn btn-block btn-light" >Continuer vos achats</a>
                         <a href="{#{{ path('cart_clear') }}#}">Vider le panier</a>
                     </div>
+
                     <div class="col-sm-12 col-md-6 text-right">
+                        {% if cart != null %}
                         <button class="btn btn-lg btn-block btn-success text-uppercase">Commander</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>
