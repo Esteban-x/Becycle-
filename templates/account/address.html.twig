@@ -1,25 +1,8 @@
 {% extends 'base.html.twig' %}
-{% block title %} Adress {% endblock %}
+
+
 {% block body %}
-
-    <div class="container">
-        <div class="form-row">
-            <div class="col">
-                <div class="card">
-
-                    <div class="card-body">
-                        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-                        {{ form_widget(form) }}
-                        <button class="btn btn-primary">Envoyer</button>
-                        {{ form_end(form) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {#{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn btn-primary">s'inscrire</button>
-    {{ form_end(form) }}#}
+{# afficher via le tableau addresses les différentes adresses de l'utilisateur
+avec un bouton pour éditer, un bouton pour selectionner l'adresse et un bouton
+pour la supprimer, ainsi que mettre l'adresse selectionné en avant. #}
 {% endblock %}

@@ -58,6 +58,11 @@ class Product
      */
     private $tag;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $visible = 0;
+
     public function __construct()
     {
         $this->orderProducts = new ArrayCollection();
@@ -179,6 +184,18 @@ class Product
     public function setTag(?Tag $tag): self
     {
         $this->tag = $tag;
+
+        return $this;
+    }
+
+    public function getVisible(): ?int
+    {
+        return $this->visible;
+    }
+
+    public function setVisible(int $visible): self
+    {
+        $this->visible = $visible;
 
         return $this;
     }
