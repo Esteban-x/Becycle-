@@ -34,6 +34,14 @@ class OrdersRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult();
     }
+
+    public function findAllById($id){
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.id_user = :val')
+            ->setParameter('val', $id)
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return Orders[] Returns an array of Orders objects
     //  */
