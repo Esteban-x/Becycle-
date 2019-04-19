@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccessoriesController!{% endblock %}
+{% block title %}{{accessory.name}}{% endblock %}
 
 {% block body %}
 <div class="container">
@@ -9,15 +9,15 @@
                 <div class="card bg-light mb-3">
                     <div class="card-body">
                         <a href="" data-toggle="modal" data-target="#productModal">
-                            <img class="img-fluid" src="{{accessory.image}}" />
+                            <img class="img-fluid access-pic" src="{{accessory.image}}" />
                         </a>
                     </div>
                 </div>
             </div>
     
-            <div class="col-12 col-lg-6 add_to_cart_block">
+            <div class="col-12 col-lg-6 add_to_cart_block container-show">
                     <div class="card bg-light mb-3">
-                        <div class="card-body">
+                        <div class="card-body show-card-body">
                             <h1>{{accessory.name}}</h1>
                             <p>{{accessory.description}}</p>
                         </div>
@@ -25,7 +25,7 @@
                             
                            
                     <div class="card bg-light mb-3">
-                        <div class="card-body">
+                        <div class="card-body show-card-body">
                             <h1>{{accessory.name}}</h1>
                             <form method="get" action="cart.html">
                                     <p>Caractéristique principale</p>

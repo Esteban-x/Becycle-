@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-12 col-md-4 col-lg-3">
                 <div id="categories" class="card bg-light mb-3">
-                    <div class="card-header bg-dark text-white text-uppercase"><i class="fa fa-list"></i>  
+                    <div class="card-header bg-dark text-white text-uppercase"><i class="far fa-list-alt"></i>  
                     <a class="bouton-categories" data-toggle="collapse" href="#collapseCategories" role="button" aria-expanded="false" aria-controls="collapseCategories">
                     &ensp;Catégories</a> 
                     </div>
@@ -27,9 +27,9 @@
 
                         {% for bike in pagination %}
 
-                        <div class="col-12 col-md-6 col-lg-4">
+                        <div class="col-12 col-md-6 col-lg-4  product-card">
                             <div class="card">
-                                <img class="card-img-top" src="{{asset('assets/image/velos/hommes/'~bike.image)}}" alt="Photo du vélo" title="{{bike.name}}">
+                                <a class="card-link" href="{{path('bike', {'id': bike.id })}}" title="Voir le vélo"><img class="card-img-top" src="{{asset('assets/image/velos/hommes/'~bike.image)}}" alt="Photo du vélo" title="{{bike.name}}"></a>
                                 <div class="card-body">
                                     <h4 class="card-title"><a class="card-link" href="{{path('bike', {'id': bike.id })}}" title="Voir le vélo">{{ bike.name }}</a></h4>
                                     <p class="card-text">{{bike.description}}</p>
