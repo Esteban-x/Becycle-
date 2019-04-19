@@ -22,11 +22,13 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
             '/accessoires' => [[['_route' => 'accessories', '_controller' => 'App\\Controller\\AccessoriesController::accessories'], null, null, null, false, false, null]],
             '/account' => [[['_route' => 'account', '_controller' => 'App\\Controller\\AccountController::index'], null, null, null, false, false, null]],
+            '/adresse/new' => [[['_route' => 'adresse_new', '_controller' => 'App\\Controller\\AccountController::addAddress'], null, null, null, false, false, null]],
+            '/account/orders' => [[['_route' => 'account_orders', '_controller' => 'App\\Controller\\AccountController::AccOrders'], null, null, null, false, false, null]],
             '/article/new' => [[['_route' => 'new_article', '_controller' => 'App\\Controller\\ArticleController::new'], null, null, null, false, false, null]],
             '/cart' => [[['_route' => 'cart', '_controller' => 'App\\Controller\\CartController::index'], null, null, null, false, false, null]],
             '/validate' => [[['_route' => 'validate', '_controller' => 'App\\Controller\\CartController::validate'], null, null, null, false, false, null]],
             '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
-            '/product/new' => [[['_route' => 'product_new', '_controller' => 'App\\Controller\\ProductController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+            '/admin/product/new' => [[['_route' => 'product_new', '_controller' => 'App\\Controller\\ProductController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
             '/signup' => [[['_route' => 'signup', '_controller' => 'App\\Controller\\SecurityController::signup'], null, null, null, false, false, null]],
             '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
             '/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
@@ -49,24 +51,27 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                         .')'
                     .')'
                     .'|/a(?'
-                        .'|ccessory/([^/]++)(*:191)'
+                        .'|cc(?'
+                            .'|essory/([^/]++)(*:194)'
+                            .'|ount/orders/([^/]++)(*:222)'
+                        .')'
                         .'|rticle/(?'
-                            .'|edit/([^/]++)(*:222)'
-                            .'|([^/]++)(*:238)'
-                            .'|delete/([^/]++)(*:261)'
+                            .'|edit/([^/]++)(*:254)'
+                            .'|([^/]++)(*:270)'
+                            .'|delete/([^/]++)(*:293)'
+                        .')'
+                        .'|dmin/product/([^/]++)(?'
+                            .'|(*:326)'
+                            .'|/edit(*:339)'
+                            .'|(*:347)'
                         .')'
                     .')'
                     .'|/bike(?'
-                        .'|s(?:/([^/]++))?(*:294)'
-                        .'|/show(?:/([^/]++))?(*:321)'
+                        .'|s(?:/([^/]++))?(*:380)'
+                        .'|/show(?:/([^/]++))?(*:407)'
                     .')'
-                    .'|/recherche(?:/([^/]++))?(*:354)'
-                    .'|/cart/add/([^/]++)(*:380)'
-                    .'|/product/([^/]++)(?'
-                        .'|(*:408)'
-                        .'|/edit(*:421)'
-                        .'|(*:429)'
-                    .')'
+                    .'|/recherche(?:/([^/]++))?(*:440)'
+                    .'|/cart/add/([^/]++)(*:466)'
                 .')/?$}sDu',
         ];
         $this->dynamicRoutes = [
@@ -77,17 +82,18 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-            191 => [[['_route' => 'accessory', '_controller' => 'App\\Controller\\AccessoriesController::showAccess'], ['id'], null, null, false, true, null]],
-            222 => [[['_route' => 'edit_article', '_controller' => 'App\\Controller\\ArticleController::edit'], ['id'], null, null, false, true, null]],
-            238 => [[['_route' => 'article_show', '_controller' => 'App\\Controller\\ArticleController::show'], ['id'], null, null, false, true, null]],
-            261 => [[['_route' => 'app_article_delete', '_controller' => 'App\\Controller\\ArticleController::delete'], ['id'], null, null, false, true, null]],
-            294 => [[['_route' => 'bikes', 'id' => null, '_controller' => 'App\\Controller\\BikesController::bikes'], ['id'], null, null, false, true, null]],
-            321 => [[['_route' => 'bike', 'id' => null, '_controller' => 'App\\Controller\\BikesController::showProduct'], ['id'], ['GET' => 0], null, false, true, null]],
-            354 => [[['_route' => 'search', '_query' => null, '_controller' => 'App\\Controller\\BikesController::handleSearchRequest'], ['_query'], null, null, false, true, null]],
-            380 => [[['_route' => 'addProduct', '_controller' => 'App\\Controller\\CartController::addProduct'], ['product'], null, null, false, true, null]],
-            408 => [[['_route' => 'product_show', '_controller' => 'App\\Controller\\ProductController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-            421 => [[['_route' => 'product_edit', '_controller' => 'App\\Controller\\ProductController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-            429 => [[['_route' => 'product_delete', '_controller' => 'App\\Controller\\ProductController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+            194 => [[['_route' => 'accessory', '_controller' => 'App\\Controller\\AccessoriesController::showAccess'], ['id'], null, null, false, true, null]],
+            222 => [[['_route' => 'account_orders_show', '_controller' => 'App\\Controller\\AccountController::AccOrdersShow'], ['order'], null, null, false, true, null]],
+            254 => [[['_route' => 'edit_article', '_controller' => 'App\\Controller\\ArticleController::edit'], ['id'], null, null, false, true, null]],
+            270 => [[['_route' => 'article_show', '_controller' => 'App\\Controller\\ArticleController::show'], ['id'], null, null, false, true, null]],
+            293 => [[['_route' => 'app_article_delete', '_controller' => 'App\\Controller\\ArticleController::delete'], ['id'], null, null, false, true, null]],
+            326 => [[['_route' => 'product_show', '_controller' => 'App\\Controller\\ProductController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+            339 => [[['_route' => 'product_edit', '_controller' => 'App\\Controller\\ProductController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+            347 => [[['_route' => 'product_delete', '_controller' => 'App\\Controller\\ProductController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+            380 => [[['_route' => 'bikes', 'id' => null, '_controller' => 'App\\Controller\\BikesController::bikes'], ['id'], null, null, false, true, null]],
+            407 => [[['_route' => 'bike', 'id' => null, '_controller' => 'App\\Controller\\BikesController::showProduct'], ['id'], ['GET' => 0], null, false, true, null]],
+            440 => [[['_route' => 'search', '_query' => null, '_controller' => 'App\\Controller\\BikesController::handleSearchRequest'], ['_query'], null, null, false, true, null]],
+            466 => [[['_route' => 'addProduct', '_controller' => 'App\\Controller\\CartController::addProduct'], ['product'], null, null, false, true, null]],
         ];
     }
 }

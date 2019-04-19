@@ -89,8 +89,8 @@ class __TwigTemplate_c7c61aed47e566d29e71977fcd9a018c67061173345faaf27fc850efd02
                     <div class=\"card-header bg-dark text-white text-uppercase\"><i class=\"fa fa-list\"></i>  
                     <a class=\"bouton-categories\" data-toggle=\"collapse\" href=\"#collapseCategories\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseCategories\">
                     &ensp;Catégories</a> 
-    </div>
-  <div class=\"collapse show\" id=\"collapseCategories\">
+                    </div>
+                    <div class=\"collapse show\" id=\"collapseCategories\">
                     <ul class=\"list-group category_block\">
 
                         ";
@@ -99,7 +99,7 @@ class __TwigTemplate_c7c61aed47e566d29e71977fcd9a018c67061173345faaf27fc850efd02
         $context['_seq'] = twig_ensure_traversable((isset($context["categorys"]) || array_key_exists("categorys", $context) ? $context["categorys"] : (function () { throw new RuntimeError('Variable "categorys" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 19
-            echo "                        <li class=\"list-group-item\"><a class=\"category-link\" href=\"";
+            echo "                        <li class=\"list-group-item licat\"><a class=\"category-link\" href=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bikes", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [])]), "html", null, true);
             echo "\"><img class=\"bike-logo\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/image/logos/" . twig_get_attribute($this->env, $this->source, $context["category"], "logo", []))), "html", null, true);
@@ -225,12 +225,12 @@ class __TwigTemplate_c7c61aed47e566d29e71977fcd9a018c67061173345faaf27fc850efd02
                     <div class=\"card-header bg-dark text-white text-uppercase\"><i class=\"fa fa-list\"></i>  
                     <a class=\"bouton-categories\" data-toggle=\"collapse\" href=\"#collapseCategories\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseCategories\">
                     &ensp;Catégories</a> 
-    </div>
-  <div class=\"collapse show\" id=\"collapseCategories\">
+                    </div>
+                    <div class=\"collapse show\" id=\"collapseCategories\">
                     <ul class=\"list-group category_block\">
 
                         {% for category in categorys %}
-                        <li class=\"list-group-item\"><a class=\"category-link\" href=\"{{path('bikes', {'id': category.id })}}\"><img class=\"bike-logo\" src=\"{{asset('assets/image/logos/'~category.logo)}}\" alt=\"\">{{category.name}}</a></li>
+                        <li class=\"list-group-item licat\"><a class=\"category-link\" href=\"{{path('bikes', {'id': category.id })}}\"><img class=\"bike-logo\" src=\"{{asset('assets/image/logos/'~category.logo)}}\" alt=\"\">{{category.name}}</a></li>
                         {% endfor %}
                     </ul>
                     </div>

@@ -63,7 +63,7 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
 
         // line 2
         echo "<header>
-     <nav onscroll=\"scrollFuncNav()\" id=\"scrollbar\" title=\"scrollbar\" class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+     <nav onscroll=\"scrollFuncNav()\" id=\"scrollbar\"  class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
                         <div class=\"container\">
                             <a class=\"navbar-brand\" href=\"";
         // line 5
@@ -89,7 +89,7 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
         // line 16
         echo ((((isset($context["route"]) || array_key_exists("route", $context) ? $context["route"] : (function () { throw new RuntimeError('Variable "route" does not exist.', 16, $this->source); })()) == "home")) ? ("active") : (""));
         echo "\">
-                                        <a class=\"nav-link \" href=\"";
+                                        <a class=\"nav-link\" title=\"Acceuil\" href=\"";
         // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Acceuil</a>
@@ -98,7 +98,7 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
         // line 19
         echo ((((isset($context["route"]) || array_key_exists("route", $context) ? $context["route"] : (function () { throw new RuntimeError('Variable "route" does not exist.', 19, $this->source); })()) == "bikes")) ? ("active") : (""));
         echo "\">
-                                        <a class=\"nav-link \" href=\"";
+                                        <a class=\"nav-link \" title=\"Nos vélos\" href=\"";
         // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bikes");
         echo "\">Nos vélos</a>
@@ -107,7 +107,7 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
         // line 22
         echo ((((isset($context["route"]) || array_key_exists("route", $context) ? $context["route"] : (function () { throw new RuntimeError('Variable "route" does not exist.', 22, $this->source); })()) == "accessories")) ? ("active") : (""));
         echo "\">
-                                        <a class=\"nav-link \" href=\"";
+                                        <a class=\"nav-link \" title=\"Accessoires\" href=\"";
         // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accessories");
         echo "\">Accessoires</a>
@@ -116,7 +116,7 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
         // line 25
         echo ((((isset($context["route"]) || array_key_exists("route", $context) ? $context["route"] : (function () { throw new RuntimeError('Variable "route" does not exist.', 25, $this->source); })()) == "#")) ? ("active") : (""));
         echo "\">
-                                        <a class=\"nav-link \" href=\"\">Choisir ma Gamme</a>
+                                        <a class=\"nav-link \" title=\"\" href=\"\">Choisir ma Gamme</a>
                                     </li>
                                     
                                 </ul>
@@ -128,7 +128,7 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
             // line 34
             echo "                                        <li class=\"nav-item\">
-                                            <a class=\"nav-link\" href=\"";
+                                            <a class=\"nav-link\" title=\"Déconnexion\" href=\"";
             // line 35
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
             echo "\">Déconnexion</a>
@@ -137,9 +137,9 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
             // line 37
             echo ((((isset($context["route"]) || array_key_exists("route", $context) ? $context["route"] : (function () { throw new RuntimeError('Variable "route" does not exist.', 37, $this->source); })()) == "login")) ? ("active") : (""));
             echo "\">
-                                            <a class=\"nav-link\" href=\"";
+                                            <a class=\"nav-link\" title=\"Mon compte\" href=\"";
             // line 38
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account");
             echo "\">Mon Compte</a>
                                         </li>
                                     ";
@@ -150,7 +150,7 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
                 echo "active";
             }
             echo "\">
-                                            <a class=\"nav-link\" href=\"";
+                                            <a class=\"nav-link\" title=\"Connexion\" href=\"";
             // line 42
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
             echo "\">Connexion</a>
@@ -161,7 +161,7 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
                 echo "active";
             }
             echo "\">
-                                            <a class=\"nav-link\" href=\"";
+                                            <a class=\"nav-link\" title=\"Inscription\" href=\"";
             // line 45
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("signup");
             echo "\">Inscription</a>
@@ -171,13 +171,13 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
         // line 48
         echo "
                                      <li class=\"nav-item\">
-                                         <a class=\"nav-link cart\" href=\"";
+                                         <a class=\"nav-link cart\" title=\"Panier\" href=\"";
         // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart");
         echo "\">Panier</a>
                                      </li>
                                 </ul>
-                                <form class=\"navbar-form navbar-right\" action=\"";
+                                <form class=\"navbar-form navbar-right\" title=\"Rechercher un modèle \" action=\"";
         // line 53
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("search");
         echo "\" method=\"post\">
@@ -213,7 +213,7 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
     {
         return new Source("{% block body %}
 <header>
-     <nav onscroll=\"scrollFuncNav()\" id=\"scrollbar\" title=\"scrollbar\" class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+     <nav onscroll=\"scrollFuncNav()\" id=\"scrollbar\"  class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
                         <div class=\"container\">
                             <a class=\"navbar-brand\" href=\"{{path('home')}}\">
                                 <span id=\"brand\">&nbsp;<img class=\"main-logo\" src=\"{{asset('assets/image/logos/becycle.png')}}\" alt=\"\">&nbsp;Becycle</span>
@@ -227,16 +227,16 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
                             {% set route = app.request.attributes.get('_route')%}
                                <ul class=\"navbar-nav mr-auto ml-auto\">
                                     <li class=\"nav-item {{route == 'home' ? \"active\"}}\">
-                                        <a class=\"nav-link \" href=\"{{path('home')}}\">Acceuil</a>
+                                        <a class=\"nav-link\" title=\"Acceuil\" href=\"{{path('home')}}\">Acceuil</a>
                                     </li>
                                     <li class=\"nav-item {{route == 'bikes' ? \"active\"}}\">
-                                        <a class=\"nav-link \" href=\"{{path('bikes')}}\">Nos vélos</a>
+                                        <a class=\"nav-link \" title=\"Nos vélos\" href=\"{{path('bikes')}}\">Nos vélos</a>
                                     </li>
                                     <li class=\"nav-item {{route == 'accessories' ? \"active\"}}\">
-                                        <a class=\"nav-link \" href=\"{{path('accessories')}}\">Accessoires</a>
+                                        <a class=\"nav-link \" title=\"Accessoires\" href=\"{{path('accessories')}}\">Accessoires</a>
                                     </li>
                                     <li class=\"nav-item {{route == '#' ? \"active\"}}\">
-                                        <a class=\"nav-link \" href=\"\">Choisir ma Gamme</a>
+                                        <a class=\"nav-link \" title=\"\" href=\"\">Choisir ma Gamme</a>
                                     </li>
                                     
                                 </ul>
@@ -245,25 +245,25 @@ class __TwigTemplate_4ada2078ca43443a7e38480acde2e6227fbd89125e2ddcf9d6d477489c7
 
                                     {% if is_granted('ROLE_USER') %}
                                         <li class=\"nav-item\">
-                                            <a class=\"nav-link\" href=\"{{path('logout')}}\">Déconnexion</a>
+                                            <a class=\"nav-link\" title=\"Déconnexion\" href=\"{{path('logout')}}\">Déconnexion</a>
                                         </li>
                                         <li class=\"nav-item {{route == 'login' ? \"active\"}}\">
-                                            <a class=\"nav-link\" href=\"{{path('login')}}\">Mon Compte</a>
+                                            <a class=\"nav-link\" title=\"Mon compte\" href=\"{{path('account')}}\">Mon Compte</a>
                                         </li>
                                     {% else %}
                                         <li class=\"nav-item {% if mainNavLogin is defined %}active{% endif %}\">
-                                            <a class=\"nav-link\" href=\"{{path('login')}}\">Connexion</a>
+                                            <a class=\"nav-link\" title=\"Connexion\" href=\"{{path('login')}}\">Connexion</a>
                                         </li>
                                         <li class=\"nav-item {% if mainNavRegistration is defined %}active{% endif %}\">
-                                            <a class=\"nav-link\" href=\"{{path('signup')}}\">Inscription</a>
+                                            <a class=\"nav-link\" title=\"Inscription\" href=\"{{path('signup')}}\">Inscription</a>
                                         </li>
                                     {% endif %}
 
                                      <li class=\"nav-item\">
-                                         <a class=\"nav-link cart\" href=\"{{path('cart')}}\">Panier</a>
+                                         <a class=\"nav-link cart\" title=\"Panier\" href=\"{{path('cart')}}\">Panier</a>
                                      </li>
                                 </ul>
-                                <form class=\"navbar-form navbar-right\" action=\"{{path('search')}}\" method=\"post\">
+                                <form class=\"navbar-form navbar-right\" title=\"Rechercher un modèle \" action=\"{{path('search')}}\" method=\"post\">
                                         <div id=\"prefetch\">
                                                 <input class=\"typeahead\" id=\"form_query\" name='motcle' type=\"text\" placeholder=\"Rechercher un modèle...\" aria-label=\"rechercher\">
                                         </div>

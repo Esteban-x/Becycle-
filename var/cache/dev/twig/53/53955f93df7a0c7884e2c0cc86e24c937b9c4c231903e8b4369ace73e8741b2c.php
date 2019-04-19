@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* bikes/show.html.twig */
+/* /bikes/show.html.twig */
 class __TwigTemplate_404324c041c5f44d83101eb102ce9fc2e058d756655bd45dfb12c436c3b5e88a extends \Twig\Template
 {
     private $source;
@@ -24,7 +24,7 @@ class __TwigTemplate_404324c041c5f44d83101eb102ce9fc2e058d756655bd45dfb12c436c3b
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "bikes/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "/bikes/show.html.twig", 1);
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
@@ -39,10 +39,10 @@ class __TwigTemplate_404324c041c5f44d83101eb102ce9fc2e058d756655bd45dfb12c436c3b
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "bikes/show.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/bikes/show.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "bikes/show.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/bikes/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -185,7 +185,7 @@ class __TwigTemplate_404324c041c5f44d83101eb102ce9fc2e058d756655bd45dfb12c436c3b
 
     public function getTemplateName()
     {
-        return "bikes/show.html.twig";
+        return "/bikes/show.html.twig";
     }
 
     public function isTraitable()
@@ -271,6 +271,6 @@ class __TwigTemplate_404324c041c5f44d83101eb102ce9fc2e058d756655bd45dfb12c436c3b
     </div>
 </div>
 
-{% endblock %}", "bikes/show.html.twig", "/home/esteban/Becycle/templates/bikes/show.html.twig");
+{% endblock %}", "/bikes/show.html.twig", "/home/esteban/Becycle/templates/bikes/show.html.twig");
     }
 }

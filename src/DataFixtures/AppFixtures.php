@@ -36,7 +36,7 @@ class   AppFixtures extends Fixture
       
         
         $categories = [
-            ['Vtt', 'vtt.png'], ['Vtc', 'vtc.png' ], ['Ville', 'ville.png'], ['Electrique', 'electric.png']
+            ['Vtt', 'vtt.png'], ['Vtc', 'vtc.png' ], ['Ville', 'ville.png'], ['Electrique', 'electric.png'], ['Homme', 'boy.png'], ['Femme', 'girl.png'], ['Enfant', 'kid.png']
         ];
 
         $j=[];
@@ -63,7 +63,7 @@ class   AppFixtures extends Fixture
             $bike->setPrice(mt_rand(500, 800));
             $bike->setImage($bikes[$i][1]);
             $bike->setType('bike');
-            $bike->setCategory($j[mt_rand(1, 4)]);
+            $bike->setCategory($j[mt_rand(1, 7)]);
             $manager->persist($bike);
         }
 
