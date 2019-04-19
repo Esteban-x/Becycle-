@@ -81,6 +81,11 @@ class User implements UserInterface
      */
     private $addresses;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $actif = 1;
+
     public function __construct()
     {
         $this->roles = array('ROLE_USER');
@@ -257,6 +262,18 @@ class User implements UserInterface
                 $address->setIdUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getActif(): ?int
+    {
+        return $this->actif;
+    }
+
+    public function setActif(int $actif): self
+    {
+        $this->actif = $actif;
 
         return $this;
     }
