@@ -20,6 +20,9 @@ class AccountController extends AbstractController
             'controller_name' => 'AccountController',
         ]);
     }
+    /**
+     * @Route("/account/adress/new", name="adress")
+     */
     public function addAddress(Request $request, Address $address){
 
         $form = $this->createForm(AddressType::class, $address);
