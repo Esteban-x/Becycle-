@@ -43,7 +43,6 @@ class AccountController extends AbstractController
             'orders' => $orders,
         ]);
     }
-}
 
     /**
      * @route("/account/adresse/new", name="adresse_new")
