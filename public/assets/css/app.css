@@ -16,6 +16,10 @@ body{
     font-size: 15px;
 }
 
+.licat{
+    border: rgba(0, 0, 0, 0.3) 0.5px solid;
+}
+
 .category-link{
     font-family: 'Francois One', cursive;
     font-size: 21px ;
@@ -288,11 +292,7 @@ color: #68FAC8;
     color:rgba(150, 150, 150, 1)
 }
 
-@media (min-width: 768px){
-    #categories {
-        position:fixed;
-    }
-}
+
 
 
 @media (min-width: 1200px){

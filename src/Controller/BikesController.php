@@ -37,7 +37,7 @@ class BikesController extends AbstractController
                 return $category->getId() == $id;
             }));
             
-            $categoryname = $categoryname[0]->getName();
+            
             
         }
         else
