@@ -4,9 +4,12 @@
 /.env.local.php
 /.env.*.local
 /public/bundles/
+<<<<<<< HEAD
 /var/
 /vendor/
 /.idea/
+=======
+>>>>>>> bc421d8bd74d1307e19ac857f9daf3a5ed6d9210
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
