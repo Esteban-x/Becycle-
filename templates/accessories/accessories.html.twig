@@ -5,42 +5,57 @@
 {% block body %}
 
 
+<div class="container mt-5">
+        <div class="row">
+                <div class="col-12 col-md-4 col-lg-3">
+                        <div id="categories" class="card bg-light mb-3">
+                            <div class="card-header bg-dark text-white text-uppercase"><i class="far fa-list-alt"></i>  
+                            <a class="bouton-categories" data-toggle="collapse" href="#collapseCategories" role="button" aria-expanded="false" aria-controls="collapseCategories">
+                            &ensp;Catégories</a> 
+                            </div>
+                            <div class="collapse show" id="collapseCategories">
+                            <ul class="list-group category_block">
+        
+                                {% for acategory in acategorys %}
+                                <li class="list-group-item licat"><a class="category-link" href="#" src="{{asset('assets/image/accessoires/'~acategory.logo)}}" alt="">{{acategory.name}}</a></li>
+                                {% endfor %}
+                            </ul>
+                            </div>
+                        </div>
+                </div>
+            <div class="col">
+                <div class="row">
 
-<div class="container">
-    
-        <div class="col access-col">
-                
-            <div class="row">
-                    {% for accessorie in pagination %}
+                        {% for accessorie in pagination %}
                 <div class="col-12 col-md-6 col-lg-4 product-card">
                     <div class="card">
-                        <a class="card-link" href="{{path('accessory', {'id': accessorie.id })}}" title="Voir l'accessoire"><img class="card-img-top" src="{{accessorie.image}}" alt="Photo de l'accessoire"></a>
+                        <a class="card-link" href="#" title="Voir l'accessoire"><img class="card-img-top" src="{{asset('assets/image/accessoires/'~accessorie.image)}}" alt="Photo de l'accessoire"></a>
                         <div class="card-body">
-                            <h4 class="card-link"><a class="card-link" href="{{path('accessory', {'id': accessorie.id })}}" title="Voir l'accessoire">{{ accessorie.name }}</a></h4>
+                            <h4 class="card-link"><a class="card-link" href="#" title="Voir l'accessoire">{{ accessorie.name }}</a></h4>
                             <p class="card-text">{{accessorie.description}}</p>
                             
                             <div class="row">
                                     <h2 title="{{accessorie.price}}" class="price">{{accessorie.price}} &euro;</h2>
                                 <div class="col">
-                                    <a href="{{path('accessory', {'id': accessorie.id })}}" title="En savoir plus sur {{accessorie.name}}" class="btn btn-dark ">Plus d'infos</a>
+                                    <a href="#" title="En savoir plus sur {{accessorie.name}}" class="btn btn-dark ">Plus d'infos</a>
                                 </div>                               
                             </div>
                         </div>
                     </div>
                 </div>
                     {% endfor %}
-                    <div class="col-12">
-                        <nav class="example" aria-label="...">
-                            <ul class="pagination pagination-lg justify-content-center">
-                                    {{ knp_pagination_render(pagination) }}
-                            </ul>
-                        </nav>
-                   </div>
-            </div>
-        </div>
-        
-</div>            
-
+                   
+   <div class="col-12">
+        <nav class="example" aria-label="...">
+            <ul class="pagination pagination-lg justify-content-center">
+                    {{ knp_pagination_render(pagination) }}
+            </ul>
+        </nav>
+   </div>
+   </div>
+</div>
+</div>
+</div>
 
 
 

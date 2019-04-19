@@ -22,11 +22,30 @@ class ProductRepository extends ServiceEntityRepository
     public function findAllAccessories(){
         return $this->createQueryBuilder('p')
             ->andWhere('p.type = :val')
-            ->setParameter('val', "polyvalent")
+            ->setParameter('val', "accessoire")
             ->getQuery()
             ->getResult()
             ;
     }
+
+    public function findAllCasques(){
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.type = :val')
+            ->setParameter('val', "casque")
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function findAllLunettes(){
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.type = :val')
+            ->setParameter('val', "lunette")
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    
     public function findAllBikes(){
         return $this->createQueryBuilder('p')
             ->andWhere('p.type = :val')
@@ -50,6 +69,16 @@ class ProductRepository extends ServiceEntityRepository
         $queryBuilder = $this->createQueryBuilder('p')
             ->where('p.category = :category')
             ->setParameter('category', $category)
+            ->getQuery();
+          return $queryBuilder->execute();
+  
+    }
+
+    public function findByACategory_id($acategory)
+    {
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->where('p.category = :category')
+            ->setParameter('category', $acategory)
             ->getQuery();
           return $queryBuilder->execute();
   

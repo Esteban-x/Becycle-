@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProductRepository;
 use App\Repository\CategoryRepository;
-use App\Repository\TagRepository;
 use App\Entity\Product;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,10 +24,9 @@ class BikesController extends AbstractController
      * @return Response
      * @param $id
      */
-    public function bikes(ProductRepository $prodrepo, CategoryRepository $catrepo, TagRepository $tagrepo, PaginatorInterface $paginator, Request $request, $id = false) : Response
+    public function bikes(ProductRepository $prodrepo, CategoryRepository $catrepo, PaginatorInterface $paginator, Request $request, $id = false) : Response
     {   
-        $tag = $tagrepo->findAll();
-        $category = $catrepo->findAll();
+        $category = $catrepo->findById(array(63,64,65,66,67,68,69));
         
         if ($id)
         {
@@ -59,7 +57,7 @@ class BikesController extends AbstractController
             'bikes' => $bikes,
             'pagination' => $pagination,
             'categorys' => $category,
-            'tags' => $tag,
+          
             'currentcategory' => $categoryname   
             
             

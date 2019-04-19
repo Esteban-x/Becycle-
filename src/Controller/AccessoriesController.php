@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,23 +13,44 @@ use Symfony\Component\HttpFoundation\Request;
 class AccessoriesController extends AbstractController
 {
     /**
-     * @Route("/accessoires", name="accessories")
+     * @Route("/accessoires/{id?}", name="accessories")
+     * @return Response
+     * @param $id
      */
-    public function accessories(ProductRepository $accrepo,  PaginatorInterface $paginator, Request $request)
+    public function accessories(ProductRepository $accrepo,CategoryRepository $catrepo, PaginatorInterface $paginator, Request $request, $id = false)
     {
         $accessories = $accrepo->findAllAccessories();
+        $casques = $accrepo->findAllCasques();
+        $lunettes = $accrepo->findAllLunettes();
+        $acategory = $catrepo->findById(array(59, 60, 61, 62));
+
+        if($id)
+        {
+            $casques = $accrepo->findByACategory_id($id);
+            $acategoryname = array_values(array_filter($acategory, function($acategory)use ($id){
+                return $category->getId() == $id;
+            }));
+        }
+        else
+        {
+            $casques = $accrepo->findAllCasques();
+            $acategoryname = 'Catégories';
+        }
 
         $pagination = $paginator->paginate(
-            $accessories, 
+            $accessories,
  
-         $request->query->getInt('page', 1),6
+         $request->query->getInt('page', 1),9
          
          );
 
         return $this->render('accessories/accessories.html.twig', [
             'controller_name' => 'AccessoriesController',
             'accessories' => $accessories,
-            'pagination' => $pagination
+            'casques' => $casques,
+            'lunettes' => $lunettes,
+            'pagination' => $pagination,
+            'acategorys' => $acategory
         ]);
     }
 
