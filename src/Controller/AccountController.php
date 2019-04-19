@@ -21,6 +21,29 @@ class AccountController extends AbstractController
         ]);
     }
     /**
+     * @Route("/account/adress/new", name="adress")
+     */
+    public function addAddress(Request $request, Address $address){
+
+        $form = $this->createForm(AddressType::class, $address);
+
+        $form->handleRequest($request);
+
+        dump($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            dump($form->getData());
+
+            $this->addFlash("success", "Envoie bien prise en compte.");
+
+
+        }
+
+        return $this->render('account/address.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+    /**
      * @Route("/account/orders", name="account_orders")
      */
     public function AccOrders()
