@@ -5,7 +5,13 @@ span.twitter-typeahead .tt-menu {
   .typeahead{
     border: 0.5px;
     border-radius: 4%;
-    
+  }
+
+  .typeahead:hover{
+    border: 0.5px;
+    border-radius: 4%;
+    box-shadow: black 2px 2px 10px;
+    transition: 0.2s;
   }
   
   .dropdown-menu, span.twitter-typeahead .tt-menu {
