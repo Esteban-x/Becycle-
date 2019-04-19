@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/home/esteban/Becycle/src</parameter>
-    <parameter key="kernel.project_dir">/home/esteban/Becycle</parameter>
+    <parameter key="kernel.root_dir">C:\xampp\htdocs\Becycle\src</parameter>
+    <parameter key="kernel.project_dir">C:\xampp\htdocs\Becycle</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">src</parameter>
-    <parameter key="kernel.cache_dir">/home/esteban/Becycle/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/home/esteban/Becycle/var/log</parameter>
+    <parameter key="kernel.cache_dir">C:\xampp\htdocs\Becycle\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\xampp\htdocs\Becycle\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineCacheBundle">Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle</parameter>
@@ -27,63 +27,63 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/symfony/framework-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\symfony\framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="DoctrineCacheBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/doctrine/doctrine-cache-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\doctrine\doctrine-cache-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineCacheBundle</parameter>
       </parameter>
       <parameter key="SensioFrameworkExtraBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/sensio/framework-extra-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\sensio\framework-extra-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/doctrine/doctrine-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\doctrine\doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/doctrine/doctrine-migrations-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\doctrine\doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/symfony/security-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\symfony\security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="SwiftmailerBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/symfony/swiftmailer-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\symfony\swiftmailer-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SwiftmailerBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/symfony/twig-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\symfony\twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/symfony/web-profiler-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\symfony\web-profiler-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/symfony/monolog-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\symfony\monolog-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/symfony/debug-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\symfony\debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/symfony/maker-bundle/src</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\symfony\maker-bundle\src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="WebServerBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/symfony/web-server-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\symfony\web-server-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebServerBundle</parameter>
       </parameter>
       <parameter key="KnpPaginatorBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
       <parameter key="DoctrineFixturesBundle" type="collection">
-        <parameter key="path">/home/esteban/Becycle/vendor/doctrine/doctrine-fixtures-bundle</parameter>
+        <parameter key="path">C:\xampp\htdocs\Becycle\vendor\doctrine\doctrine-fixtures-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
       </parameter>
     </parameter>
@@ -108,22 +108,22 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/home/esteban/Becycle/var/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">C:\xampp\htdocs\Becycle\var\cache\dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
     <parameter key="asset.request_context.base_path"></parameter>
     <parameter key="asset.request_context.secure">false</parameter>
     <parameter key="validator.mapping.cache.prefix"></parameter>
-    <parameter key="validator.mapping.cache.file">/home/esteban/Becycle/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\xampp\htdocs\Becycle\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="translator.logging">false</parameter>
-    <parameter key="translator.default_path">/home/esteban/Becycle/translations</parameter>
+    <parameter key="translator.default_path">C:\xampp\htdocs\Becycle/translations</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:/home/esteban/Becycle/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\xampp\htdocs\Becycle\var\cache\dev/profiler</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/home/esteban/Becycle/var/cache/dev/srcApp_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\xampp\htdocs\Becycle\var\cache\dev/srcApp_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
@@ -131,7 +131,7 @@
     <parameter key="router.cache_class_prefix">srcApp_KernelDevDebugContainer</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">/home/esteban/Becycle/var/cache/dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\xampp\htdocs\Becycle\var\cache\dev/serialization.php</parameter>
     <parameter key="serializer.mapping.cache.prefix"></parameter>
     <parameter key="doctrine_cache.apc.class">Doctrine\Common\Cache\ApcCache</parameter>
     <parameter key="doctrine_cache.apcu.class">Doctrine\Common\Cache\ApcuCache</parameter>
@@ -240,9 +240,9 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">/home/esteban/Becycle/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\Becycle\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
-    <parameter key="doctrine_migrations.dir_name">/home/esteban/Becycle/src/Migrations</parameter>
+    <parameter key="doctrine_migrations.dir_name">C:\xampp\htdocs\Becycle/src/Migrations</parameter>
     <parameter key="doctrine_migrations.namespace">DoctrineMigrations</parameter>
     <parameter key="doctrine_migrations.table_name">migration_versions</parameter>
     <parameter key="doctrine_migrations.column_name">version</parameter>
@@ -265,7 +265,7 @@
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">dynamic</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">/home/esteban/Becycle/var/cache/dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">C:\xampp\htdocs\Becycle\var\cache\dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -282,7 +282,7 @@
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>bootstrap_4_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">/home/esteban/Becycle/templates</parameter>
+    <parameter key="twig.default_path">C:\xampp\htdocs\Becycle/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
@@ -404,7 +404,7 @@
   <services>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
-      <argument>/home/esteban/Becycle/var/log/dev.log</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\log/dev.log</argument>
     </service>
     <service id="App\Controller\AccessoriesController" class="App\Controller\AccessoriesController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -466,6 +466,9 @@
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
+    </service>
+    <service id="App\Form\AddressType" class="App\Form\AddressType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\LoginType" class="App\Form\LoginType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -570,7 +573,7 @@
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate" public="true">
       <argument type="tagged" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/srcApp_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/srcApp_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <argument type="tagged" tag="kernel.cache_clearer"/>
@@ -579,9 +582,9 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem" public="true"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator" public="false">
       <argument type="service" id="kernel"/>
-      <argument>/home/esteban/Becycle/src/Resources</argument>
+      <argument>C:\xampp\htdocs\Becycle\src/Resources</argument>
       <argument type="collection">
-        <argument>/home/esteban/Becycle/src</argument>
+        <argument>C:\xampp\htdocs\Becycle\src</argument>
       </argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner" public="false">
@@ -738,8 +741,8 @@
       <argument type="service" id="translator.data_collector"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>/home/esteban/Becycle/translations</argument>
-      <argument>/home/esteban/Becycle/templates</argument>
+      <argument>C:\xampp\htdocs\Becycle/translations</argument>
+      <argument>C:\xampp\htdocs\Becycle/templates</argument>
       <call method="setName">
         <argument>debug:translation</argument>
       </call>
@@ -750,8 +753,8 @@
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
       <argument>en</argument>
-      <argument>/home/esteban/Becycle/translations</argument>
-      <argument>/home/esteban/Becycle/templates</argument>
+      <argument>C:\xampp\htdocs\Becycle/translations</argument>
+      <argument>C:\xampp\htdocs\Becycle/templates</argument>
       <call method="setName">
         <argument>translation:update</argument>
       </call>
@@ -777,6 +780,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AddressType</argument>
         <argument>App\Form\LoginType</argument>
         <argument>App\Form\ProductType</argument>
         <argument>App\Form\SignUpType</argument>
@@ -834,7 +838,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/pools</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -863,7 +867,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/pools</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -952,8 +956,8 @@
     <service id="translator.selector" class="Symfony\Component\Translation\MessageSelector" public="false">
       <deprecated>The "%service_id%" service is deprecated since Symfony 4.2, use "identity_translator" instead.</deprecated>
     </service>
-    <service id=".1_NativeFileSessionHandler~p5ly1bt" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
-      <argument>/home/esteban/Becycle/var/cache/dev/sessions</argument>
+    <service id=".1_NativeFileSessionHandler~rqrYP0E" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/sessions</argument>
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session" public="true">
       <tag name="kernel.reset" method="save"/>
@@ -977,12 +981,12 @@
     <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false"/>
     <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
-      <argument>/home/esteban/Becycle/var/cache/dev/sessions</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler" public="false">
-      <argument type="service" id=".1_NativeFileSessionHandler~p5ly1bt"/>
+      <argument type="service" id=".1_NativeFileSessionHandler~rqrYP0E"/>
     </service>
     <service id="session_listener" class="Symfony\Component\HttpKernel\EventListener\SessionListener" public="false">
       <tag name="kernel.event_subscriber"/>
@@ -1011,7 +1015,7 @@
       <tag name="twig.extension"/>
     </service>
     <service id="form.resolved_type_factory" class="Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy" public="false">
-      <argument type="service" id=".1_ResolvedFormTypeFactory~mURRRdk"/>
+      <argument type="service" id=".1_ResolvedFormTypeFactory~x9bNj6J"/>
       <argument type="service" id="data_collector.form"/>
     </service>
     <service id="form.registry" class="Symfony\Component\Form\FormRegistry" public="false">
@@ -1024,7 +1028,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.bLUSbKF"/>
+      <argument type="service" id=".service_locator.QiumsIF"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1140,8 +1144,8 @@
       <argument type="service" id="assets.empty_version_strategy"/>
       <argument type="service" id="assets.context"/>
     </service>
-    <service id=".1_PhpArrayAdapter~Jo2qogp" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>/home/esteban/Becycle/var/cache/dev/validation.php</argument>
+    <service id=".1_PhpArrayAdapter~1AStcjR" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -1157,7 +1161,7 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/config/validation.xml</argument>
+          <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1176,10 +1180,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>/home/esteban/Becycle/var/cache/dev/validation.php</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.symfony" class="Symfony\Component\Validator\Mapping\Cache\Psr6Cache" public="false">
-      <argument type="service" id=".1_PhpArrayAdapter~Jo2qogp"/>
+      <argument type="service" id=".1_PhpArrayAdapter~1AStcjR"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory" public="false">
       <argument type="service" id=".service_locator.37xBtZ2"/>
@@ -1233,277 +1237,277 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">/home/esteban/Becycle/var/cache/dev/translations</argument>
+        <argument key="cache_dir">C:\xampp\htdocs\Becycle\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.af.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
           </argument>
           <argument key="ar" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.ar.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.ar.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.ar.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.ar.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.az.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.az.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.az.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.bg.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.bg.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.bg.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.ca.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.ca.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.ca.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
           </argument>
           <argument key="cs" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.cs.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.cs.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.cs.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.cs.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.cy.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
           </argument>
           <argument key="da" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.da.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.da.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.da.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.da.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.de.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.de.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.de.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.de.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.el.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.el.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.el.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
           </argument>
           <argument key="en" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.en.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.en.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.en.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.en.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.es.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.es.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.es.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.es.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.et.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.eu.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.eu.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
           </argument>
           <argument key="fa" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.fa.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.fa.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.fa.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.fa.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.fi.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.fi.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
           </argument>
           <argument key="fr" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.fr.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.fr.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.fr.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.fr.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.gl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.gl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.gl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
           </argument>
           <argument key="he" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.he.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.he.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.he.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
           </argument>
           <argument key="hr" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.hr.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.hr.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.hr.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
           </argument>
           <argument key="hu" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.hu.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.hu.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.hu.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.hu.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.hy.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.hy.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
           </argument>
           <argument key="id" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.id.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.id.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.id.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.id.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.it.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.it.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.it.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.it.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.ja.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.ja.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.ja.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.ja.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.lb.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.lb.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.lb.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
           </argument>
           <argument key="lt" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.lt.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.lt.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.lt.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.lt.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.lv.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.lv.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.lv.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
           </argument>
           <argument key="mn" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.mn.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.mn.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
           </argument>
           <argument key="nb" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.nb.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.nb.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.nb.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
           </argument>
           <argument key="nl" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.nl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.nl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.nl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.nl.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.nn.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.nn.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.nn.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
           </argument>
           <argument key="no" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.no.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.no.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.no.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.no.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.pl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.pl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.pl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.pl.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.pt.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.pt.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
           </argument>
           <argument key="pt_BR" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.pt_BR.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.pt_BR.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.pt_BR.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.pt_BR.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.ro.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.ro.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.ro.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.ro.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.ru.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.ru.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.ru.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.ru.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.sk.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.sk.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.sk.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
           </argument>
           <argument key="sl" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.sl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.sl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.sl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
           </argument>
           <argument key="sq" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.sq.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
           </argument>
           <argument key="sr_Cyrl" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.sr_Cyrl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.sr_Cyrl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.sr_Cyrl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
           </argument>
           <argument key="sr_Latn" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.sr_Latn.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.sr_Latn.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.sr_Latn.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
           </argument>
           <argument key="sv" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.sv.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.sv.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.sv.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.sv.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.th.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.th.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
           </argument>
           <argument key="tl" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.tl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.tl.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.tl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
           </argument>
           <argument key="tr" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.tr.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.tr.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
           </argument>
           <argument key="uk" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.uk.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.uk.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.uk.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.uk.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="vi" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.vi.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.vi.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.vi.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
           </argument>
           <argument key="zh_CN" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.zh_CN.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/form/Resources/translations/validators.zh_CN.xlf</argument>
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.zh_CN.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
           </argument>
           <argument key="zh_TW" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/validator/Resources/translations/validators.zh_TW.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
           </argument>
           <argument key="pt_PT" type="collection">
-            <argument>/home/esteban/Becycle/vendor/symfony/security-core/Resources/translations/security.pt_PT.xlf</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-core/Resources/translations\security.pt_PT.xlf</argument>
           </argument>
           <argument key="ky" type="collection">
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.ky.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.ky.xliff</argument>
           </argument>
           <argument key="sw" type="collection">
-            <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.sw.xliff</argument>
+            <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/translations\KnpPaginatorBundle.sw.xliff</argument>
           </argument>
         </argument>
       </argument>
@@ -1778,7 +1782,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-      <argument>file:/home/esteban/Becycle/var/cache/dev/profiler</argument>
+      <argument>file:C:\xampp\htdocs\Becycle\var\cache\dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener" public="false">
       <tag name="kernel.event_subscriber"/>
@@ -1815,7 +1819,7 @@
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>/home/esteban/Becycle/var/cache/dev/srcApp_KernelDevDebugContainer</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/srcApp_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector" public="false">
@@ -1858,7 +1862,7 @@
         <argument type="service" id="cache.security_expression_language"/>
       </call>
     </service>
-    <service id=".1_ResolvedFormTypeFactory~mURRRdk" class="Symfony\Component\Form\ResolvedFormTypeFactory" public="false"/>
+    <service id=".1_ResolvedFormTypeFactory~x9bNj6J" class="Symfony\Component\Form\ResolvedFormTypeFactory" public="false"/>
     <service id="form.type_extension.form.data_collector" class="Symfony\Component\Form\Extension\DataCollector\Type\DataCollectorTypeExtension" public="false">
       <tag name="form.type_extension"/>
       <argument type="service" id="data_collector.form"/>
@@ -1916,7 +1920,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" public="false">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
       <argument type="service" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch">
@@ -2448,7 +2452,7 @@
       <argument type="service" id=".service_locator.MAfdX1A.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">/home/esteban/Becycle/var/cache/dev</argument>
+        <argument key="cache_dir">C:\xampp\htdocs\Becycle\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -2490,7 +2494,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -2516,12 +2520,12 @@
       <argument type="service" id="file_locator"/>
       <argument type="service" id="routing.loader.annotation"/>
     </service>
-    <service id=".2_PhpArrayAdapter~sLRcF_3" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>/home/esteban/Becycle/var/cache/dev/annotations.php</argument>
+    <service id=".2_PhpArrayAdapter~CrumkIX" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
-    <service id=".1_ArrayCache~sLRcF_3" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
+    <service id=".1_ArrayCache~CrumkIX" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
     <service id="annotations.reader" class="Doctrine\Common\Annotations\AnnotationReader" public="false">
       <call method="addGlobalIgnoredName">
         <argument>required</argument>
@@ -2536,7 +2540,7 @@
     <service id="annotations.cached_reader" class="Doctrine\Common\Annotations\CachedReader" public="false">
       <tag name="annotations.cached_reader"/>
       <argument type="service" id="annotations.reader"/>
-      <argument type="service" id=".1_ArrayCache~sLRcF_3"/>
+      <argument type="service" id=".1_ArrayCache~CrumkIX"/>
       <argument>true</argument>
       <property name="cacheProviderBackup" type="service" id="annotations.cache"/>
     </service>
@@ -2546,12 +2550,12 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>/home/esteban/Becycle/var/cache/dev/annotations.php</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!AbstractController$|Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider" public="false">
-      <argument type="service" id=".2_PhpArrayAdapter~sLRcF_3"/>
+      <argument type="service" id=".2_PhpArrayAdapter~CrumkIX"/>
     </service>
     <service id="property_accessor" class="Symfony\Component\PropertyAccess\PropertyAccessor" public="false">
       <argument>false</argument>
@@ -2626,10 +2630,10 @@
           </service>
         </argument>
       </argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/serialization.php</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>/home/esteban/Becycle/var/cache/dev/serialization.php</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3052,7 +3056,7 @@
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>/home/esteban/Becycle/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>C:\xampp\htdocs\Becycle\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -3082,7 +3086,7 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
-        <argument>/home/esteban/Becycle/src/Entity</argument>
+        <argument>C:\xampp\htdocs\Becycle\src\Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
@@ -3093,17 +3097,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
       <call method="setNamespace">
-        <argument>sf_orm_default_5f5645031abeb4d22e510253051f0af718cf23da0a5d785a3419a936fb2329e6</argument>
+        <argument>sf_orm_default_ad0fda04175f0c8810c8b6b8110aee6dd84d37c4ee0d271731b2278db8ff09f7</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
       <call method="setNamespace">
-        <argument>sf_orm_default_5f5645031abeb4d22e510253051f0af718cf23da0a5d785a3419a936fb2329e6</argument>
+        <argument>sf_orm_default_ad0fda04175f0c8810c8b6b8110aee6dd84d37c4ee0d271731b2278db8ff09f7</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
       <call method="setNamespace">
-        <argument>sf_orm_default_5f5645031abeb4d22e510253051f0af718cf23da0a5d785a3419a936fb2329e6</argument>
+        <argument>sf_orm_default_ad0fda04175f0c8810c8b6b8110aee6dd84d37c4ee0d271731b2278db8ff09f7</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\Bundle\DoctrineBundle\Mapping\ContainerAwareEntityListenerResolver">
@@ -3300,6 +3304,14 @@
       <tag name="cache.pool"/>
       <argument type="service" id="cache.security_expression_language.recorder_inner"/>
     </service>
+    <service id="security.cache_warmer.expression" class="Symfony\Bundle\SecurityBundle\CacheWarmer\ExpressionCacheWarmer" public="false">
+      <tag name="kernel.cache_warmer"/>
+      <argument type="iterator">
+        <argument type="service" id=".security.expression.salN4Kf"/>
+        <argument type="service" id=".security.expression.yvaAKV4"/>
+      </argument>
+      <argument type="service" id="security.expression_language"/>
+    </service>
     <service id="security.authentication.listener.anonymous" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.token_storage"/>
@@ -3323,9 +3335,37 @@
     </service>
     <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false">
       <call method="add">
-        <argument type="service" id=".security.request_matcher.eKXDm4f"/>
+        <argument type="service" id=".security.request_matcher.5dJADCx"/>
         <argument type="collection">
-          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.bHpLOwX"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.QWkwKV5"/>
+        <argument type="collection">
+          <argument type="service" id=".security.expression.salN4Kf"/>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.mXNOY4T"/>
+        <argument type="collection">
+          <argument type="service" id=".security.expression.salN4Kf"/>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.QPwreRw"/>
+        <argument type="collection">
+          <argument type="service" id=".security.expression.yvaAKV4"/>
         </argument>
         <argument>null</argument>
       </call>
@@ -3774,8 +3814,26 @@
         <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
     </service>
-    <service id=".security.request_matcher.eKXDm4f" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/login$</argument>
+    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin</argument>
+    </service>
+    <service id=".security.request_matcher.bHpLOwX" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/account</argument>
+    </service>
+    <service id=".security.request_matcher.QWkwKV5" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/login</argument>
+    </service>
+    <service id=".security.expression.salN4Kf" class="Symfony\Component\ExpressionLanguage\Expression" public="false">
+      <argument>not is_granted('ROLE_USER')</argument>
+    </service>
+    <service id=".security.request_matcher.mXNOY4T" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/signup</argument>
+    </service>
+    <service id=".security.request_matcher.QPwreRw" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/logout</argument>
+    </service>
+    <service id=".security.expression.yvaAKV4" class="Symfony\Component\ExpressionLanguage\Expression" public="false">
+      <argument>is_granted('ROLE_USER')</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
@@ -3787,10 +3845,10 @@
         <argument>security:encode-password</argument>
       </call>
     </service>
-    <service id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~Fn3VPpQ" class="Swift_Transport_Esmtp_Auth_NTLMAuthenticator" public="false"/>
-    <service id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~Fn3VPpQ" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator" public="false"/>
-    <service id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~Fn3VPpQ" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator" public="false"/>
-    <service id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~Fn3VPpQ" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator" public="false"/>
+    <service id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~h0QSRY7" class="Swift_Transport_Esmtp_Auth_NTLMAuthenticator" public="false"/>
+    <service id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~h0QSRY7" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator" public="false"/>
+    <service id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~h0QSRY7" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator" public="false"/>
+    <service id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~h0QSRY7" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator" public="false"/>
     <service id="swiftmailer.mailer.abstract" class="Swift_Mailer" public="true" abstract="true">
       <argument type="service" id="swiftmailer.mailer.default.transport.spool"/>
     </service>
@@ -3803,10 +3861,10 @@
     </service>
     <service id="swiftmailer.transport.authhandler.abstract" class="Swift_Transport_Esmtp_AuthHandler" public="false" abstract="true">
       <argument type="collection">
-        <argument type="service" id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~Fn3VPpQ"/>
-        <argument type="service" id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~Fn3VPpQ"/>
-        <argument type="service" id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~Fn3VPpQ"/>
-        <argument type="service" id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~Fn3VPpQ"/>
+        <argument type="service" id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~h0QSRY7"/>
+        <argument type="service" id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~h0QSRY7"/>
+        <argument type="service" id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~h0QSRY7"/>
+        <argument type="service" id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~h0QSRY7"/>
       </argument>
     </service>
     <service id="swiftmailer.transport.eventdispatcher.abstract" class="Swift_Events_SimpleEventDispatcher" public="false" abstract="true"/>
@@ -3818,7 +3876,7 @@
     <service id="swiftmailer.transport.smtp.abstract" class="Swift_Transport_EsmtpTransport" public="false" abstract="true"/>
     <service id="swiftmailer.transport.spool.abstract" class="Swift_Transport_SpoolTransport" public="false" abstract="true"/>
     <service id="swiftmailer.spool.file.abstract" class="Swift_FileSpool" public="false" abstract="true">
-      <argument>/home/esteban/Becycle/src/../data/swiftmailer/spool</argument>
+      <argument>C:\xampp\htdocs\Becycle\src/../data/swiftmailer/spool</argument>
     </service>
     <service id="swiftmailer.spool.memory.abstract" class="Swift_MemorySpool" public="false" abstract="true"/>
     <service id="swiftmailer.email_sender.listener" class="Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener">
@@ -3886,7 +3944,7 @@
     <service id="twig" class="Twig\Environment" public="true">
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="default_path">/home/esteban/Becycle/templates</argument>
+        <argument key="default_path">C:\xampp\htdocs\Becycle/templates</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
         <argument key="form_themes" type="collection">
@@ -3895,7 +3953,7 @@
         </argument>
         <argument key="exception_controller">twig.controller.exception::showAction</argument>
         <argument key="autoescape">name</argument>
-        <argument key="cache">/home/esteban/Becycle/var/cache/dev/twig</argument>
+        <argument key="cache">C:\xampp\htdocs\Becycle\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -3995,16 +4053,16 @@
       <argument type="service" id=".service_locator.lSIKWsr.twig.cache_warmer"/>
       <argument>null</argument>
       <argument type="collection">
-        <argument key="/home/esteban/Becycle/vendor/symfony/twig-bridge/Resources/views/Form">null</argument>
+        <argument key="C:\xampp\htdocs\Becycle\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
     </service>
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator" public="false">
       <argument type="service" id="kernel"/>
-      <argument>/home/esteban/Becycle/src</argument>
+      <argument>C:\xampp\htdocs\Becycle\src</argument>
       <argument type="collection">
-        <argument key="/home/esteban/Becycle/vendor/symfony/twig-bridge/Resources/views/Form">null</argument>
+        <argument key="C:\xampp\htdocs\Becycle\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
-      <argument>/home/esteban/Becycle/templates</argument>
+      <argument>C:\xampp\htdocs\Becycle/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
@@ -4015,76 +4073,76 @@
     <service id="twig.loader.native_filesystem" class="Symfony\Bundle\TwigBundle\Loader\NativeFilesystemLoader" public="false">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/framework-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\framework-bundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/framework-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\framework-bundle/Resources/views</argument>
         <argument>!Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/security-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/security-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>!Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/twig-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\twig-bundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/twig-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\twig-bundle/Resources/views</argument>
         <argument>!Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/web-profiler-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/web-profiler-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>!WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/views</argument>
         <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/knplabs/knp-paginator-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\knplabs\knp-paginator-bundle/Resources/views</argument>
         <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/templates</argument>
+        <argument>C:\xampp\htdocs\Becycle/templates</argument>
       </call>
       <call method="addPath">
-        <argument>/home/esteban/Becycle/vendor/symfony/twig-bridge/Resources/views/Form</argument>
+        <argument>C:\xampp\htdocs\Becycle\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader" public="false"/>
@@ -4110,7 +4168,7 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension" public="false">
@@ -4194,10 +4252,10 @@
     <service id="twig.command.debug" class="Symfony\Bridge\Twig\Command\DebugCommand" public="false">
       <tag name="console.command" command="debug:twig"/>
       <argument type="service" id="twig"/>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>/home/esteban/Becycle/templates</argument>
-      <argument>/home/esteban/Becycle/src</argument>
+      <argument>C:\xampp\htdocs\Becycle/templates</argument>
+      <argument>C:\xampp\htdocs\Becycle\src</argument>
       <call method="setName">
         <argument>debug:twig</argument>
       </call>
@@ -4209,7 +4267,7 @@
         <argument>lint:twig</argument>
       </call>
     </service>
-    <service id=".2_HtmlDumper~Sqc05gc" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
+    <service id=".2_HtmlDumper~rX3CPdd" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
       <argument>null</argument>
       <argument>UTF-8</argument>
       <argument>1</argument>
@@ -4220,14 +4278,14 @@
         </argument>
       </call>
     </service>
-    <service id=".1_NonceGenerator~Sqc05gc" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
+    <service id=".1_NonceGenerator~rX3CPdd" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController" public="true">
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="profiler" on-invalid="null"/>
       <argument type="service" id="twig"/>
       <argument>%data_collector.templates%</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -4241,11 +4299,11 @@
       <argument type="service" id="debug.file_link_formatter"/>
     </service>
     <service id="web_profiler.csp.handler" class="Symfony\Bundle\WebProfilerBundle\Csp\ContentSecurityPolicyHandler" public="false">
-      <argument type="service" id=".1_NonceGenerator~Sqc05gc"/>
+      <argument type="service" id=".1_NonceGenerator~rX3CPdd"/>
     </service>
     <service id="twig.extension.webprofiler" class="Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension" public="false">
       <tag name="twig.extension"/>
-      <argument type="service" id=".2_HtmlDumper~Sqc05gc"/>
+      <argument type="service" id=".2_HtmlDumper~rX3CPdd"/>
     </service>
     <service id="debug.file_link_formatter.url_format" class="string" public="false">
       <argument type="service" id="router.default"/>
@@ -4300,7 +4358,7 @@
     </service>
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor" public="false"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>/home/esteban/Becycle/var/log/dev.log</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\log/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -4314,19 +4372,19 @@
       <argument>true</argument>
       <argument type="collection"/>
     </service>
-    <service id=".5_HtmlDescriptor~rJMxDQv" class="Symfony\Component\VarDumper\Command\Descriptor\HtmlDescriptor" public="false">
+    <service id=".5_HtmlDescriptor~9aUr177" class="Symfony\Component\VarDumper\Command\Descriptor\HtmlDescriptor" public="false">
       <argument type="service" id="var_dumper.html_dumper"/>
     </service>
-    <service id=".4_CliDescriptor~rJMxDQv" class="Symfony\Component\VarDumper\Command\Descriptor\CliDescriptor" public="false">
+    <service id=".4_CliDescriptor~9aUr177" class="Symfony\Component\VarDumper\Command\Descriptor\CliDescriptor" public="false">
       <argument type="service" id="var_dumper.cli_dumper"/>
     </service>
-    <service id=".3_CliContextProvider~rJMxDQv" class="Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvider" public="false"/>
-    <service id=".2_RequestContextProvider~rJMxDQv" class="Symfony\Component\VarDumper\Dumper\ContextProvider\RequestContextProvider" public="false">
+    <service id=".3_CliContextProvider~9aUr177" class="Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvider" public="false"/>
+    <service id=".2_RequestContextProvider~9aUr177" class="Symfony\Component\VarDumper\Dumper\ContextProvider\RequestContextProvider" public="false">
       <argument type="service" id="request_stack"/>
     </service>
-    <service id=".1_SourceContextProvider~rJMxDQv" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
+    <service id=".1_SourceContextProvider~9aUr177" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
       <argument>UTF-8</argument>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
     </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
@@ -4377,9 +4435,9 @@
     <service id="var_dumper.server_connection" class="Symfony\Component\VarDumper\Server\Connection" public="false">
       <argument>tcp://%env(VAR_DUMPER_SERVER)%</argument>
       <argument type="collection">
-        <argument key="source" type="service" id=".1_SourceContextProvider~rJMxDQv"/>
-        <argument key="request" type="service" id=".2_RequestContextProvider~rJMxDQv"/>
-        <argument key="cli" type="service" id=".3_CliContextProvider~rJMxDQv"/>
+        <argument key="source" type="service" id=".1_SourceContextProvider~9aUr177"/>
+        <argument key="request" type="service" id=".2_RequestContextProvider~9aUr177"/>
+        <argument key="cli" type="service" id=".3_CliContextProvider~9aUr177"/>
       </argument>
     </service>
     <service id="var_dumper.dump_server" class="Symfony\Component\VarDumper\Server\DumpServer" public="false">
@@ -4391,8 +4449,8 @@
       <tag name="console.command" command="server:dump"/>
       <argument type="service" id="var_dumper.dump_server"/>
       <argument type="collection">
-        <argument key="cli" type="service" id=".4_CliDescriptor~rJMxDQv"/>
-        <argument key="html" type="service" id=".5_HtmlDescriptor~rJMxDQv"/>
+        <argument key="cli" type="service" id=".4_CliDescriptor~9aUr177"/>
+        <argument key="html" type="service" id=".5_HtmlDescriptor~9aUr177"/>
       </argument>
       <call method="setName">
         <argument>server:dump</argument>
@@ -4401,7 +4459,7 @@
     <service id="maker.file_manager" class="Symfony\Bundle\MakerBundle\FileManager" public="false">
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder" public="false"/>
     <service id="maker.autoloader_util" class="Symfony\Bundle\MakerBundle\Util\AutoloaderUtil" public="false">
@@ -4457,7 +4515,7 @@
       <tag name="maker.command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.doctrine_helper"/>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
       <argument type="service" id="maker.generator"/>
     </service>
     <service id="maker.maker.make_fixtures" class="Symfony\Bundle\MakerBundle\Maker\MakeFixtures" public="false">
@@ -4507,11 +4565,11 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration" public="false">
       <tag name="maker.command"/>
-      <argument>/home/esteban/Becycle</argument>
+      <argument>C:\xampp\htdocs\Becycle</argument>
     </service>
     <service id="web_server.command.server_run" class="Symfony\Bundle\WebServerBundle\Command\ServerRunCommand" public="false">
       <tag name="console.command" command="server:run"/>
-      <argument>/home/esteban/Becycle/public</argument>
+      <argument>C:\xampp\htdocs\Becycle/public</argument>
       <argument>dev</argument>
       <call method="setName">
         <argument>server:run</argument>
@@ -4519,7 +4577,7 @@
     </service>
     <service id="web_server.command.server_start" class="Symfony\Bundle\WebServerBundle\Command\ServerStartCommand" public="false">
       <tag name="console.command" command="server:start"/>
-      <argument>/home/esteban/Becycle/public</argument>
+      <argument>C:\xampp\htdocs\Becycle/public</argument>
       <argument>dev</argument>
       <call method="setName">
         <argument>server:start</argument>
@@ -4628,6 +4686,8 @@
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddressType" class="App\Form\AddressType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AddressType" class="App\Form\AddressType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LoginType" class="App\Form\LoginType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\LoginType" class="App\Form\LoginType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProductType" class="App\Form\ProductType" autowire="true" abstract="true"/>
@@ -4823,6 +4883,12 @@
         <argument key="accessory" type="service" id=".errored..service_locator.Xh7Khga.App\Entity\Product"/>
       </argument>
     </service>
+    <service id=".service_locator.yxYM1K0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="address" type="service" id=".errored..service_locator.yxYM1K0.App\Entity\Address"/>
+      </argument>
+    </service>
     <service id=".service_locator.usCa76w" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4850,11 +4916,12 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.pavPIuw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.hRrBfXe" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AccessoriesController::accessories" type="service" id=".service_locator.9wN6S47"/>
         <argument key="App\Controller\AccessoriesController::showAccess" type="service" id=".service_locator.Xh7Khga"/>
+        <argument key="App\Controller\AccountController::addAddress" type="service" id=".service_locator.yxYM1K0"/>
         <argument key="App\Controller\BikesController::bikes" type="service" id=".service_locator.usCa76w"/>
         <argument key="App\Controller\CartController::addProduct" type="service" id=".service_locator.ZzSB_Y3"/>
         <argument key="App\Controller\ProductController::delete" type="service" id=".service_locator.ZzSB_Y3"/>
@@ -4864,6 +4931,7 @@
         <argument key="App\Controller\SecurityController::signup" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\AccessoriesController:accessories" type="service" id=".service_locator.9wN6S47"/>
         <argument key="App\Controller\AccessoriesController:showAccess" type="service" id=".service_locator.Xh7Khga"/>
+        <argument key="App\Controller\AccountController:addAddress" type="service" id=".service_locator.yxYM1K0"/>
         <argument key="App\Controller\BikesController:bikes" type="service" id=".service_locator.usCa76w"/>
         <argument key="App\Controller\CartController:addProduct" type="service" id=".service_locator.ZzSB_Y3"/>
         <argument key="App\Controller\ProductController:delete" type="service" id=".service_locator.ZzSB_Y3"/>
@@ -4942,9 +5010,10 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.bLUSbKF" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.QiumsIF" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AddressType" type="service" id="App\Form\AddressType"/>
         <argument key="App\Form\LoginType" type="service" id="App\Form\LoginType"/>
         <argument key="App\Form\ProductType" type="service" id="App\Form\ProductType"/>
         <argument key="App\Form\SignUpType" type="service" id="App\Form\SignUpType"/>
@@ -5283,11 +5352,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.pavPIuw"/>
+      <argument type="service" id=".service_locator.hRrBfXe"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id=".errored..service_locator.Xh7Khga.App\Entity\Product" class="App\Entity\Product"/>
+    <service id=".errored..service_locator.yxYM1K0.App\Entity\Address" class="App\Entity\Address"/>
     <service id=".errored..service_locator.ZzSB_Y3.App\Entity\Product" class="App\Entity\Product"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.KwgMclN"/>
@@ -5440,51 +5510,51 @@
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="false">
-      <argument>S01ChAfIkU</argument>
+      <argument>QyjIZSZ6e7</argument>
       <argument>0</argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/pools</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>Srh+SdEC-c</argument>
+      <argument>5qB87HDBpr</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/pools</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>F8CDCVY-O8</argument>
+      <argument>r6aAe1X57C</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/pools</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>GqxNKrzf-Y</argument>
+      <argument>KBNAI56WTt</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/pools</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>dsSlWoAS8Y</argument>
+      <argument>Ebv67IrVuk</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/pools</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>8beXiThC1U</argument>
+      <argument>pZ6dq+-ajU</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/esteban/Becycle/var/cache/dev/pools</argument>
+      <argument>C:\xampp\htdocs\Becycle\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5618,7 +5688,7 @@
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.pavPIuw"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.hRrBfXe"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>
