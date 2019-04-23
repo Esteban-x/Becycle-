@@ -33,27 +33,59 @@ class   AppFixtures extends Fixture
             ['BLUECITY 28 ladie\'s','velo-femme-15.jpg'],['LADY 3X7 STI LADY','velo-femme-16.jpg']
         ];
 
-      
+        $casques = [
+            ['Casque KENNY FURTIF Gris/Jaune Fluo 2019', 'casque1.jpg'], ['Casque MAVIC AKSIUM ELITE Blanc/Noir', 'casque2.jpg'], ['Casque MAVIC AKSIUM ELITE Noir/Blanc', 'casque3.jpg'], ['Casque MET STRALE Noir/Rouge', 'casque4.jpg'], ['Casque MET STRALE Noir', 'casque5.jpg'], ['Casque GIRO ATMOS 2 Blanc Mat/Argent','casque6.jpg'], 
+        ['Casque ZERO RH+ LAMBO Noir/Argent','casque7.jpg'], ['Casque GIRO SYNTAX MIPS Noir Mat 2019','casque8.jpg'], ['Casque KASK MOJITO Blanc','casque9.jpg'], ['Casque KASK MOJITO X Noir Mat 2019','casque10.jpg'], ['Casque KASK MOJITO Noir Mat/Blanc','casque11.jpg'], ['Casque MAVIC KSYRIUM PRO MIPS Jaune Fluo/Noir','casque12.jpg'],
+        ['Casque KASK MOJITO Noir Mat','casque13.jpg'], ['Casque KASK MOJITO Noir Mat/Rouge','casque14.jpg'], ['Casque ZERO RH+ Z ALPHA MIPS Noir','casque15.jpg']
+        ];
+
+        $lunettes = [
+            ['Lunettes XLC TAHITI Argent/Noir', 'lunette1.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Noir','lunette2.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir','lunette3.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Bleu','lunette4.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Blanc','lunette5.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir/Orange','lunette6.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Gris','lunette7.jpg'],['Lunettes XLC JAMAICA Blanc','lunette8.jpg'],['Lunettes XLC MALDIVES Noir','lunette9.jpg'],['Lunettes NORTHWAVE TEAM Rouge/Noir','lunette10.jpg']
+        ];
+        
+        $accessories = [
+            ['Casque KENNY FURTIF Gris/Jaune Fluo 2019', 'casque1.jpg'], ['Casque MAVIC AKSIUM ELITE Blanc/Noir', 'casque2.jpg'], ['Casque MAVIC AKSIUM ELITE Noir/Blanc', 'casque3.jpg'], ['Casque MET STRALE Noir/Rouge', 'casque4.jpg'], ['Casque MET STRALE Noir', 'casque5.jpg'], ['Casque GIRO ATMOS 2 Blanc Mat/Argent','casque6.jpg'], 
+        ['Casque ZERO RH+ LAMBO Noir/Argent','casque7.jpg'], ['Casque GIRO SYNTAX MIPS Noir Mat 2019','casque8.jpg'], ['Casque KASK MOJITO Blanc','casque9.jpg'], ['Casque KASK MOJITO X Noir Mat 2019','casque10.jpg'], ['Casque KASK MOJITO Noir Mat/Blanc','casque11.jpg'], ['Casque MAVIC KSYRIUM PRO MIPS Jaune Fluo/Noir','casque12.jpg'],
+        ['Casque KASK MOJITO Noir Mat','casque13.jpg'], ['Casque KASK MOJITO Noir Mat/Rouge','casque14.jpg'], ['Casque ZERO RH+ Z ALPHA MIPS Noir','casque15.jpg'], ['Lunettes XLC TAHITI Argent/Noir', 'lunette1.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Noir','lunette2.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir','lunette3.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Bleu','lunette4.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Blanc','lunette5.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir/Orange','lunette6.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Gris','lunette7.jpg'],['Lunettes XLC JAMAICA Blanc','lunette8.jpg'],['Lunettes XLC MALDIVES Noir','lunette9.jpg'],['Lunettes NORTHWAVE TEAM Rouge/Noir','lunette10.jpg']
+        ];
         
         $categories = [
             ['Vtt', 'vtt.png'], ['Vtc', 'vtc.png' ], ['Ville', 'ville.png'], ['Electrique', 'electric.png'], ['Homme', 'boy.png'], ['Femme', 'girl.png'], ['Enfant', 'kid.png']
         ];
 
+        $acategories = [
+            ['Casques', 'casque.png'], ['Gants', 'gant.png'], ['Lunettes', 'lunette.png'], ['Sacs', 'sac.png']
+        ];
+
+        $l=[];
+
+        //Catégories d'accessoires
+        for($i=1;$i<=count($acategories);$i++)
+        {
+            $acategory = new Category();
+            $acategoryname = $acategories[$i-1][0];
+            $acategory->setName($acategoryname);
+            $acategory->setLogo($acategories[$i-1][1]);
+            $acategory->setType('accessoires');
+            $manager->persist($acategory);
+            $l[$i] = $acategory;
+        }
+
         $j=[];
        
-
-
+        //Catégories de vélos
         for($i=1;$i<=count($categories);$i++)
         {
             $category = new Category();
             $categoryname = $categories[$i-1][0];
             $category->setName($categoryname);
             $category->setLogo($categories[$i-1][1]);
+            $category->setType('velo');
             $manager->persist($category);
             $j[$i] = $category;
         }
 
-
+        //Tous les vélos
         for ($i = 0; $i < count($bikes); $i++)
         {   
             $bike = new Product();
@@ -67,14 +99,44 @@ class   AppFixtures extends Fixture
             $manager->persist($bike);
         }
 
-        for($i=1;$i<10;$i++)
+        //Les casques
+        for ($i = 1; $i < count($casques); $i++)
+        {   
+            $casque = new Product();
+            $casqueName = $casques[$i-1][0];
+            $casque->setName($casqueName);
+            $casque->setDescription('voici un très bon accessoire pour la randonné en velo sur de grandes distances.');
+            $casque->setPrice(mt_rand(50, 87));
+            $casque->setImage($casques[$i-1][1]);
+            $casque->setType('casque');
+            $casque->setCategory($l[mt_rand(1, 2)]);
+            $manager->persist($casque);
+        }
+
+        //les lunettes
+        for ($i = 1; $i < count($lunettes); $i++)
+        {   
+            $lunette = new Product();
+            $lunetteName = $lunettes[$i-1][0];
+            $lunette->setName($lunetteName);
+            $lunette->setDescription('voici un très bon accessoire pour la randonné en velo sur de grandes distances.');
+            $lunette->setPrice(mt_rand(17, 29.99));
+            $lunette->setImage($lunettes[$i-1][1]);
+            $lunette->setType('lunette');
+            $lunette->setCategory($l[mt_rand(3, 4)]);
+            $manager->persist($lunette);
+        }
+
+        //Les produits random que l'on affiche sur la page home accessoires
+        for($i=1;$i<count($accessories);$i++)
         {
             $accessory = new Product();
-            $accessory->setName('Accessoire n°'.$i);
+            $accessoryname = $accessories[$i-1][0];
+            $accessory->setName($accessoryname);
             $accessory->setDescription('voici un très bon accessoire pour la randonné en velo sur de grandes distances.');
-            $accessory->setPrice(mt_rand(6, 20));
-            $accessory->setImage('https://placeimg.com/640/480/tech');
-            $accessory->setType('polyvalent');
+            $accessory->setPrice(mt_rand(20, 47));
+            $accessory->setImage($accessories[$i-1][1]);
+            $accessory->setType('accessoire');
             $manager->persist($accessory);
         }
 
