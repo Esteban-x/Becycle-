@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Form\SignUpType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AccountController extends AbstractController
 {
@@ -40,4 +43,34 @@ class AccountController extends AbstractController
         ]);
     }
 
+
+    /**
+     * @route("/account/parametres", name="parametres-show.html.twig")
+     */
+
+    public function ParametresShow(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $user = $this->getUser();
+        $form = $this->createForm(SignUpType::class, $user);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $password = $passwordEncoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($password);
+            $manager = $this->getDoctrine()->getManager();
+            $manager->flush();
+
+            $this->addFlash("success", "Modification bien prise en compte.");
+
+            return $this->redirectToRoute('home');
+        }
+        return $this->render('account/parametres-show.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 }
+
+
+
