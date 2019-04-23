@@ -2,6 +2,8 @@
 
 namespace App\DataFixtures;
 
+use Symfony\Component\Validator\Constraints\DateTime;
+use App\Entity\Orders;
 use App\Entity\Product;
 use App\Entity\Category;
 use App\Entity\Tag;
@@ -59,6 +61,8 @@ class   AppFixtures extends Fixture
 
         $l=[];
 
+       
+
         //Catégories d'accessoires
         for($i=1;$i<=count($acategories);$i++)
         {
@@ -109,7 +113,7 @@ class   AppFixtures extends Fixture
             $casque->setPrice(mt_rand(50, 87));
             $casque->setImage($casques[$i-1][1]);
             $casque->setType('casque');
-            $casque->setCategory($l[mt_rand(1, 2)]);
+            $casque->setCategory($l[1]);
             $manager->persist($casque);
         }
 
@@ -140,7 +144,17 @@ class   AppFixtures extends Fixture
             $manager->persist($accessory);
         }
 
+        for($i=0;$i<5;$i++)
+        {   $faker = Faker\Factory::create();
+            $order = new Orders();
+            $order->getId('commande n%'. $i);
+            $order->setOrderState(1);
+            $order->setPaymentDate(new\DateTime('now'));
+            $order->setTotal($i * 2);
+            $order->setPaymentState('ok');
+            $manager->persist($order);  
 
+        }
         
 
         $users = [];

@@ -42,6 +42,15 @@ class OrdersRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function showActiveOrder(){
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.order_state != :val')
+            ->setParameter('val', 0)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
     // /**
     //  * @return Orders[] Returns an array of Orders objects
     //  */
