@@ -19,6 +19,35 @@ class AddressRepository extends ServiceEntityRepository
         parent::__construct($registry, Address::class);
     }
 
+    public function isActive($userid){
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.active = :val')
+            ->setParameter('val', 2)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
+
+    public function isNotActive(){
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.active = :val')
+            ->setParameter('val', 1)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function showActiveAddress($userid){
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.active != :val')
+            ->andwhere('a.id_user = :user')
+            ->setParameter('val', 1)
+            ->setParameter('user', $userid)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Address[] Returns an array of Address objects
     //  */

@@ -1,21 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
+<div class="row">
 {% for addresse in addresses %}
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">{{app.user.fullname}}:~{{addresse.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{addresse.country}}</h6>
+<div class="card ml-3" style="width: 18rem;">
+    <div class="card-body {{addresse.active == 2 ?  "selectadd" }}">
+       
+      <h5 class="card-title">{{addresse.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Pays :&nbsp;{{addresse.country}}</h6>
       <ul>
-          <li>Ville:{{addresse.city}}</li>
-          <li>Code postal:{{addresse.postal_code}}</li>
-          <li>Rue:{{addresse.street}}</li>
-          <li></li>
+          <li>Ville :&nbsp;{{addresse.city}}</li>
+          <li>Code postal :&nbsp;{{addresse.PostalCode}}</li>
+          <li>Adresse :&nbsp;{{addresse.street}}</li>
+     
       </ul>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <a href="{{ path('address_edit',{ 'id': addresse.id }) }}" class="card-link">Modifier</a>
+      {{ include('address/delete.html.twig') }}
+      <a href="{{path('address_active', {'id': addresse.id }) }}">Utiliser</a>
     </div>
   </div>
 {%  endfor  %}
+</div>
 
 {% endblock %}
