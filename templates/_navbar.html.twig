@@ -48,11 +48,6 @@
 
 
 
-                    <li class="nav-item {{route == 'login' ? "active"}}">
-                        <a class="nav-link" title="Mon compte" href="{{path('account')}}">Mon Compte</a>
-                    </li>
-
-
                     {% else %}
                     <li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
                         <a class="nav-link" title="Connexion" href="{{path('login')}}">Connexion</a>
