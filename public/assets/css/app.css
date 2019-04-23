@@ -162,6 +162,10 @@ position: relative;
     background-position:bottom;
 }
 
+.selectadd{
+    box-shadow: black 1px 1px 10px;
+}
+
 @keyframes fade1
 {
     0%

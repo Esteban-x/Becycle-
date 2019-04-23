@@ -1,0 +1,12 @@
+
+{% extends "base.html.twig" %} 
+
+{% block body %}
+<div class="container mt-3 mb-3">
+{{form_start(form)}}
+{{form_widget(form)}}
+{{form_end(form)}}
+<button type="submit" class="btn btn-block btn-info">Modifier</button>
+<a href="{{path('address')}}" class="btn-light btn mt-2">Retour</a>
+</div>
+{% endblock %}

@@ -57,7 +57,7 @@ class Address
     /**
      * @ORM\Column(type="integer")
      */
-    private $active=1;
+    private $active=0;
 
     public function __construct()
     {
