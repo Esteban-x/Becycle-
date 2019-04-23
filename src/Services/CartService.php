@@ -6,7 +6,6 @@ namespace App\Services;
 use App\Entity\OrderProducts;
 use App\Entity\Orders;
 use App\Entity\Product;
-use App\Entity\User;
 use Symfony\Component\Security\Core\Security;
 use App\Repository\OrdersRepository;
 use Doctrine\Common\Persistence\ObjectManager;

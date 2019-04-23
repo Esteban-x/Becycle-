@@ -16,6 +16,39 @@ body{
     font-size: 15px;
 }
 
+.product-card{
+margin-bottom: 15px;
+border-radius: 25px;
+}
+
+.product-card:hover{
+    cursor: pointer;
+    box-shadow: black 1px 5px 26px;
+    color: black; 
+    transition: 160ms;
+}
+
+.show-card-body{
+    border: rgba(0, 0, 0, 0.3) 0.5px solid;
+}
+
+.container-show{
+    margin-top: 50px; 
+}
+
+.access-pic{
+    margin-top: 35px;
+    border-radius: 10px;
+}
+
+.access-col{
+    margin-top: 40px;
+}
+
+.licat{
+    border: rgba(0, 0, 0, 0.3) 0.5px solid;
+}
+
 .category-link{
     font-family: 'Francois One', cursive;
     font-size: 21px ;
@@ -24,9 +57,9 @@ body{
 .category-link:hover{
     font-family: 'Francois One', cursive;
     font-size: 21px ;
-    text-shadow: 1px 4px 90px black;
+    text-shadow: 1px 1px 20px black;
     color: black; 
-    transition: 0.5s;  
+    transition: 0.6s;  
 }
 
 .pagination-lg{
@@ -34,11 +67,16 @@ body{
     margin-right: 60px;
 }
 
+.example .pagination>li{
+  box-shadow: 1px 1px 15px black;
+  border: 1px transparent;
+}
+
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
     background-color:#343a40;
     color:#D4E1E8;
     cursor: pointer;
-    border: #D4E1E8 1px solid;
+    border: transparent 1px solid;
     z-index:2;
     
   }
@@ -198,15 +236,19 @@ h4 .card-link{
     border-block-end: rgba(7, 45, 64, 0.1) 4px solid;
     border-radius: 5px;
     padding: 0;
+    margin: 0;
 }
 
 h4 .card-link:hover{
     font-family: 'Francois One', cursive;
     font-size: 21px ;
-    color: #051926;
-    border-block-end: rgba(7, 45, 64, 0.2) 4px solid;
+    text-shadow: 1px 1px 20px black;
+    color: black; 
+    transition: 0.6s;  
+    border-block-end: rgba(7, 45, 64, 0.1) 5px solid;
     border-radius: 8px;
-    padding: 0.4px;
+    padding: 0;
+    margin: 0;
 }
 
 .main-logo{
@@ -289,15 +331,8 @@ color: #68FAC8;
 }
 
 .bouton-categories:hover {
-    color:rgba(150, 150, 150, 1)
+    color:rgba(255, 255, 255, 0.8);
 }
-
-@media (min-width: 768px){
-    #categories {
-        position:fixed;
-    }
-}
-
 
 @media (min-width: 1200px){
     #categories .list-group-item{
