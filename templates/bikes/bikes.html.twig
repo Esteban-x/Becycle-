@@ -11,15 +11,15 @@
                     <div class="card-header bg-dark text-white text-uppercase"><i class="fa fa-list"></i>  
                     <a class="bouton-categories" data-toggle="collapse" href="#collapseCategories" role="button" aria-expanded="false" aria-controls="collapseCategories">
                     &ensp;Catégories</a> 
-    </div>
-  <div class="collapse show" id="collapseCategories">
+                    </div>
+                 <div class="collapse show" id="collapseCategories">
                     <ul class="list-group category_block">
 
                         {% for category in categorys %}
                         <li class="list-group-item"><a class="category-link" href="{{path('bikes', {'id': category.id })}}"><img class="bike-logo" src="{{asset('assets/image/logos/'~category.logo)}}" alt="">{{category.name}}</a></li>
                         {% endfor %}
                     </ul>
-                    </div>
+                </div>
                 </div>
             </div>
             <div class="col">
