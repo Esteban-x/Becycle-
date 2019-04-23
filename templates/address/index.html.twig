@@ -1,4 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{% for addresse in addresses %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{app.user.fullname}}:~{{addresse.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{addresse.country}}</h6>
+      <ul>
+          <li>Ville:{{addresse.city}}</li>
+          <li>Code postal:{{addresse.postal_code}}</li>
+          <li>Rue:{{addresse.street}}</li>
+          <li></li>
+      </ul>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+{%  endfor  %}
+
 {% endblock %}
