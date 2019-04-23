@@ -30,16 +30,7 @@ function scrollFuncNav() {
   }
 }
 
-// Scroll catégories
-/*
-function scrollFuncCat() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("categories").style.top = "60px";
-  } else {
-    document.getElementById("categories").style.top = "60px";
-  }
-}
-*/
+
 
 $(document).ready(()=>{
   var bikes = new Bloodhound({
@@ -88,11 +79,10 @@ $(document).ready(()=>{
 
 /* toggle "Catégories" */
 
-/*
-________________A TERMINER____________________
-function menuCateg() {
-  var element = document.getElementById("collapseCategories");
-  element.className = element.className.replace("collapse show", "collapse");
-}
-_________________________________________________
-*/
+window.addEventListener("DOMContentLoaded", function() {
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    document.getElementById("collapseCategories").className = "collapse";
+  } else {
+    document.getElementById("collapseCategories").className = "collapse show";
+  }
+  });

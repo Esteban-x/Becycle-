@@ -2,13 +2,11 @@
 
 {% block title %}Votre panier{% endblock %}
 
-{#{% block title %}Cart - {{ sitename }}{% endblock %}#}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
 
 
     <div class="container mb-4">
@@ -20,64 +18,52 @@
 
 
                 {% else %}
-                <div class="table-responsive">
+                    <div class="table-responsive">
 
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th scope="col"> </th>
-                            <th scope="col">Produit</th>
-                            <th scope="col">Disponibilité</th>
-                            <th scope="col" class="text-center">Quantité</th>
-                            <th scope="col" class="text-right">Prix</th>
-                            <th> </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-
-                        {% for item in cart.products %}
+                        <table class="table table-striped">
+                            <thead>
                             <tr>
-                                <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                <td>{{ item.idProducts.name }}</td>
-                                <td>En stock</td>
-                                <td><input class="form-control" type="text" value="{{ item.qty }}" /></td>
-                                <td class="text-right">{{ item.total  }} &euro;</td>
-                                <td class="text-right">
-                                    <a href="{#{{ path('cart_remove', {'id': item.product.id}) }}#}" class="btn btn-sm btn-danger">
-                                        <i class="fa fa-trash"></i>
-                                    </a>
-                                </td>
+                                <th scope="col"> </th>
+                                <th scope="col">Produit</th>
+                                <th scope="col">Disponibilité</th>
+                                <th scope="col" class="text-center">Quantité</th>
+                                <th scope="col" class="text-right">Prix</th>
+                                <th> </th>
                             </tr>
-                        {% endfor %}
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Sous-Total</td>
-                            <td class="text-right">{{ cart.order.total }} &euro;</td>
-                        </tr>
+                            </thead>
+                            <tbody>
 
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Frais de port</td>
-                            <td class="text-right">{#{{ cart.shipping }}#} &euro;</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>Total</strong></td>
-                            <td class="text-right"><strong>{#{{ cart.total }}#} &euro;</strong></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+
+                            {% for item in cart.products %}
+                                <tr>
+                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                                    <td>{{ item.idProducts.name }}</td>
+                                    <td>En stock</td>
+                                    <td><input class="form-control" type="text" value="{{ item.qty }}" /></td>
+                                    <td class="text-right">{{ item.total  }} &euro;</td>
+                                    <td class="text-right">
+                                        <a href="{#{{ path('cart_remove', {'id': item.product.id}) }}#}" class="btn btn-sm btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="text-right">Sous-Total</td>
+                                <td class="text-right">{{ cart.order.total }} &euro;</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="5" class="text-right">Frais de port</td>
+                                <td class="text-right">{#{{ cart.shipping }}#} &euro;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right"><strong>Total</strong></td>
+                                <td class="text-right"><strong>{#{{ cart.total }}#} &euro;</strong></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                 {% endif %}
             </div>
@@ -94,7 +80,15 @@
 
                     <div class="col-sm-12 col-md-6 text-right">
                         {% if cart != null %}
-                        <button class="btn btn-lg btn-block btn-success text-uppercase">Commander</button>
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                {% if app.user.Addresses is empty %}
+                                    <a href="#" class="btn btn-lg btn-block btn-success text-uppercase">Ajouter une adresse</a>
+                                {% else %}
+                                    <button class="btn btn-lg btn-block btn-success text-uppercase" onclick="checkout('{{ session.id }}')">Commander</button>
+                                {% endif %}
+                            {% else %}
+                                <a href="{{ path('login') }}" class="btn btn-lg btn-block btn-success text-uppercase">Se connecter</a>
+                            {% endif %}
                         {% endif %}
                     </div>
                 </div>

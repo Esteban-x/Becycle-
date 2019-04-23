@@ -4,5 +4,55 @@
 {#
  afficher la liste des commandes (variable array : orders)
 #}
+
+
+
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Vos commandes</h1>
+            </div>
+        </section>
+
+        <div class="container mb-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col" class="text-center">Numero de la commande</th>
+                                <th scope="col" class="text-center">Etat de commande</th>
+                                <th scope="col" class="text-center">Date de commande</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Etat de paiment</th>
+                                <th> </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                        {% for ord in orders %}
+                                <tr>
+
+                                    <td class="text-center">{{ ord.id }}</td>
+                                    <td class="text-center">{{ ord.orderState}}</td>
+                                    <td class="text-right">{{ ord.orderDate }}</td>
+                                    <td class="text-center">{{ ord.total }} &euro;</td>
+                                    <td class="text-right">{{ ord.paymentState }} </td>
+                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light">Voir la commande</a></td>
+                                </tr>
+                        {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
 {% endblock %}
 

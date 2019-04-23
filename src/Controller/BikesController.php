@@ -78,7 +78,7 @@ class BikesController extends AbstractController
         }
 
         return $this->render('/bikes/show.html.twig', [
-            'bike' => $bike
+            'product' => $bike
         ]);
     }
 

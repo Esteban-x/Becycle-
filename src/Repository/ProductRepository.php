@@ -23,6 +23,7 @@ class ProductRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('p')
             ->andWhere('p.type = :val')
             ->setParameter('val', "accessoire")
+            ->andWhere('p.visible = 0')
             ->getQuery()
             ->getResult()
             ;
@@ -49,6 +50,7 @@ class ProductRepository extends ServiceEntityRepository
     public function findAllBikes(){
         return $this->createQueryBuilder('p')
             ->andWhere('p.type = :val')
+            ->andWhere('p.visible = 0')
             ->setParameter('val', "bike")
             ->getQuery()
             ->getResult()

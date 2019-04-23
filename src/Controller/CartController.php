@@ -27,6 +27,7 @@ class CartController extends AbstractController
     public function index()
     {
         $order = $this->cart->getCart();
+        $session = null;
         \Stripe\Stripe::setApiKey("sk_test_K49VwG3tTAtkpFOXY8wudk4N00JWT94kDF");
         if($order != NULL){
             $listProd = [];
