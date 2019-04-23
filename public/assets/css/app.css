@@ -139,6 +139,7 @@ position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     animation: fade1 16s infinite;
+    background-position:bottom;
 }
 
 .slide2{
@@ -146,6 +147,7 @@ position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     animation: fade2 16s infinite;
+    background-position:center;
 }
 
 .slide3{
@@ -153,6 +155,7 @@ position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     animation: fade3 16s infinite;
+    background-position:bottom;
 }
 
 @keyframes fade1
@@ -324,9 +327,26 @@ color: #68FAC8;
 
 .bouton-categories {
     color: white;
+    padding-right: 60px;
 }
 
 .bouton-categories:hover {
+    color:rgba(180, 180, 180, 1)
+}
+
+@media (min-width: 768px){
+    #collapseCategories {
+        
+    }
+    #categories {
+        position:fixed;
+    }
+}
+
+/*
+@media (max-width: 768px){
+    .show {
+        display: none;
     color:rgba(255, 255, 255, 0.8);
 }
 
@@ -334,4 +354,8 @@ color: #68FAC8;
     #categories .list-group-item{
         padding: 20px 30px;
     }
-}
+    .show {
+        display: none;
+    }
+
+*/
