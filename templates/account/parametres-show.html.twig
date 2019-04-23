@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="container">
+        <div class="form-row">
+            <div class="col">
+                <div class="card">
+
+                    <div class="card-body">
+                            {{ form_start(form, { attr: {novalidate: 'novalidate'} } ) }}
+
+                        {{ form_widget(form)  }}
+                            <button type="submit" class="btn btn-primary">Modifier</button>
+                            {{ form_end(form) }}<br>
+                        <a href="#" type="submit" class="btn btn-danger">Supprimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
