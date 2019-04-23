@@ -42,7 +42,7 @@ class AddressController extends AbstractController
             $manager->flush();
             $this->addFlash("success", "Adresse bien enregistré.");
 
-            return $this->redirectToRoute('account');
+            return $this->redirectToRoute('cart');
         }
 
         return $this->render('account/address-new.html.twig', [

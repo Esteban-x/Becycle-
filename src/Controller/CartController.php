@@ -68,9 +68,12 @@ class CartController extends AbstractController
     }
     /**
      * @Route("/validate", name="validate")
+     * @param $response \Stripe\Charge
+     * @return
      */
-    public function validate()
+    public function validate($response)
     {
-
+        dump($response);
+        return $this->render('payment/index.html.twig');
     }
 }
