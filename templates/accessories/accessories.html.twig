@@ -31,7 +31,7 @@
                     <div class="card">
                         <a class="card-link" href="#" title="Voir l'accessoire"><img class="card-img-top" src="{{asset('assets/image/accessoires/'~accessorie.image)}}" alt="Photo de l'accessoire"></a>
                         <div class="card-body">
-                            <h4 class="card-link"><a class="card-link" href="#" title="Voir l'accessoire">{{ accessorie.name }}</a></h4>
+                            <h4 class="card-link"><a class="card-link" href="{{path('accessory', {'id': accessorie.id })}}" title="Voir le vélo" title="Voir l'accessoire">{{ accessorie.name }}</a></h4>
                             <p class="card-text">{{accessorie.description}}</p>
                             
                             <div class="row">

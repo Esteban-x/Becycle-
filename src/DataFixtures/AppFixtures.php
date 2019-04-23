@@ -66,6 +66,7 @@ class   AppFixtures extends Fixture
             $acategoryname = $acategories[$i-1][0];
             $acategory->setName($acategoryname);
             $acategory->setLogo($acategories[$i-1][1]);
+            $acategory->setType('accessoires');
             $manager->persist($acategory);
             $l[$i] = $acategory;
         }
@@ -79,6 +80,7 @@ class   AppFixtures extends Fixture
             $categoryname = $categories[$i-1][0];
             $category->setName($categoryname);
             $category->setLogo($categories[$i-1][1]);
+            $category->setType('velo');
             $manager->persist($category);
             $j[$i] = $category;
         }

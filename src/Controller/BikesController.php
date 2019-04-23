@@ -26,7 +26,7 @@ class BikesController extends AbstractController
      */
     public function bikes(ProductRepository $prodrepo, CategoryRepository $catrepo, PaginatorInterface $paginator, Request $request, $id = false) : Response
     {   
-        $category = $catrepo->findById(array(63,64,65,66,67,68,69));
+        $category = $catrepo->findVcategory();
         
         if ($id)
         {

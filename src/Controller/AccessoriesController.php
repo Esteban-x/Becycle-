@@ -22,7 +22,7 @@ class AccessoriesController extends AbstractController
         $accessories = $accrepo->findAllAccessories();
         $casques = $accrepo->findAllCasques();
         $lunettes = $accrepo->findAllLunettes();
-        $acategory = $catrepo->findById(array(59, 60, 61, 62));
+        $acategory = $catrepo->findAcategory();
 
         if($id)
         {
@@ -60,8 +60,14 @@ class AccessoriesController extends AbstractController
      * @param Product $accessory
      * @return Response
      */
-    public function showAccess(Product $accessory)
-    {   
+    public function showAccess(Product $accessory, Request $request, $id) 
+
+    {   $em = $this->getDoctrine()->getmanager();
+        $accessory = null;
+
+        if ($id) {
+            $accessory = $em->getRepository(Product::class)->findOneBy(['id' => $id]);
+        }
         return $this->render('/accessories/show.html.twig', [
             'accessory' => $accessory
         ]);
