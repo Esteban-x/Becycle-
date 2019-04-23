@@ -15,22 +15,10 @@
   <div class="collapse" id="collapseCategories">
                     <ul class="list-group category_block">
 
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <img class="card-img-top" src="{{bike.image}}" alt="Photo du vélo">
-                        <div class="card-body">
-                            <h4 class="card-title"><a href="{{path('bike', {'id': bike.id })}}" title="Voir le vélo">{{ bike.name }}</a></h4>
-                            <p class="card-text">{{bike.description}}</p>
-                            
-                            <div class="row">
-                                    <h2 title="{{bike.price}}" class="price">{{bike.price}} &euro;</h2>
-                                <div class="col">
-                                    <a href="{{path('bike', {'id': bike.id })}}" title="En savoir plus sur ce vélo" class="btn btn-success ">Plus d'infos</a>
-                                    <a href="/product" class="btn btn-dark delete-bike" data-id="{{bike.id}}">Supprimer</a>
-                                    <a href="/product" class="btn btn-dark edit-bike" data-id="{{bike.id}}">Editer</a>
-                                </div>                               
-                            </div>
-                        </div>
+                        {% for category in categorys %}
+                        <li class="list-group-item licat"><a class="category-link" href="{{path('bikes', {'id': category.id })}}"><img class="bike-logo" src="{{asset('assets/image/logos/'~category.logo)}}" alt="">{{category.name}}</a></li>
+                        {% endfor %}
+                    </ul>
                     </div>
                 </div>
             </div>
