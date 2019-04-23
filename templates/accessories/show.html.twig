@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{accessory.name}}{% endblock %}
+{% block title %}{{product.name}}{% endblock %}
 
 {% block body %}
 <div class="container">
@@ -9,7 +9,7 @@
                 <div class="card bg-light mb-3">
                     <div class="card-body">
                         <a href="" data-toggle="modal" data-target="#productModal">
-                            <img class="img-fluid access-pic" src="{{accessory.image}}" />
+                            <img class="img-fluid access-pic" src="{{product.image}}" />
                         </a>
                     </div>
                 </div>
@@ -18,19 +18,19 @@
             <div class="col-12 col-lg-6 add_to_cart_block container-show">
                     <div class="card bg-light mb-3">
                         <div class="card-body show-card-body">
-                            <h1>{{accessory.name}}</h1>
-                            <p>{{accessory.description}}</p>
+                            <h1>{{product.name}}</h1>
+                            <p>{{product.description}}</p>
                         </div>
                     </div>
                             
                            
                     <div class="card bg-light mb-3">
                         <div class="card-body show-card-body">
-                            <h1>{{accessory.name}}</h1>
+                            <h1>{{product.name}}</h1>
                             <form method="get" action="cart.html">
                                     <p>Caractéristique principale</p>
                                 <div class="row">
-                                <h2>{{accessory.price }}&euro;</h2>
+                                <h2>{{product.price }}&euro;</h2>
                                 <a href="cart.html" class="btn btn-success btn-lg text-uppercase">
                                     <i class="fa fa-shopping-cart"></i> Ajouter au panier
                                 </a>

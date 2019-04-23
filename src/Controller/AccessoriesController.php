@@ -41,7 +41,7 @@ class AccessoriesController extends AbstractController
     public function showAccess(Product $accessory)
     {   
         return $this->render('/accessories/show.html.twig', [
-            'accessory' => $accessory
+            'product' => $accessory
         ]);
     }
 
