@@ -18,7 +18,8 @@ class AccessoriesController extends AbstractController
      * @param $id
      */
     public function accessories(ProductRepository $accrepo,CategoryRepository $catrepo, PaginatorInterface $paginator, Request $request, $id = false)
-    {
+    {   
+        
         $accessories = $accrepo->findAllAccessories();
         $casques = $accrepo->findAllCasques();
         $lunettes = $accrepo->findAllLunettes();
