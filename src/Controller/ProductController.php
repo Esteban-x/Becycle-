@@ -79,7 +79,7 @@ class ProductController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$product->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($product);
+            $product->setVisible(1);
             $entityManager->flush();
         }
 
