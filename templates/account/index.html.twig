@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <ul>
+        <li>
+            <a href="{{ path('account_orders') }}">Mes commandes</a>
+        </li>
+        <li>
+            <a href="{{ path('address') }}">Mes adresses</a>
+        </li>
+        <li>
+            <a href="#">Paramètres</a>
+        </li>
+    </ul>
+{% endblock %}

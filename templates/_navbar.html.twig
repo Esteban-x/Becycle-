@@ -1,6 +1,6 @@
 {% block body %}
 <header>
-     <nav onscroll="scrollFuncNav()" id="scrollbar" title="scrollbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <nav onscroll="scrollFuncNav()" id="scrollbar"  class="navbar navbar-expand-lg navbar-dark bg-dark">
                         <div class="container">
                             <a class="navbar-brand" href="{{path('home')}}">
                                 <span id="brand">&nbsp;<img class="main-logo" src="{{asset('assets/image/logos/becycle.png')}}" alt="">&nbsp;Becycle</span>
@@ -14,43 +14,39 @@
                             {% set route = app.request.attributes.get('_route')%}
                                <ul class="navbar-nav mr-auto ml-auto">
                                     <li class="nav-item {{route == 'home' ? "active"}}">
-                                        <a class="nav-link " href="{{path('home')}}">Acceuil</a>
+                                        <a class="nav-link" title="Acceuil" href="{{path('home')}}">Acceuil</a>
                                     </li>
                                     <li class="nav-item {{route == 'bikes' ? "active"}}">
                                         <a class="nav-link " href="{{path('bikes')}}">Nos&nbsp;vélos</a>
                                     </li>
                                     <li class="nav-item {{route == 'accessories' ? "active"}}">
-                                        <a class="nav-link " href="{{path('accessories')}}">Accessoires</a>
+                                        <a class="nav-link " title="Accessoires" href="{{path('accessories')}}">Accessoires</a>
                                     </li>
-                                    <li class="nav-item {{route == '#' ? "active"}}">
-                                        <a class="nav-link " href="">Choisir&nbsp;ma&nbsp;Gamme</a>
-                                    </li>
-                                    
                                 </ul>
                 
                                 <ul class="navbar-nav">
 
                                     {% if is_granted('ROLE_USER') %}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{path('logout')}}">Déconnexion</a>
+                                            <a class="nav-link" title="Déconnexion" href="{{path('logout')}}">Déconnexion</a>
                                         </li>
                                         <li class="nav-item {{route == 'login' ? "active"}}">
-                                            <a class="nav-link" href="{{path('login')}}">Mon Compte</a>
+                                            <a class="nav-link" title="Mon compte" href="{{path('account')}}">Mon Compte</a>
                                         </li>
                                     {% else %}
                                         <li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
-                                            <a class="nav-link" href="{{path('login')}}">Connexion</a>
+                                            <a class="nav-link" title="Connexion" href="{{path('login')}}">Connexion</a>
                                         </li>
                                         <li class="nav-item {% if mainNavRegistration is defined %}active{% endif %}">
-                                            <a class="nav-link" href="{{path('signup')}}">Inscription</a>
+                                            <a class="nav-link" title="Inscription" href="{{path('signup')}}">Inscription</a>
                                         </li>
                                     {% endif %}
 
                                      <li class="nav-item">
-                                         <a class="nav-link cart" href="#">Panier</a>
+                                         <a class="nav-link cart" title="Panier" href="{{path('cart')}}">Panier</a>
                                      </li>
                                 </ul>
-                                <form class="navbar-form navbar-right" action="{{path('search')}}" method="post">
+                                <form class="navbar-form navbar-right" title="Rechercher un modèle " action="{{path('search')}}" method="post">
                                         <div id="prefetch">
                                                 <input class="typeahead" id="form_query" name='motcle' type="text" placeholder="Rechercher un modèle..." aria-label="rechercher">
                                         </div>

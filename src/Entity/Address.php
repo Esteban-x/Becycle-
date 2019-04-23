@@ -44,7 +44,7 @@ class Address
     private $country;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\user", inversedBy="addresses")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="addresses")
      * @ORM\JoinColumn(nullable=false)
      */
     private $id_user;
@@ -53,6 +53,11 @@ class Address
      * @ORM\OneToMany(targetEntity="App\Entity\Orders", mappedBy="id_adress")
      */
     private $orders;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $active=1;
 
     public function __construct()
     {
@@ -163,6 +168,18 @@ class Address
                 $order->setIdAdress(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getActive(): ?int
+    {
+        return $this->active;
+    }
+
+    public function setActive(int $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }
