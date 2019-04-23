@@ -57,7 +57,6 @@ class BikesController extends AbstractController
             'bikes' => $bikes,
             'pagination' => $pagination,
             'categorys' => $category,
-          
             'currentcategory' => $categoryname   
             
             
