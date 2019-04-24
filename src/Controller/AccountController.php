@@ -79,8 +79,21 @@ class AccountController extends AbstractController
         ]);
     }
     /**
-     * @route("/account/parametres", name="parametres-show.html.twig")
+     * @route("/account/parametres/delete", name="delete_user")
      */
+    public function deleteUser(){
+        $manager = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+        $user->setUsername('delete');
+        $user->setPassword('delete');
+        $user->setFirstname('delete');
+        $user->setLastname('delete');
+        $user->setBirthdate(new \DateTime('now'));
+        $user->setRoles(['ROLE_DELETE']);
+        $user->setActif(0);
+        $manager->flush();
+        return $this->redirectToRoute('logout');
+    }
 }
 
 
