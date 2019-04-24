@@ -30,10 +30,10 @@
                             <form method="get" action="cart.html">
                                     <p>Caractéristique principale</p>
                                 <div class="row">
-                                <h2>{{product.price }}&euro;</h2>
-                                <a href="cart.html" class="btn btn-success btn-lg text-uppercase">
-                                    <i class="fa fa-shopping-cart"></i> Ajouter au panier
-                                </a>
+                                <h2 class="bike-price ml-5">{{product.price }}&euro;</h2>
+                            <a href="{{ path('addProduct', {'product':product.id}) }}" class="ml-5 btn btn-dark btn-lg btn-panier text-uppercase">
+                                <i class="fa fa-shopping-cart"></i> Ajouter au panier
+                            </a>
                             </div>
                             </form>
                         </div>
