@@ -44,11 +44,20 @@ class   AppFixtures extends Fixture
         $lunettes = [
             ['Lunettes XLC TAHITI Argent/Noir', 'lunette1.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Noir','lunette2.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir','lunette3.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Bleu','lunette4.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Blanc','lunette5.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir/Orange','lunette6.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Gris','lunette7.jpg'],['Lunettes XLC JAMAICA Blanc','lunette8.jpg'],['Lunettes XLC MALDIVES Noir','lunette9.jpg'],['Lunettes NORTHWAVE TEAM Rouge/Noir','lunette10.jpg']
         ];
+
+        $gants = [
+            ['Gants DEXSHELL ULTRA FEX Jaune','gant1.jpg'],['Gants ENDURA DELUGE II Noir','gant2.jpg'],['Gants WOWOW DARK GLOVES 1.0 Réfléchissants Gris','gant3.jpg'],['Gants GORE WEAR C3 URBAN Noir','gant4.jpg'],['Gants GORE WEAR C3 URBAN Rouge','gant5.jpg'],['Gants BBB WINTER COLDSHIELD Gris','gant6.jpg'],['Gants BBB WINTER COLDSHIELD Gris','gant7.jpg'],['Gants Courts GORE WEAR C3 URBAN Noir','gant8.jpg'],['Gants GORE WEAR M GORE WINDSTOPPER Noir/Jaune Fluo','gant9.jpg'],['Gants GORE WEAR M GORE WINDSTOPPER Noir/Jaune Fluo','gant10.jpg']
+        ];
+
+        $sacs = [
+            ['Sac à Dos ORTLIEB MESSENGER','sac1.jpg'],['Sac à Dos BROOKS DALSTON - S','sac2.jpg'],['Sac à Dos BROOKS DALSTON - M','sac3.jpg'],['Sac à Dos ORTLIEB VELOCITY HIGH VISIBILITY','sac4.jpg'],['Sac à Dos BROOKS PICKZIP LARGE','sac5.jpg'],['Sac à Dos MOONRIDE LED CONNECT XS Gris','sac6.jpg'],['Sac à Dos MOONRIDE LED CONNECT XS Gris','sac7.jpg'],['Sac à Dos HPA DRY BACKPACK Noir','sac8.jpg'],['Sac à Dos HPA DRY BACKPACK Bleu','sac9.jpg'],['Sac à Dos BROOKS HACKNEY','sac10.jpg'],
+        ];
         
         $accessories = [
             ['Casque KENNY FURTIF Gris/Jaune Fluo 2019', 'casque1.jpg'], ['Casque MAVIC AKSIUM ELITE Blanc/Noir', 'casque2.jpg'], ['Casque MAVIC AKSIUM ELITE Noir/Blanc', 'casque3.jpg'], ['Casque MET STRALE Noir/Rouge', 'casque4.jpg'], ['Casque MET STRALE Noir', 'casque5.jpg'], ['Casque GIRO ATMOS 2 Blanc Mat/Argent','casque6.jpg'], 
-        ['Casque ZERO RH+ LAMBO Noir/Argent','casque7.jpg'], ['Casque GIRO SYNTAX MIPS Noir Mat 2019','casque8.jpg'], ['Casque KASK MOJITO Blanc','casque9.jpg'], ['Casque KASK MOJITO X Noir Mat 2019','casque10.jpg'], ['Casque KASK MOJITO Noir Mat/Blanc','casque11.jpg'], ['Casque MAVIC KSYRIUM PRO MIPS Jaune Fluo/Noir','casque12.jpg'],
-        ['Casque KASK MOJITO Noir Mat','casque13.jpg'], ['Casque KASK MOJITO Noir Mat/Rouge','casque14.jpg'], ['Casque ZERO RH+ Z ALPHA MIPS Noir','casque15.jpg'], ['Lunettes XLC TAHITI Argent/Noir', 'lunette1.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Noir','lunette2.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir','lunette3.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Bleu','lunette4.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Blanc','lunette5.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir/Orange','lunette6.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Gris','lunette7.jpg'],['Lunettes XLC JAMAICA Blanc','lunette8.jpg'],['Lunettes XLC MALDIVES Noir','lunette9.jpg'],['Lunettes NORTHWAVE TEAM Rouge/Noir','lunette10.jpg']
+            ['Casque ZERO RH+ LAMBO Noir/Argent','casque7.jpg'], ['Casque GIRO SYNTAX MIPS Noir Mat 2019','casque8.jpg'], ['Casque KASK MOJITO Blanc','casque9.jpg'], ['Casque KASK MOJITO X Noir Mat 2019','casque10.jpg'], ['Casque KASK MOJITO Noir Mat/Blanc','casque11.jpg'], ['Casque MAVIC KSYRIUM PRO MIPS Jaune Fluo/Noir','casque12.jpg'],
+            ['Casque KASK MOJITO Noir Mat','casque13.jpg'], ['Casque KASK MOJITO Noir Mat/Rouge','casque14.jpg'], ['Casque ZERO RH+ Z ALPHA MIPS Noir','casque15.jpg'], ['Lunettes XLC TAHITI Argent/Noir', 'lunette1.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Noir','lunette2.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir','lunette3.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Bleu','lunette4.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Blanc','lunette5.jpg'], ['Lunettes UVEX SPORTSTYLE 223 Noir/Orange','lunette6.jpg'], ['Lunettes UVEX SPORTSTYLE 204 Gris','lunette7.jpg'],['Lunettes XLC JAMAICA Blanc','lunette8.jpg'],['Lunettes XLC MALDIVES Noir','lunette9.jpg'],['Lunettes NORTHWAVE TEAM Rouge/Noir','lunette10.jpg'],
+            ['Gants DEXSHELL ULTRA FEX Jaune','gant1.jpg'],['Gants ENDURA DELUGE II Noir','gant2.jpg'],['Gants WOWOW DARK GLOVES 1.0 Réfléchissants Gris','gant3.jpg'],['Gants GORE WEAR C3 URBAN Noir','gant4.jpg'],['Gants GORE WEAR C3 URBAN Rouge','gant5.jpg'],['Gants BBB WINTER COLDSHIELD Gris','gant6.jpg'],['Gants BBB WINTER COLDSHIELD Gris','gant7.jpg'],['Gants Courts GORE WEAR C3 URBAN Noir','gant8.jpg'],['Gants GORE WEAR M GORE WINDSTOPPER Noir/Jaune Fluo','gant9.jpg'],['Gants GORE WEAR M GORE WINDSTOPPER Noir/Jaune Fluo','gant10.jpg'], ['Sac à Dos ORTLIEB MESSENGER','sac1.jpg'],['Sac à Dos BROOKS DALSTON - S','sac2.jpg'],['Sac à Dos BROOKS DALSTON - M','sac3.jpg'],['Sac à Dos ORTLIEB VELOCITY HIGH VISIBILITY','sac4.jpg'],['Sac à Dos BROOKS PICKZIP LARGE','sac5.jpg'],['Sac à Dos MOONRIDE LED CONNECT XS Gris','sac6.jpg'],['Sac à Dos MOONRIDE LED CONNECT XS Gris','sac7.jpg'],['Sac à Dos HPA DRY BACKPACK Noir','sac8.jpg'],['Sac à Dos HPA DRY BACKPACK Bleu','sac9.jpg'],['Sac à Dos BROOKS HACKNEY','sac10.jpg']
         ];
         
         $categories = [
@@ -127,9 +136,37 @@ class   AppFixtures extends Fixture
             $lunette->setPrice(mt_rand(17, 29.99));
             $lunette->setImage($lunettes[$i-1][1]);
             $lunette->setType('lunette');
-            $lunette->setCategory($l[mt_rand(3, 4)]);
+            $lunette->setCategory($l[3]);
             $manager->persist($lunette);
         }
+
+        //les gants
+        for ($i = 1; $i < count($gants); $i++)
+        {   
+            $gant = new Product();
+            $gantName = $gants[$i-1][0];
+            $gant->setName($gantName);
+            $gant->setDescription('voici un très bon accessoire pour la randonné en velo sur de grandes distances.');
+            $gant->setPrice(mt_rand(17, 29.99));
+            $gant->setImage($gants[$i-1][1]);
+            $gant->setType('gant');
+            $gant->setCategory($l[2]);
+            $manager->persist($gant);
+        }
+
+         //les sacs
+         for ($i = 1; $i < count($sacs); $i++)
+         {   
+             $sac = new Product();
+             $sacName = $sacs[$i-1][0];
+             $sac->setName($sacName);
+             $sac->setDescription('voici un très bon accessoire pour la randonné en velo sur de grandes distances.');
+             $sac->setPrice(mt_rand(17, 29.99));
+             $sac->setImage($sacs[$i-1][1]);
+             $sac->setType('sac');
+             $sac->setCategory($l[4]);
+             $manager->persist($sac);
+         }
 
         //Les produits random que l'on affiche sur la page home accessoires
         for($i=1;$i<count($accessories);$i++)
@@ -144,6 +181,7 @@ class   AppFixtures extends Fixture
             $manager->persist($accessory);
         }
 
+        //Fausses commandes
         for($i=0;$i<5;$i++)
         {   $faker = Faker\Factory::create();
             $order = new Orders();

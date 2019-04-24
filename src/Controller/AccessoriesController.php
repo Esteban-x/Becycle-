@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
@@ -9,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class AccessoriesController extends AbstractController
 {
@@ -17,18 +19,19 @@ class AccessoriesController extends AbstractController
      * @return Response
      * @param $id
      */
-    public function accessories(ProductRepository $accrepo,CategoryRepository $catrepo, PaginatorInterface $paginator, Request $request, $id = false)
-    {
+    public function accessories(ProductRepository $accrepo,CategoryRepository $catrepo, PaginatorInterface $paginator, Request $request, $id = false) : Response
+    {   
+        
         $accessories = $accrepo->findAllAccessories();
-        $casques = $accrepo->findAllCasques();
-        $lunettes = $accrepo->findAllLunettes();
+      
+        
         $acategory = $catrepo->findAcategory();
 
         if($id)
-        {
-            $casques = $accrepo->findByACategory_id($id);
+        {   $accessories = $accrepo->findByACategory_id($id);
+
             $acategoryname = array_values(array_filter($acategory, function($acategory)use ($id){
-                return $category->getId() == $id;
+                return $acategory->getId() == $id;
             }));
         }
         else
@@ -47,15 +50,13 @@ class AccessoriesController extends AbstractController
         return $this->render('accessories/accessories.html.twig', [
             'controller_name' => 'AccessoriesController',
             'accessories' => $accessories,
-            'casques' => $casques,
-            'lunettes' => $lunettes,
             'pagination' => $pagination,
             'acategorys' => $acategory
         ]);
     }
 
     /**
-     * @Route("/accessory/{id}", name="accessory")
+     * @Route("/accessory/{id}", name="accessory", methods={"GET"})
      * 
      * @param Product $accessory
      * @return Response
@@ -69,7 +70,7 @@ class AccessoriesController extends AbstractController
             $accessory = $em->getRepository(Product::class)->findOneBy(['id' => $id]);
         }
         return $this->render('/accessories/show.html.twig', [
-            'product' => $accessory
+            'accessory' => $accessory
         ]);
     }
 

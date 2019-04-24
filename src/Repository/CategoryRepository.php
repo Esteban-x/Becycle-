@@ -43,16 +43,16 @@ class CategoryRepository extends ServiceEntityRepository
     //  * @return Category[] Returns an array of Category objects
     //  */
     
-    //public function findByAcategory()
-    //{
-        //return $this->createQueryBuilder('c')
-            //->andWhere('c.id = :val')
-            //->setParameter(array('val'=> '37', '38', '39'))
-            //->getQuery()
-            //->getResult();
+    public function findByAcategory($acatnames)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.name = :val')
+            ->setParameter('val', $acatnames)
+            ->getQuery()
+            ->getResult();
         
      
-    //}
+    }
     
 
     /*
