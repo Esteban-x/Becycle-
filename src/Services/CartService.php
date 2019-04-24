@@ -131,4 +131,17 @@ class CartService
             return NULL;
         }
     }
+    public function remove(OrderProducts $product)
+    {   
+        $user = $this->security->getUser();
+        $order = $this->getOrder($user);
+        $products = $order->getOrderProducts();
+
+        
+        
+        $this->session->set('products', $products);
+
+        return $this;
+    }
+    
 }

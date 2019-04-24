@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\OrderProducts;
 use App\Entity\Product;
 use App\Services\CartService;
 use App\Repository\OrdersRepository;
@@ -117,4 +118,16 @@ class CartController extends AbstractController
             return $this->redirectToRoute('home');
         }
     }
+    /**
+     * @Route("/cart/remove/{id}", name="cart_remove")
+     * @param OrderProducts $product
+     * @return RedirectResponse
+     */
+    public function remove(OrderProducts $product)
+    {
+        $this->cart->remove($product);
+
+        return $this->redirectToRoute('cart');
+    }
+    
 }
