@@ -4,5 +4,61 @@
 {#
  afficher la liste des produits ainsi que les info de la commande (variable array : products / variable objet : order)
 #}
+
+                    <div class="container mb-4">
+                        <div class="row">
+                            <div class="col-12">
+
+                                <div class="card mt-5">
+                                    <h5 class="card-header">Info de la commande</h5>
+                                    <div class="card-body">
+                                        <p class="card-title">Numero de la commande : {{ order.id }}</p>
+                                        <p class="card-text">Prix total : {{ order.total }}</p>
+                                        <p class="card-text">Date de la commande : {{ order.orderDate }}</p>
+                                        <p class="card-text">Etat de la commande : {{ order.orderState }}</p>
+                                        <p class="card-text">Etat de payment : {{ order.paymentState }}</p>
+
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive mt-5">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center">Nom de produit</th>
+                                            <th scope="col" class="text-center"></th>
+                                            <th scope="col" class="text-center"></th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
+                                            <th scope="col"> </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for product in products %}
+                                            <tr>
+
+                                                <td class="text-center">{{ product.name }}</td>
+                                                <td class="text-center">{{"a" }}</td>
+                                                <td class="text-right">{{ "a" }}</td>
+                                                <td class="text-center">{{ "a" }} </td>
+                                                <td class="text-right">{{ "a" }}</td>
+                                                <td class="text-right"></td>
+
+                                            </tr>
+                                        {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            </div>
+        </div>
+
+
 {% endblock %}
 

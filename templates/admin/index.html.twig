@@ -9,46 +9,46 @@
         </section>
 
         <div class="container mb-4">
-            <div class="row">
-                <div class="col-12">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th scope="col" class="text-center">Numero de la commande</th>
-                                <th scope="col" class="text-center">Etat de commande</th>
-                                <th scope="col" class="text-center">Date de commande</th>
-                                <th scope="col">Total</th>
-                                <th scope="col">Etat de paiment</th>
-                                <th> </th>
-                            </tr>
-                            </thead>
-                            <tbody>
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Numero de la commande</th>
+                            <th scope="col" class="text-center">Etat de commande</th>
+                            <th scope="col" class="text-center">Date de commande</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Etat de paiment</th>
+                            <th> </th>
+                        </tr>
+                        </thead>
+                        <tbody>
                         {% for activeorder in activeorders %}
-                                <tr>
+                            <tr>
 
-                                    <td class="text-center">{{ activeorder.id }}</td>
-                                    <td class="text-center">{{ activeorder.orderState}}</td>
-                                    <td class="text-right">{{ activeorder.orderDate }}</td>
-                                    <td class="text-center">{{ activeorder.total }} &euro;</td>
-                                    <td class="text-right">{{ activeorder.paymentState }}</td>
-                                    {% if activeorder.paymentState == 'ok' %}
+                                <td class="text-center">{{ activeorder.id }}</td>
+                                <td class="text-center">{{ activeorder.orderState}}</td>
+                                <td class="text-right">{{ activeorder.orderDate }}</td>
+                                <td class="text-center">{{ activeorder.total }} &euro;</td>
+                                <td class="text-right">{{ activeorder.paymentState }}</td>
+                                {% if activeorder.paymentState == 'ok' %}
                                     <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light">Valider</a></td>
-                                    {% elseif activeorder.paymentState != 'ok' %}
+                                {% elseif activeorder.paymentState != 'ok' %}
                                     <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light disabled">Valider</a></td>
-                                    {% endif %}
+                                {% endif %}
 
-                                    
-                                </tr>
+
+                            </tr>
                         {% endfor %}
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
-
             </div>
+
         </div>
+    </div>
 
 
 
