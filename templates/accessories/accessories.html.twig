@@ -17,8 +17,9 @@
                             <ul class="list-group category_block">
         
                                 {% for acategory in acategorys %}
-                                <li class="list-group-item licat"><a class="category-link" href="#" src="{{asset('assets/image/accessoires/'~acategory.logo)}}" alt="">{{acategory.name}}</a></li>
+                                <li class="list-group-item licat"><a class="category-link" href="{{path('accessories', {'id': acategory.id })}}"><img class="bike-logo" src="{{asset('assets/image/logos/'~acategory.logo)}}" alt="">{{acategory.name}}</a></li>
                                 {% endfor %}
+
                             </ul>
                             </div>
                         </div>
@@ -29,7 +30,7 @@
                         {% for accessorie in pagination %}
                 <div class="col-12 col-md-6 col-lg-4 product-card">
                     <div class="card">
-                        <a class="card-link" href="#" title="Voir l'accessoire"><img class="card-img-top" src="{{asset('assets/image/accessoires/'~accessorie.image)}}" alt="Photo de l'accessoire"></a>
+                        <a class="card-link" href="{{path('accessory', {'id': accessorie.id })}}" title="Voir l'accessoire"><img class="card-img-top" src="{{asset('assets/image/accessoires/'~accessorie.image)}}" alt="Photo de l'accessoire"></a>
                         <div class="card-body">
                             <h4 class="card-link"><a class="card-link" href="{{path('accessory', {'id': accessorie.id })}}" title="Voir le vélo" title="Voir l'accessoire">{{ accessorie.name }}</a></h4>
                             <p class="card-text">{{accessorie.description}}</p>
