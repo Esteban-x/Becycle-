@@ -138,8 +138,10 @@ class CartService
         $products = $order->getOrderProducts();
 
         
+        
         $this->session->set('products', $products);
 
         return $this;
     }
+    
 }
