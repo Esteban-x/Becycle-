@@ -132,15 +132,24 @@ class CartService
         }
     }
     public function remove(OrderProducts $product)
-    {   
-        $user = $this->security->getUser();
-        $order = $this->getOrder($user);
-        $products = $order->getOrderProducts();
-
-        
-        
-        $this->session->set('products', $products);
-
+    {
+        $cart = $this->getCart();
+        if(sizeof($cart['products']) > 1){
+            $cart["order"]->setTotal($cart["order"]->getTotal() - $product->getTotal());
+            $this->om->remove($product);
+            $this->om->flush();
+            return $this;
+        }else{
+            $this->deleteCart();
+        }
+    }
+    public function deleteCart(){
+        $cart = $this->getCart();
+        foreach ($cart["products"] as $produ){
+            $this->om->remove($produ);
+        }
+        $this->om->remove($cart["order"]);
+        $this->om->flush();
         return $this;
     }
     
