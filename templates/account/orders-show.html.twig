@@ -9,15 +9,33 @@
                         <div class="row">
                             <div class="col-12">
 
-                                <div class="card mt-5">
-                                    <h5 class="card-header">Info de la commande</h5>
-                                    <div class="card-body">
-                                        <p class="card-title">Numero de la commande : {{ order.id }}</p>
-                                        <p class="card-text">Prix total : {{ order.total }}</p>
-                                        <p class="card-text">Date de la commande : {{ order.orderDate }}</p>
-                                        <p class="card-text">Etat de la commande : {{ order.orderState }}</p>
-                                        <p class="card-text">Etat de payment : {{ order.paymentState }}</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="card mt-5">
+                                            <h5 class="card-header">Info de la commande</h5>
+                                            <div class="card-body">
+                                                <p class="card-title">Numero de la commande : {{ order.id }}</p>
+                                                <p class="card-text">Prix total : {{ order.total }}</p>
+                                                <p class="card-text">Date de la commande : {{ order.orderDate|date('d-m-Y') }}</p>
+                                                <p class="card-text">Etat de la commande : {{ order.orderState }}</p>
+                                                <p class="card-text">Etat de payment : {{ order.paymentState }}</p>
 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="card mt-5">
+                                            <h5 class="card-header">Adresse de la commande</h5>
+                                            <div class="card-body">
+                                                <p class="card-title">Nom : {{ order.idAdress.name }}</p>
+                                                <p class="card-text">Rue : {{ order.idAdress.street }}</p>
+                                                <p class="card-text">Code postale : {{ order.idAdress.postalCode }}</p>
+                                                <p class="card-text">Ville : {{ order.idAdress.city }}</p>
+                                                <p class="card-text">Pays : {{ order.idAdress.country }}</p>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
