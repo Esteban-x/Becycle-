@@ -59,10 +59,11 @@ $(document).ready(()=>{
         source: bikes.ttAdapter(),
         display: 'bike_name',
         templates: {
+          header: '<h6 class="accessoires">Nos produits :</h6>',
           suggestion: function (data)
           {
             return `
-                    <a href='/bike/show/`+data.bike_id+`'>
+                    <a class='bikesug' href='/bike/show/`+data.bike_id+`'>
                       <span>`+data.bike_name+`</span>
                     </a>
                             `

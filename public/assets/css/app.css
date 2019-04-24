@@ -38,6 +38,10 @@ body {
     margin-top: 50px;
 }
 
+.bikesug{
+font-family: 'Raleway', cursive;
+font-size: 15px;
+}
 .access-pic {
     margin-top: 35px;
     border-radius: 10px;
@@ -315,12 +319,130 @@ p {
 .nav-link {
     font-size: 18px;
     text-shadow: 1px 1px 23px black;
+    font-size: 20px;
+    margin-right: 5px;
+    font-family: 'Alegreya Sans', sans-serif;
+    padding: 0;
 }
 
 .nav-link:hover {
     text-shadow: 1px 3px 10px black;
     color: #D6FFF1;
-    transition: 0.4s;
+    transition: 350ms;
+}
+
+.jumbotron-2{
+    background-image: url("/assets/image/japon.jpg");
+    background-size: cover;
+    opacity: 0.8;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+   
+   
+    height: 500px;
+    border-radius: 2%;
+}
+
+
+.bien1{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-shadow: 1px 3px 5px black;
+    font-size: 57px;
+    margin-top: 20px;
+}
+.bien{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-shadow: 1px 3px 5px black;
+    font-size: 27px;
+    margin-top: 58px;
+}
+
+.bikeco{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+}
+
+.confort{
+  
+    opacity: 0.7;
+    background-position: cover;
+    border-radius: 5%;
+    padding: 6px;
+}
+
+a .story{
+    font-family: 'Montserrat', sans-serif;
+    color: #2A363B;
+    text-decoration: none;
+}
+
+.kk{
+    font-family: 'Montserrat', sans-serif;
+    color: #2A363B;
+    text-decoration: none;
+    text-transform: uppercase:
+}
+
+.manride{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-image: url("/assets/image/manride.gif");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 400px;
+    opacity: 0.8;
+    border-radius: 2%;
+}
+
+.rapid-title{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    border: rgba(255, 255, 255, 0.1) 5px solid;
+    text-shadow: black 1px 1px 5px;
+}
+
+.history-body{
+    margin: 0;
+}
+
+.créateurs{
+    margin-left: 30px;
+}
+
+.rapid{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    text-shadow: black 1px 1px 5px;
+}
+
+.rapid-container{
+    border-radius: 5%;
+}
+
+.jumbotron-fluid p{
+    
+    
+    font-size: 35px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 1px 3px 5px black;
+   
+}
+
+.mg{
+    margin-left: 10px; 
+}
+
+.ml{
+    margin-right: 10px;
 }
 
 .active {
