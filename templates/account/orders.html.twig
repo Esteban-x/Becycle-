@@ -38,7 +38,7 @@
                                     <td class="text-right">{{ ord.orderDate }}</td>
                                     <td class="text-center">{{ ord.total }} &euro;</td>
                                     <td class="text-right">{{ ord.paymentState }} </td>
-                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light">Voir la commande</a></td>
+                                    <td class="text-right"><a href="{{ path('account_orders_show', {'order': ord.id}) }}" class="btn btn btn-light">Voir la commande</a></td>
                                 </tr>
                         {% endfor %}
 
