@@ -70,7 +70,7 @@ class AccessoriesController extends AbstractController
             $accessory = $em->getRepository(Product::class)->findOneBy(['id' => $id]);
         }
         return $this->render('/accessories/show.html.twig', [
-            'accessory' => $accessory
+            'product' => $accessory
         ]);
     }
 

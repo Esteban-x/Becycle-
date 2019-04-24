@@ -14,9 +14,21 @@ span.twitter-typeahead .tt-menu {
     transition: 0.2s;
   }
   
+.accessoires{
+  text-align: center;
+  border: 0.5px transparent solid;
+  box-shadow: 1px 1px 5px;
+  font-size: 17px;
+  font-family: 'Comfortaa', cursive;
+  padding: 2px;
+  border-radius: 7%; 
+}
+
   .dropdown-menu, span.twitter-typeahead .tt-menu {
     position: absolute;
     top: 100%;
+    overflow-y: auto;
+    max-height: 250px;
     left: 0;
     z-index: 1000;
     display: none;

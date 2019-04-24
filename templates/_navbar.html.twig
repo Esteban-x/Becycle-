@@ -16,13 +16,13 @@
                 {% set route = app.request.attributes.get('_route')%}
                 <ul class="navbar-nav mr-auto ml-auto">
                     <li class="nav-item {{route == 'home' ? "active"}}">
-                        <a class="nav-link" title="Acceuil" href="{{path('home')}}">Acceuil</a>
+                        <a class="nav-link mg" title="Acceuil" href="{{path('home')}}">Acceuil</a>
                     </li>
                     <li class="nav-item {{route == 'bikes' ? "active"}}">
-                        <a class="nav-link "  title="Nos vélos" href="{{path('bikes')}}">Nos&nbsp;vélos</a>
+                        <a class="nav-link mg"  title="Nos vélos" href="{{path('bikes')}}">Nos&nbsp;vélos</a>
                     </li>
                     <li class="nav-item {{route == 'accessories' ? "active"}}">
-                        <a class="nav-link " title="Accessoires" href="{{path('accessories')}}">Accessoires</a>
+                        <a class="nav-link mg" title="Accessoires" href="{{path('accessories')}}">Accessoires</a>   
                     </li>
                 </ul>
 
@@ -50,22 +50,22 @@
 
                     {% else %}
                     <li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
-                        <a class="nav-link" title="Connexion" href="{{path('login')}}">Connexion</a>
+                        <a class="nav-link ml" title="Connexion" href="{{path('login')}}">Connexion</a>
                     </li>
                     <li class="nav-item {% if mainNavRegistration is defined %}active{% endif %}">
-                        <a class="nav-link" title="Inscription" href="{{path('signup')}}">Inscription</a>
+                        <a class="nav-link ml" title="Inscription" href="{{path('signup')}}">Inscription</a>
                     </li>
                     {% endif %}
 
                     <li class="nav-item">
-                        <a class="nav-link cart" title="Panier" href="{{path('cart')}}">Panier</a>
+                        <a class="nav-link cart ml" title="Panier" href="{{path('cart')}}">Panier</a>
                     </li>
                 </ul>
                 <form class="navbar-form navbar-right" title="Rechercher un modèle " action="{{path('search')}}"
                     method="post">
                     <div id="prefetch">
                         <input class="typeahead" id="form_query" name='motcle' type="text"
-                            placeholder="Rechercher un modèle..." aria-label="rechercher">
+                            placeholder="Rechercher un produit..." aria-label="rechercher">
                     </div>
 
                 </form>
