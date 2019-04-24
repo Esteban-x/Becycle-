@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\OrderProducts;
 use App\Entity\Product;
 use App\Services\CartService;
+use App\Repository\OrdersRepository;
+use App\Repository\AddressRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,6 +31,8 @@ class CartController extends AbstractController
     {
         $order = $this->cart->getCart();
         $session = null;
+        $user = $this->getUser();
+        $ValAddress = false;
         \Stripe\Stripe::setApiKey("sk_test_K49VwG3tTAtkpFOXY8wudk4N00JWT94kDF");
         if($order != NULL){
             $listProd = [];
@@ -40,18 +45,29 @@ class CartController extends AbstractController
                     'quantity' => $prod->getQty(),
                 ];
             }
-            $session = \Stripe\Checkout\Session::create([
-                'customer_email' => 'customer@example.com',
-                'success_url' => $this->generateUrl('validate', [], UrlGeneratorInterface::ABSOLUTE_URL),
-                'cancel_url' => $this->generateUrl('cart', [], UrlGeneratorInterface::ABSOLUTE_URL),
-                'payment_method_types' => ['card'],
-                'line_items' => $listProd
+            if($user != null){
+                foreach($user->getAddresses() as $add){
+                    if($add->getActive()== 2){
+                        $ValAddress = true;
+                        break;
+                    }
+                }
+                $session = \Stripe\Checkout\Session::create([
+                    'customer_email' => $user->getUsername(),
+                    'success_url' => $this->generateUrl('validate', [], UrlGeneratorInterface::ABSOLUTE_URL),
+                    'cancel_url' => $this->generateUrl('cart', [], UrlGeneratorInterface::ABSOLUTE_URL),
+                    'payment_method_types' => ['card'],
+                    'line_items' => $listProd,
+                    'client_reference_id' => $order["order"]->getId()
 
-            ]);
+                ]);
+            }
         }
         return $this->render('cart/index.html.twig', [
             'cart' => $order,
             'session'=> $session,
+            'valadd'=> $ValAddress,
+            'frais'=> $this->cart->amountTotal()
         ]);
     }
 
@@ -68,12 +84,71 @@ class CartController extends AbstractController
     }
     /**
      * @Route("/validate", name="validate")
-     * @param $response \Stripe\Charge
-     * @return
      */
-    public function validate($response)
+    public function validate(OrdersRepository $orderRepo, AddressRepository $addRepo)
     {
-        dump($response);
-        return $this->render('payment/index.html.twig');
+        \Stripe\Stripe::setApiKey("sk_test_K49VwG3tTAtkpFOXY8wudk4N00JWT94kDF");
+
+        $events = \Stripe\Event::all(["limit" => 10, "type" => "checkout.session.completed"]);
+        $user = $this->getUser();
+        if($user != null){
+            $user = $user->getId();
+            $order = $orderRepo->findById($user);
+            $addr = $addRepo->isActive($user);
+
+            if($order != null) {
+                foreach ($events as $ev) {
+                    if ($ev->data->object->client_reference_id == $order->getId()) {
+                        $manager = $this->getDoctrine()->getManager();
+
+                        $order->setOrderState(1);
+                        $order->setPaymentMode($ev->data->object->payment_method_types[0]);
+                        $order->setPaymentState('ok');
+                        $order->setPaymentDate(new \DateTime('now'));
+                        $order->setOrderDate(new \DateTime('now'));
+                        $order->setIdAdress($addr);
+
+                        $manager->flush();
+                        return $this->render('payment/index.html.twig');
+                    } else {
+                        return $this->redirectToRoute('home');
+                    }
+                }
+            }
+        }
+        return $this->redirectToRoute('home');
+    }
+    /**
+     * @Route("/cart/remove/{id}", name="cart_remove")
+     * @param OrderProducts $product
+     * @return Response
+     */
+    public function remove(OrderProducts $product)
+    {
+        $this->cart->remove($product);
+
+        return $this->redirectToRoute('cart');
+    }
+    /**
+     * @Route("/cart/delete", name="cart_clear")
+     */
+    public function delete()
+    {
+        $this->cart->deleteCart();
+
+        return $this->redirectToRoute('cart');
+    }
+
+    /**
+     * @Route("/cart/edit/{id}/{edit}", name="cart_edit")
+     * @param OrderProducts $product
+     * @param string $edit
+     * @return Response
+     */
+    public function edit(OrderProducts $product, $edit)
+    {
+        $this->cart->editCart($product, $edit);
+
+        return $this->redirectToRoute('cart');
     }
 }

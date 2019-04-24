@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Votre panier{% endblock %}
-
+{% block javascript %}
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="{{asset('assets/js/payment.js')}}"></script>
+    {{ parent() }}
+{% endblock %}
 {% block body %}
     <style>
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -39,10 +43,14 @@
                                     <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                                     <td>{{ item.idProducts.name }}</td>
                                     <td>En stock</td>
-                                    <td><input class="form-control" type="text" value="{{ item.qty }}" /></td>
+                                    <td>
+                                        <a href="{{ path('cart_edit', {'id': item.id, "edit": 'less'}) }}" class="btn btn-sm btn-danger"><i class="fas fa-minus"></i></a>
+                                            {{ item.qty }}
+                                        <a href="{{ path('cart_edit', {'id': item.id, "edit": 'more'}) }}" class="btn btn-sm btn-danger"><i class="fas fa-plus"></i></a>
+                                    </td>
                                     <td class="text-right">{{ item.total  }} &euro;</td>
                                     <td class="text-right">
-                                        <a href="{#{{ path('cart_remove', {'id': item.product.id}) }}#}" class="btn btn-sm btn-danger">
+                                        <a href="{{ path('cart_remove', {'id': item.id}) }}" class="btn btn-sm btn-danger">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>
@@ -50,16 +58,16 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="text-right">Sous-Total</td>
-                                <td class="text-right">{{ cart.order.total }} &euro;</td>
+                                <td class="text-right">{{ cart.order.total-frais }} &euro;</td>
                             </tr>
 
                             <tr>
                                 <td colspan="5" class="text-right">Frais de port</td>
-                                <td class="text-right">{#{{ cart.shipping }}#} &euro;</td>
+                                <td class="text-right">{{ frais }} &euro;</td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right"><strong>Total</strong></td>
-                                <td class="text-right"><strong>{#{{ cart.total }}#} &euro;</strong></td>
+                                <td class="text-right"><strong>{{ cart.order.total }} &euro;</strong></td>
                             </tr>
                             </tbody>
                         </table>
@@ -75,14 +83,14 @@
                 <div class="row">
                     <div class="col-sm-12  col-md-6">
                         <a href="{{ path('bikes') }}" class="btn btn-block btn-light" >Continuer vos achats</a>
-                        <a href="{#{{ path('cart_clear') }}#}">Vider le panier</a>
+                        <a href="{{ path('cart_clear') }}">Vider le panier</a>
                     </div>
 
                     <div class="col-sm-12 col-md-6 text-right">
                         {% if cart != null %}
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                {% if app.user.Addresses is empty %}
-                                    <a href="{{ path('new_address') }}" class="btn btn-lg btn-block btn-success text-uppercase">Ajouter une adresse</a>
+                                {% if not valadd %}
+                                    <a href="{{ path('address') }}" class="btn btn-lg btn-block btn-success text-uppercase">Selectionner une adresse</a>
                                 {% else %}
                                     <button class="btn btn-lg btn-block btn-success text-uppercase" onclick="checkout('{{ session.id }}')">Commander</button>
                                 {% endif %}
@@ -95,5 +103,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
