@@ -55,7 +55,7 @@ class AccessoriesController extends AbstractController
     }
 
     /**
-     * @Route("/accessory/{id}", name="accessory")
+     * @Route("/accessory/show/{id}", name="accessory", methods={"GET"})
      * 
      * @param Product $accessory
      * @return Response
@@ -72,5 +72,11 @@ class AccessoriesController extends AbstractController
             'product' => $accessory
         ]);
     }
+
+
+
+
+
+
 
 }
