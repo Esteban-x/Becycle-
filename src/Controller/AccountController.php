@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Orders;
 use App\Form\SignUpType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,20 +33,27 @@ class AccountController extends AbstractController
     }
 
     /**
-     * @Route("/account/orders/{order}", name="account_orders_show")
+     * @Route("/account/orders/{order?}", name="account_orders_show")
+     * @param Orders $order
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function AccOrdersShow()
+    public function AccOrdersShow(Orders $order)
     {
-        $user = $this->getUser();
-        $orders = $user->getOrders();
+        $orderProducts = $order->getOrderProducts();
+        $products = [];
+        foreach($orderProducts  as $liaison){
+            $products[] = $liaison->getIdProducts();
+        }
         return $this->render('account/orders-show.html.twig', [
-            'orders' => $orders,
+            'products' => $products,
+            'order' => $order
         ]);
     }
 
 
     /**
-     * @route("/account/parametres", name="parametres-show.html.twig")
+     * @route("/account/parametres", name="parametres")
+     *
      */
 
     public function ParametresShow(Request $request, UserPasswordEncoderInterface $passwordEncoder)
@@ -70,6 +78,9 @@ class AccountController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    /**
+     * @route("/account/parametres", name="parametres-show.html.twig")
+     */
 }
 
 
