@@ -3,11 +3,10 @@
 window.onscroll = function(){
   scrollFunction();
   scrollFuncNav();
-  scrollFuncCat();
+  //scrollFuncCat();
 };
 
 function scrollFunction() {
-    console.log ("Le nombre de pixels que tu as scroll");
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("myBtn").style.display = "block";
   } else {
@@ -76,13 +75,3 @@ $(document).ready(()=>{
       }
   )
 })
-
-/* toggle "Catégories" */
-
-window.addEventListener("DOMContentLoaded", function() {
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    document.getElementById("collapseCategories").className = "collapse";
-  } else {
-    document.getElementById("collapseCategories").className = "collapse show";
-  }
-  });

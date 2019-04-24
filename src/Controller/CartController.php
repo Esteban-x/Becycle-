@@ -66,7 +66,8 @@ class CartController extends AbstractController
         return $this->render('cart/index.html.twig', [
             'cart' => $order,
             'session'=> $session,
-            'valadd'=> $ValAddress
+            'valadd'=> $ValAddress,
+            'frais'=> $this->cart->amountTotal()
         ]);
     }
 
@@ -138,5 +139,17 @@ class CartController extends AbstractController
 
         return $this->redirectToRoute('cart');
     }
-    
+
+    /**
+     * @Route("/cart/edit/{id}/{edit}", name="cart_edit")
+     * @param OrderProducts $product
+     * @param string $edit
+     * @return Response
+     */
+    public function edit(OrderProducts $product, $edit)
+    {
+        $this->cart->editCart($product, $edit);
+
+        return $this->redirectToRoute('cart');
+    }
 }
