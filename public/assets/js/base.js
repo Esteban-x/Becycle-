@@ -30,7 +30,7 @@ function scrollFuncNav() {
   }
 }
 
-
+// --------------
 
 $(document).ready(()=>{
   var bikes = new Bloodhound({
