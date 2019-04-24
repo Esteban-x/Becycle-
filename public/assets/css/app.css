@@ -1,116 +1,123 @@
-.card-text{
-    text-align: left;
-}
-.description{
+.card-text {
     text-align: left;
 }
 
-.bike-logo{
+.description {
+    text-align: left;
+}
+
+.bike-logo {
     margin-right: 30px;
 }
-body{
+
+body {
     overflow-x: hidden;
 }
 
-::placeholder{
+::placeholder {
     font-size: 15px;
 }
 
-.product-card{
-margin-bottom: 15px;
-border-radius: 25px;
+.product-card {
+    margin-bottom: 15px;
+    border-radius: 25px;
 }
 
-.product-card:hover{
+.product-card:hover {
     cursor: pointer;
     box-shadow: black 1px 5px 26px;
-    color: black; 
+    color: black;
     transition: 160ms;
 }
 
-.show-card-body{
+.show-card-body {
     border: rgba(0, 0, 0, 0.3) 0.5px solid;
 }
 
-.container-show{
-    margin-top: 50px; 
+.container-show {
+    margin-top: 50px;
 }
 
-.access-pic{
+.access-pic {
     margin-top: 35px;
     border-radius: 10px;
 }
 
-.access-col{
+.access-col {
     margin-top: 40px;
 }
 
-.licat{
+.licat {
     border: rgba(0, 0, 0, 0.3) 0.5px solid;
 }
 
-.category-link{
+.category-link {
     font-family: 'Francois One', cursive;
-    font-size: 21px ;
-    color: #233D4D;}
-
-.category-link:hover{
-    font-family: 'Francois One', cursive;
-    font-size: 21px ;
-    text-shadow: 1px 1px 20px black;
-    color: black; 
-    transition: 0.6s;  
+    font-size: 21px;
+    color: #233D4D;
 }
 
-.pagination-lg{
+.category-link:hover {
+    font-family: 'Francois One', cursive;
+    font-size: 21px;
+    text-shadow: 1px 1px 20px black;
+    color: black;
+    transition: 0.6s;
+}
+
+.pagination-lg {
     margin-top: 20px;
     margin-right: 60px;
 }
 
-.example .pagination>li{
-  box-shadow: 1px 1px 15px black;
-  border: 1px transparent;
+.example .pagination>li {
+    box-shadow: 1px 1px 15px black;
+    border: 1px transparent;
 }
 
-.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-    background-color:#343a40;
-    color:#D4E1E8;
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+    background-color: #343a40;
+    color: #D4E1E8;
     cursor: pointer;
     border: transparent 1px solid;
-    z-index:2;
-    
-  }
+    z-index: 2;
 
-  .example .pagination>li>a,
-  .example .pagination>li>span,
-  .example .pagination>li.disabled>span
-   {
+}
+
+.example .pagination>li>a,
+.example .pagination>li>span,
+.example .pagination>li.disabled>span {
     border: #D4E1E8 1px solid;
     background-color: #343a40;
     color: #D4E1E8;
-  }
+}
 
-  .example .pagination>li>span:hover{
-      background-color: #233D4D;
-  }
- 
-  .example .pagination>li.active>span{
-      background-color: #D4E1E8;
-      color: #051926;
-      border: none;
-      
-  }
- 
+.example .pagination>li>span:hover {
+    background-color: #233D4D;
+}
 
-a:hover{
+.example .pagination>li.active>span {
+    background-color: #D4E1E8;
+    color: #051926;
+    border: none;
+
+}
+
+
+a:hover {
     text-decoration: none;
 }
 
-.list-group .list-group-item{
+.list-group .list-group-item {
     padding: 30px;
     text-align: center;
     text-transform: uppercase;
-    }
+}
 
 body {
     padding-top: 55px;
@@ -118,111 +125,107 @@ body {
 
 /* Home _ fade images */
 
-#brand{
+#brand {
     font-family: 'Francois One', sans-serif;
-   
-   font-size: 20px;
-  
+
+    font-size: 20px;
+
 }
 
 /* Slider */
 .slide {
-height: 600px;
-position: relative;
+    height: 600px;
+    position: relative;
 
 }
 
-.slide1,.slide2,.slide3{
+.slide1,
+.slide2,
+.slide3 {
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.slide1{
+.slide1 {
     background-image: url(../image/image-home-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     animation: fade1 16s infinite;
-    background-position:bottom;
+    background-position: bottom;
 }
 
-.slide2{
+.slide2 {
     background-image: url(../image/image-home-2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     animation: fade2 16s infinite;
-    background-position:center;
+    background-position: center;
 }
 
-.slide3{
+.slide3 {
     background-image: url(../image/image-home-3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     animation: fade3 16s infinite;
-    background-position:bottom;
+    background-position: bottom;
 }
 
-.selectadd{
+.selectadd {
     box-shadow: black 1px 1px 10px;
 }
 
-@keyframes fade1
-{
-    0%
-    {
-    opacity: 1;
+@keyframes fade1 {
+    0% {
+        opacity: 1;
     }
-    25%
-    {
-    opacity: 0;
+
+    25% {
+        opacity: 0;
     }
-    75%
-    {
-    opacity: 0;
+
+    75% {
+        opacity: 0;
     }
-    100%
-    {
-    opacity: 1; 
+
+    100% {
+        opacity: 1;
     }
 }
 
-@keyframes fade2
-{
-    0%
-    {
-    opacity: 0;
+@keyframes fade2 {
+    0% {
+        opacity: 0;
     }
-    25%
-    {
-    opacity: 1;
+
+    25% {
+        opacity: 1;
     }
-    75%
-    {
-    opacity: 0;
+
+    75% {
+        opacity: 0;
     }
-    100%
-    {
-    opacity: 0; 
+
+    100% {
+        opacity: 0;
     }
 }
 
-@keyframes fade3
-{
-    0%
-    {
-    opacity: 0;
+@keyframes fade3 {
+    0% {
+        opacity: 0;
     }
-    25%
-    {
-    opacity: 0;
+
+    25% {
+        opacity: 0;
     }
-    75%
-    {
-    opacity: 1;
+
+    75% {
+        opacity: 1;
     }
-    100%
-    {
-    opacity: 0; 
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -236,6 +239,7 @@ h1 {
     font-size: 26px;
 }
 
+/*
 h4 .card-link{
     font-family: 'Francois One', cursive;
     font-size: 21px ;
@@ -257,19 +261,21 @@ h4 .card-link:hover{
     padding: 0;
     margin: 0;
 }
+*/
 
-.main-logo{
-border-radius: 7px;
-opacity: 0.9;
-box-shadow: black 1px 1px 100px;
-height: 30px;
-width: 38px;
+.main-logo {
+    border-radius: 7px;
+    opacity: 0.9;
+    box-shadow: black 1px 1px 100px;
+    height: 30px;
+    width: 38px;
 }
 
 p {
     text-align: justify;
     font-family: 'Comfortaa', cursive;
 }
+
 /* Bouton "haut de page" */
 #myBtn {
     display: none;
@@ -287,13 +293,13 @@ p {
     margin-bottom: 10px;
     border-radius: 4px;
     box-shadow: black 1px 1px 5px;
-  }
-  
-  #myBtn:hover {
+}
+
+#myBtn:hover {
     background-color: #212529;
     box-shadow: black 1px 1px 13px;
-    
-  }
+
+}
 
 /* Navbar */
 
@@ -305,31 +311,64 @@ p {
     z-index: 10;
     transition: top 0.3s;
 }
-.nav-link{
+
+.nav-link {
+    font-size: 18px;
     text-shadow: 1px 1px 23px black;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     text-shadow: 1px 3px 10px black;
     color: #D6FFF1;
     transition: 0.4s;
 }
 
-.active{
-color: #68FAC8;
+.active {
+    color: #68FAC8;
 }
 
 /* Show */
 
-#show-zoom {
-    padding-left: 15px;
-    padding-right: 15px; 
-    padding-bottom: 15px; 
+.s-zoom {
+    max-width: 100%;
+    height: 100%;
+}
+
+.s-image {
+    width: 100%;
+    height:100%;
+}
+
+.s-image img {
+    /* La transition s'applique à la fois sur la largeur et la hauteur, avec une durée d'une seconde. */
+    -webkit-transition: all 1s ease;
+    /* Safari et Chrome */
+    -moz-transition: all 1s ease;
+    /* Firefox */
+    -ms-transition: all 1s ease;
+    /* Internet Explorer 9 */
+    -o-transition: all 1s ease;
+    /* Opera */
+    transition: all 1s ease;
+}
+
+.s-image:hover img {
+    /* L'image est grossie de 25% */
+    -webkit-transform: scale(1.75);
+    /* Safari et Chrome */
+    -moz-transform: scale(1.75);
+    /* Firefox */
+    -ms-transform: scale(1.75);
+    /* Internet Explorer 9 */
+    -o-transform: scale(1.75);
+    /* Opera */
+    transform: scale(1.75);
 }
 
 
+
 /* Catégories */
-#categories .list-group-item{
+#categories .list-group-item {
     padding: 20px 15px;
 }
 
@@ -339,16 +378,13 @@ color: #68FAC8;
 }
 
 .bouton-categories:hover {
-    color:rgba(180, 180, 180, 1)
+    color: rgba(180, 180, 180, 1)
 }
 
-@media (min-width: 768px){
-    #collapseCategories {
-        
-    }
-    #categories {
-        
-    }
+@media (min-width: 768px) {
+    #collapseCategories {}
+
+    #categories {}
 }
 
 /*
@@ -367,3 +403,4 @@ color: #68FAC8;
     }
 
 */
+
