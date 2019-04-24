@@ -85,7 +85,7 @@ class CartController extends AbstractController
      * @Route("/validate", name="validate")
      */
     public function validate(OrdersRepository $orderRepo, AddressRepository $addRepo)
-    {/*
+    {
         \Stripe\Stripe::setApiKey("sk_test_K49VwG3tTAtkpFOXY8wudk4N00JWT94kDF");
 
         $events = \Stripe\Event::all(["limit" => 10, "type" => "checkout.session.completed"]);
@@ -114,8 +114,7 @@ class CartController extends AbstractController
                     }
                 }
             }
-        }*/
-        return $this->render('payment/index.html.twig');
+        }
         return $this->redirectToRoute('home');
     }
     /**
