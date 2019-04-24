@@ -97,7 +97,6 @@ class AddressController extends AbstractController
         $activeaddress  = $addrepo->isActive($this->getUser()->getId());
 
         $entityManager = $this->getDoctrine()->getManager();
-                dump($activeaddress);
             if($activeaddress != null)
             {
                $activeaddress->setActive(0);
