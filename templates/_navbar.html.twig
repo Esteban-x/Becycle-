@@ -42,6 +42,12 @@
                             <a class="dropdown-item" href="{{ path('account_orders') }}">Mes commandes</a>
                             <a class="dropdown-item" href="{{ path('address') }}">Mes adresses</a>
                             <a class="dropdown-item" href="{{ path('parametres') }}">Paramètres</a>
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ path('admin_orders') }}">Gestion des commandes</a>
+                            <a class="dropdown-item" href="{{ path('product_new') }}">Ajouter un produit</a>
+                            {% endif %}
                         </div>
                     </li>
 
