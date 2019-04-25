@@ -1,5 +1,5 @@
 <form method="post" action="{{ path('delete_user') }}" onsubmit="return confirm('Êtes vous sûr de vouloir nous quitter ?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ app.user.id) }}">
-    <button class="ml-5 btn-lg text-uppercase btn btn-danger">Delete</button>
+    <button class="ml-5 btn-lg text-uppercase btn btn-danger"><i class="fas fa-trash-alt"></i>&nbsp;Delete</button>
 </form>

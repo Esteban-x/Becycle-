@@ -19,7 +19,7 @@
                             <th scope="col" class="text-center">Etat de commande</th>
                             <th scope="col" class="text-center">Date de commande</th>
                             <th scope="col">Total</th>
-                            <th scope="col">Etat de paiment</th>
+                            <th scope="col">Etat de paiement</th>
                             <th> </th>
                         </tr>
                         </thead>
@@ -33,9 +33,9 @@
                                 <td class="text-center">{{ activeorder.total }} &euro;</td>
                                 <td class="text-right">{{ activeorder.paymentState }}</td>
                                 {% if activeorder.paymentState == 'ok' %}
-                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light">Commande envoyé</a></td>
+                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;Commande envoyé</a></td>
                                 {% elseif activeorder.paymentState != 'ok' %}
-                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light disabled">Commande envoyé</a></td>
+                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light disabled"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;Commande envoyé</a></td>
                                 {% endif %}
 
 
