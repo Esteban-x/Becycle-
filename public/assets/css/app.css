@@ -17,6 +17,7 @@ body {
 .product-card {
     margin-bottom: 15px;
     border-radius: 25px;
+    border: transparent;
 }
 
 .product-card:hover {
@@ -95,6 +96,7 @@ font-size: 15px;
 .example .pagination>li {
     box-shadow: 1px 1px 15px black;
     border: 1px transparent;
+    color: #233D4D;
 }
 
 .pagination>.active>a,
@@ -124,11 +126,12 @@ font-size: 15px;
 
 .example .pagination>li>span:hover {
     background-color: #233D4D;
+    
 }
 
 .example .pagination>li.active>span {
-    background-color: #D4E1E8;
-    color: #051926;
+    background-color: #233D4D;
+    color: white;
     border: none;
 
 }
