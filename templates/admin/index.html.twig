@@ -29,13 +29,13 @@
 
                                 <td class="text-center">{{ activeorder.id }}</td>
                                 <td class="text-center">{{ activeorder.orderState}}</td>
-                                <td class="text-right">{{ activeorder.orderDate }}</td>
+                                <td class="text-right">{{ activeorder.orderDate|date('d-m-Y') }}</td>
                                 <td class="text-center">{{ activeorder.total }} &euro;</td>
                                 <td class="text-right">{{ activeorder.paymentState }}</td>
                                 {% if activeorder.paymentState == 'ok' %}
-                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light">Valider</a></td>
+                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light">Commande envoyé</a></td>
                                 {% elseif activeorder.paymentState != 'ok' %}
-                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light disabled">Valider</a></td>
+                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light disabled">Commande envoyé</a></td>
                                 {% endif %}
 
 

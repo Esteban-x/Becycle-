@@ -38,6 +38,12 @@
                             </form>
                         </div>
                     </div>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('product_edit', {'id':product.id}) }}" class="ml-5 btn btn-dark btn-lg text-uppercase mb-3">
+                        Editer le produit
+                    </a>
+                    {{ include('product/_delete_form.html.twig') }}
+                {% endif %}
                 </div>
             </div>
         </div>

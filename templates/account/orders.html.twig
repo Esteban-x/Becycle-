@@ -34,10 +34,19 @@
                                 <tr>
 
                                     <td class="text-center">{{ ord.id }}</td>
-                                    <td class="text-center">{{ ord.orderState}}</td>
+                                    <td class="text-center">
+                                        {% if ord.orderState == 0 %}
+                                            Dans le panier
+                                            {% elseif ord.orderState == 1 %}
+                                            Commande prise en compte
+                                            {% elseif ord.orderState == 2 %}
+                                            Commande envoyé
+                                            {% else %}
+                                            Problème avec la commande
+                                        {% endif %}</td>
                                     <td class="text-right">{{ ord.orderDate|date('d-m-Y') }}</td>
                                     <td class="text-center">{{ ord.total }} &euro;</td>
-                                    <td class="text-right">{{ ord.paymentState }} </td>
+                                    <td class="text-right">{{ ord.paymentState == "ok" ? "Paiement validé" : "En attente de paiement" }} </td>
                                     <td class="text-right"><a href="{{ path('account_orders_show', {'order': ord.id}) }}" class="btn btn btn-light">Voir la commande</a></td>
                                 </tr>
                         {% endfor %}

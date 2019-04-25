@@ -45,7 +45,7 @@ class AccountController extends AbstractController
             $products[] = $liaison->getIdProducts();
         }
         return $this->render('account/orders-show.html.twig', [
-            'products' => $products,
+            'products' => $orderProducts,
             'order' => $order
         ]);
     }
