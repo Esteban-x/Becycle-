@@ -363,6 +363,28 @@ p {
     color: rgb(184, 181, 181);
 }
 
+.resp-title{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 26px;
+    border: rgba(255, 255, 255, 0.1) 5px solid;
+    text-shadow: black 1px 1px 5px;
+    
+}
+
+.resp{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    text-shadow: black 1px 1px 5px;
+}
+
+.btn-resp{
+    margin-left: 165px;
+}
+
 .jumbotron-2{
     background-image: url("/assets/image/japon.jpg");
     background-size: cover;
@@ -372,6 +394,19 @@ p {
    
    
     height: 500px;
+    border-radius: 2%;
+}
+
+.jumbotron-3{
+    background-image: url("/assets/image/manride.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+   
+   
+    height: 400px;
     border-radius: 2%;
 }
 
