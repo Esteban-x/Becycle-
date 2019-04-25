@@ -54,11 +54,6 @@ class Product
     private $category;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Tag", inversedBy="products")
-     */
-    private $tag;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $visible = 0;
@@ -175,19 +170,6 @@ class Product
 
         return $this;
     }
-
-    public function getTag(): ?Tag
-    {
-        return $this->tag;
-    }
-
-    public function setTag(?Tag $tag): self
-    {
-        $this->tag = $tag;
-
-        return $this;
-    }
-
     public function getVisible(): ?int
     {
         return $this->visible;
