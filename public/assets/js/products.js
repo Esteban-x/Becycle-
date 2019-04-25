@@ -10,12 +10,3 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 
-/* product-example- home */
-
-window.addEventListener("resize", function() {
-    if (window.matchMedia("(max-width: 768px)").matches) {
-        document.querySelector(".product-example").className = "product-example";
-    }else{document.querySelector(".product-example").className = "product-example media";
-  }
-    
-  });

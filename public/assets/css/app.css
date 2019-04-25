@@ -547,7 +547,7 @@ a .story{
     transform: scale(2);
   }
 
-/* @media - texte sur anim-home */
+/* @media - home  < 768px */
 
 @media( max-width : 768px ) {
     #txt-anim-home {
@@ -564,6 +564,17 @@ a .story{
 }
 
 
+/* @media - home  < 400px */
+
+@media( max-width : 400px ) {
+    #txt-anim-home {
+        font-size: 15px;
+    }
+    .bien {
+        font-size: 20px;
+        text-align: left;
+    }
+}
 
   
     
