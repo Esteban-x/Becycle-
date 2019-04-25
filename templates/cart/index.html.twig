@@ -27,9 +27,7 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th scope="col"> </th>
                                 <th scope="col">Produit</th>
-                                <th scope="col">Disponibilité</th>
                                 <th scope="col" class="text-center">Quantité</th>
                                 <th scope="col" class="text-right">Prix</th>
                                 <th> </th>
@@ -40,9 +38,7 @@
 
                             {% for item in cart.products %}
                                 <tr>
-                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                                     <td>{{ item.idProducts.name }}</td>
-                                    <td>En stock</td>
                                     <td class="item">
                                         <a href="{{ path('cart_edit', {'id': item.id, "edit": 'less'}) }}" class="btn btn-sm btn-danger mr-1"><i class="fas fa-minus"></i></a>
                                             {{ item.qty }}
@@ -57,16 +53,16 @@
                                 </tr>
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="text-right">Sous-Total</td>
+                                <td colspan="3" class="text-right">Sous-Total</td>
                                 <td class="text-right">{{ cart.order.total-frais }} &euro;</td>
                             </tr>
 
                             <tr>
-                                <td colspan="5" class="text-right">Frais de port</td>
+                                <td colspan="3" class="text-right">Frais de port</td>
                                 <td class="text-right">{{ frais }} &euro;</td>
                             </tr>
                             <tr>
-                                <td colspan="5" class="text-right"><strong>Total</strong></td>
+                                <td colspan="3" class="text-right"><strong>Total</strong></td>
                                 <td class="text-right"><strong>{{ cart.order.total }} &euro;</strong></td>
                             </tr>
                             </tbody>
