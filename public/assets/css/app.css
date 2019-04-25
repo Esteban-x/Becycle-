@@ -18,7 +18,8 @@ body{
 
 .product-card{
 margin-bottom: 15px;
-border-radius: 25px;
+border: transparent;
+
 }
 
 .product-card:hover{
@@ -26,7 +27,10 @@ border-radius: 25px;
     box-shadow: black 1px 5px 26px;
     color: black; 
     transition: 160ms;
+    border-radius: 25px;
 }
+
+
 
 .show-card-body{
     border: rgba(0, 0, 0, 0.3) 0.5px solid;
@@ -62,7 +66,6 @@ font-size: 15px;
 .category-link:hover{
     font-family: 'Francois One', cursive;
     font-size: 21px ;
-    text-shadow: 1px 1px 20px black;
     color: black; 
     transition: 0.6s;  
 }
@@ -73,7 +76,7 @@ font-size: 15px;
 }
 
 .example .pagination>li{
-  box-shadow: 1px 1px 15px black;
+  
   border: 1px transparent;
 }
 
@@ -245,7 +248,7 @@ h4 .card-link{
     font-family: 'Francois One', cursive;
     font-size: 21px ;
     color: #233D4D;
-    border-block-end: rgba(7, 45, 64, 0.1) 4px solid;
+    
     border-radius: 5px;
     padding: 0;
     margin: 0;
@@ -257,7 +260,7 @@ h4 .card-link:hover{
     text-shadow: 1px 1px 20px black;
     color: black; 
     transition: 0.6s;  
-    border-block-end: rgba(7, 45, 64, 0.1) 5px solid;
+   
     border-radius: 8px;
     padding: 0;
     margin: 0;
@@ -321,7 +324,21 @@ p {
 .nav-link:hover{
     text-shadow: 1px 3px 10px black;
     color: #D6FFF1;
+    font-family: 'Alegreya Sans', sans-serif;
     transition: 350ms;
+    padding: 0;
+}
+
+.page-footer{
+    color: white;
+}
+
+.page-footer a{
+    color: grey;
+}
+
+.page-footer a:hover{
+    color: rgb(184, 181, 181);
 }
 
 .jumbotron-2{
@@ -402,6 +419,15 @@ a .story{
 
 .history-body{
     margin: 0;
+}
+
+.social{
+    border-radius: 2%;
+}
+
+.social:hover{
+    box-shadow: black 1px 1px 8px;
+    border-radius: 2%;
 }
 
 .créateurs{
