@@ -17,22 +17,26 @@
     <hr>
     <a href="#"><h1 class="kk text-center">Votre confort notre mission</h1></a>
     <hr>
+    
     <div class="row mt-4 mb-4">
-        <div class="col-6"><div class="media">
+        <div class="col-6">
+          <div class="product_example media">
             <img src="{{asset('assets/image/couvreselle.jpg')}}" class="mr-3" alt="...">
             <div class="media-body">
               <h5 class="mt-0">Couvre selles</h5>
               Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
             </div>
-          </div></div>
-        <div class="col-6"><div class="media">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="product_example media">
             <img src="{{asset('assets/image/amortisseur.jpg')}}" class="mr-3" alt="...">
             <div class="media-body">
               <h5 class="mt-0">Amortisseurs</h5>
               Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
             </div>
           </div>
-    </div>
+      </div>
     </div>
 </div>
 
@@ -40,8 +44,8 @@
 
 <div class="jumbotron jumbotron-3">
   <div class="container">
-    <h1 class="resp-title text-center mt-0 mb-3">Rapide comme le vent</h1>
-    <p class="resp text-center mt-5">Seulement 5 jours de délais en région outre mer et 24h maximum en France métropolitaine.<br>
+    <h1 class="resp-title text-center mt-0 mb-3">Rapide comme le&nbsp;vent</h1>
+    <p class="resp text-center mt-5" id="txt-anim-home">Seulement 5 jours de délais en région outre mer et 24h maximum en France métropolitaine.<br>
       Notre rapidité n'est pas présente seulement dans nos services de livraisons, elle est aussi présente en terme de communication, nos agents de communication vous fournissent une réponse en un temps record !
     </p>
 
@@ -107,7 +111,7 @@
         <div class="container bien1">
           <h1 class="">Ressentez le bien être</h1>
           <p class="bien">Comment ressentir chaque mouvement d'un vélo, partez à la découverte de la ville ou redécouvrez la nature.
-              Chaques modèles de vélo vous correspondra totalement selon vos attentes ainsi que votre mode de vie.
+              Chaques modèles de vélo vous correspondra totalement selon vos attentes ainsi que votre mode de&nbsp;vie.
           </p>
         </div>
       </div>
@@ -144,4 +148,8 @@
 
 
 
+{% endblock %}
+{% block javascript %}
+{{ parent() }}
+<script src="{{asset('assets/js/products.js')}}"></script>
 {% endblock %}
