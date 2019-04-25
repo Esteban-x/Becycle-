@@ -20,7 +20,7 @@
                         {{ last_username }}
                         {{ form_widget(form) }}
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                        <button class="btn btn-primary">se connecter</button>
+                        <button class="btn btn-primary"><i class="fas fa-user-circle"></i>&nbsp;se connecter</button>
                         {{ form_end(form) }}
                 </div>
             </div>

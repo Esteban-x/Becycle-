@@ -82,8 +82,8 @@
             <div class="col mb-2">
                 <div class="row">
                     <div class="col-sm-12  col-md-6">
-                        <a href="{{ path('bikes') }}" class="btn btn-block btn-light" ><i class="fas fa-long-arrow-alt-left"></i>&nbsp;&nbsp;Continuer vos achats</a>
-                        <a class="btn btn-danger mt-3" href="{{ path('cart_clear') }}"><i class="fas fa-trash-restore"></i>&nbspVider le panier</a>
+                        <a href="{{ path('bikes') }}" class="btn btn-block btn-light mt-3" ><i class="fas fa-long-arrow-alt-left "></i>&nbsp;&nbsp;Continuer vos achats</a>
+                        <a class="btn btn-danger mt-3  mb-3" href="{{ path('cart_clear') }}"><i class="fas fa-trash-restore"></i>&nbsp;Vider le panier</a>
                     </div>
 
                     <div class="col-sm-12 col-md-6 text-right">
@@ -92,10 +92,10 @@
                                 {% if not valadd %}
                                     <a href="{{ path('address') }}" class="btn btn-lg btn-block btn-success text-uppercase">Selectionner une adresse</a>
                                 {% else %}
-                                    <button class="btn btn-lg btn-block btn-success text-uppercase" onclick="checkout('{{ session.id }}')">Commander</button>
+                                    <button class="btn btn-lg btn-block btn-success text-uppercase" onclick="checkout('{{ session.id }}')"><i class="fas fa-truck"></i>&nbsp;&nbsp;Commander</button>
                                 {% endif %}
                             {% else %}
-                                <a href="{{ path('login') }}" class="btn btn-lg btn-block btn-success text-uppercase">Se connecter</a>
+                                <a href="{{ path('login') }}" class="btn btn-lg btn-block btn-success text-uppercase"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;Se connecter</a>
                             {% endif %}
                         {% endif %}
                     </div>
