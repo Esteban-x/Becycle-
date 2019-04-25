@@ -43,10 +43,10 @@
                                     <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                                     <td>{{ item.idProducts.name }}</td>
                                     <td>En stock</td>
-                                    <td>
-                                        <a href="{{ path('cart_edit', {'id': item.id, "edit": 'less'}) }}" class="btn btn-sm btn-danger"><i class="fas fa-minus"></i></a>
+                                    <td class="item">
+                                        <a href="{{ path('cart_edit', {'id': item.id, "edit": 'less'}) }}" class="btn btn-sm btn-danger mr-1"><i class="fas fa-minus"></i></a>
                                             {{ item.qty }}
-                                        <a href="{{ path('cart_edit', {'id': item.id, "edit": 'more'}) }}" class="btn btn-sm btn-danger"><i class="fas fa-plus"></i></a>
+                                        <a href="{{ path('cart_edit', {'id': item.id, "edit": 'more'}) }}" class="btn btn-sm btn-danger ml-2"><i class="fas fa-plus"></i></a>
                                     </td>
                                     <td class="text-right">{{ item.total  }} &euro;</td>
                                     <td class="text-right">
