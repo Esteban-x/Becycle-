@@ -66,7 +66,8 @@ class CartController extends AbstractController
         return $this->render('cart/index.html.twig', [
             'cart' => $order,
             'session'=> $session,
-            'valadd'=> $ValAddress
+            'valadd'=> $ValAddress,
+            'frais'=> $this->cart->amountTotal()
         ]);
     }
 
@@ -92,31 +93,30 @@ class CartController extends AbstractController
         $user = $this->getUser();
         if($user != null){
             $user = $user->getId();
-        $order = $orderRepo->findById($user);
-        $addr = $addRepo->isActive($user);
-        foreach($events as $ev){
-            if($ev->data->object->client_reference_id == $order->getId()){
-                $manager = $this->getDoctrine()->getManager();
+            $order = $orderRepo->findById($user);
+            $addr = $addRepo->isActive($user);
 
-                $order->setOrderState(1);
-                $order->setPaymentMode($ev->data->object->payment_method_types[0]);
-                $order->setPaymentState('ok');
-                $order->setPaymentDate(new \DateTime('now'));
-                $order->setOrderDate(new \DateTime('now'));
-                $order->setIdAdress($addr);
+            if($order != null) {
+                foreach ($events as $ev) {
+                    if ($ev->data->object->client_reference_id == $order->getId()) {
+                        $manager = $this->getDoctrine()->getManager();
 
-                $manager->flush();
+                        $order->setOrderState(1);
+                        $order->setPaymentMode($ev->data->object->payment_method_types[0]);
+                        $order->setPaymentState('ok');
+                        $order->setPaymentDate(new \DateTime('now'));
+                        $order->setOrderDate(new \DateTime('now'));
+                        $order->setIdAdress($addr);
+
+                        $manager->flush();
+                        return $this->render('payment/index.html.twig');
+                    } else {
+                        return $this->redirectToRoute('home');
+                    }
+                }
             }
-            else{
-                return $this->redirectToRoute('home');
-            }
-         }
-
-        return $this->render('payment/index.html.twig');
         }
-        else{
-            return $this->redirectToRoute('home');
-        }
+        return $this->redirectToRoute('home');
     }
     /**
      * @Route("/cart/remove/{id}", name="cart_remove")
@@ -138,5 +138,17 @@ class CartController extends AbstractController
 
         return $this->redirectToRoute('cart');
     }
-    
+
+    /**
+     * @Route("/cart/edit/{id}/{edit}", name="cart_edit")
+     * @param OrderProducts $product
+     * @param string $edit
+     * @return Response
+     */
+    public function edit(OrderProducts $product, $edit)
+    {
+        $this->cart->editCart($product, $edit);
+
+        return $this->redirectToRoute('cart');
+    }
 }

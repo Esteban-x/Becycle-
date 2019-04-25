@@ -28,6 +28,7 @@ class BikesController extends AbstractController
     {   
         $category = $catrepo->findVcategory();
         
+        
         if ($id)
         {
             $bikes = $prodrepo->findByCategory_id($id);
@@ -92,6 +93,7 @@ class BikesController extends AbstractController
         {   
             $data = $em->getRepository(Product::class)->findByName($_query);
             
+            
         }
         else {
             $data = $em->getRepository(Product::class)->findAll();
@@ -112,8 +114,11 @@ class BikesController extends AbstractController
 
         $serializers = new Serializer($normalizers, $encoders);
 
+       
+
         $data = $serializers->serialize($data, 'json');
 
+        
         return new JsonResponse($data, 200, [], true);        
     }
 
