@@ -18,9 +18,9 @@
                             <th scope="col" class="text-center">Numero de la commande</th>
                             <th scope="col" class="text-center">Etat de commande</th>
                             <th scope="col" class="text-center">Date de commande</th>
-                            <th scope="col">Total</th>
-                            <th scope="col">Etat de paiement</th>
-                            <th> </th>
+                            <th scope="col" class="text-center">Total</th>
+                            <th scope="col" class="text-center">Etat de paiment</th>
+                            <th colspan="2"> </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -28,17 +28,28 @@
                             <tr>
 
                                 <td class="text-center">{{ activeorder.id }}</td>
-                                <td class="text-center">{{ activeorder.orderState}}</td>
-                                <td class="text-right">{{ activeorder.orderDate|date('d-m-Y') }}</td>
+                                <td class="text-center">
+                                    {% if activeorder.orderState == 0 %}
+                                        Dans le panier
+                                    {% elseif activeorder.orderState == 1 %}
+                                        Commande prise en compte
+                                    {% elseif activeorder.orderState == 2 %}
+                                        Commande envoyé
+                                    {% else %}
+                                        Problème avec la commande
+                                    {% endif %}</td>
+                                <td class="text-center">{{ activeorder.orderDate|date('d-m-Y') }}</td>
                                 <td class="text-center">{{ activeorder.total }} &euro;</td>
-                                <td class="text-right">{{ activeorder.paymentState }}</td>
-                                {% if activeorder.paymentState == 'ok' %}
-                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;Commande envoyé</a></td>
-                                {% elseif activeorder.paymentState != 'ok' %}
-                                    <td class="text-right"><a href="{{ path('bikes') }}" class="btn btn btn-light disabled"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;Commande envoyé</a></td>
-                                {% endif %}
-
-
+                                <td class="text-center">{{ activeorder.paymentState == "ok" ? "Paiement validé" : "En attente de paiement" }} </td>
+                                <td class="text-right">
+                                    <a href="{{ path('admin_validate', {"id": activeorder.id}) }}"
+                                       class="btn btn btn-light {{ activeorder.paymentState != "ok" or activeorder.orderState != 1 ? "disabled"}} ">
+                                        <i class="fas fa-check-circle"></i>&nbsp;&nbsp;{{ activeorder.orderState != 1 ? "Commande envoyé" : "Valider Commande"}}</a>
+                                </td>
+                                <td class="text-right">
+                                    <a href="{{ path('admin_order_show', {"id": activeorder.id}) }}"
+                                       class="btn btn btn-light">Voir la Commande</a>
+                                </td>
                             </tr>
                         {% endfor %}
 

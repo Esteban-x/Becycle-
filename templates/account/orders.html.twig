@@ -31,13 +31,12 @@
                             </thead>
                             <tbody>
                         {% for ord in orders %}
+                            {% if ord.orderState != 0 %}
                                 <tr>
 
                                     <td class="text-center">{{ ord.id }}</td>
                                     <td class="text-center">
-                                        {% if ord.orderState == 0 %}
-                                            Dans le panier
-                                            {% elseif ord.orderState == 1 %}
+                                        {% if ord.orderState == 1 %}
                                             Commande prise en compte
                                             {% elseif ord.orderState == 2 %}
                                             Commande envoyé
@@ -49,6 +48,7 @@
                                     <td class="text-right">{{ ord.paymentState == "ok" ? "Paiement validé" : "En attente de paiement" }} </td>
                                     <td class="text-right"><a href="{{ path('account_orders_show', {'order': ord.id}) }}" class="btn btn btn-light">Voir la commande</a></td>
                                 </tr>
+                            {% endif %}
                         {% endfor %}
 
                             </tbody>
