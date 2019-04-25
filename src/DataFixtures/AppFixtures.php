@@ -180,19 +180,6 @@ class   AppFixtures extends Fixture
             $accessory->setType('accessoire');
             $manager->persist($accessory);
         }
-
-        //Fausses commandes
-        for($i=0;$i<5;$i++)
-        {   $faker = Faker\Factory::create();
-            $order = new Orders();
-            $order->getId('commande n%'. $i);
-            $order->setOrderState(1);
-            $order->setPaymentDate(new\DateTime('now'));
-            $order->setTotal($i * 2);
-            $order->setPaymentState('ok');
-            $manager->persist($order);  
-
-        }
         
 
         $users = [];
