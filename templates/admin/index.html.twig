@@ -44,7 +44,7 @@
                                 <td class="text-right">
                                     <a href="{{ path('admin_validate', {"id": activeorder.id}) }}"
                                        class="btn btn btn-light {{ activeorder.paymentState != "ok" or activeorder.orderState != 1 ? "disabled"}} ">
-                                        {{ activeorder.orderState != 1 ? "Commande envoyé" : "Valider Commande"}}</a>
+                                        <i class="fas fa-check-circle"></i>&nbsp;&nbsp;{{ activeorder.orderState != 1 ? "Commande envoyé" : "Valider Commande"}}</a>
                                 </td>
                                 <td class="text-right">
                                     <a href="{{ path('admin_order_show', {"id": activeorder.id}) }}"
