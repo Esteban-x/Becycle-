@@ -85,6 +85,7 @@ font-size: 15px;
     color:#D4E1E8;
     cursor: pointer;
     border: transparent 1px solid;
+    box-shadow: 1px 1px 5px;
     z-index:2;
     
   }
@@ -429,6 +430,8 @@ a .story{
     box-shadow: black 1px 1px 8px;
     border-radius: 2%;
 }
+
+
 
 .créateurs{
     margin-left: 30px;
