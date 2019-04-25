@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+ 
         <link href="{{ asset('assets/css/typeahead.css') }}" rel="stylesheet">
         {% block stylesheets %}{% endblock %}
     </head>
@@ -34,11 +36,39 @@
         {% block body %}
         {% endblock %}
    
-        <footer class="py-5 bg-dark">
+        <footer class="page-footer font-small bg-dark pt-4">
+
+            <!-- Footer Elements -->
             <div class="container">
-                <p class="text-white text-center m-0">Copyright &copy; {{ 'now' | date('Y') }}</p>
-            </div>       
-        </footer>
+        
+              <!-- Social buttons -->
+              <ul class="list-unstyled list-inline text-center">
+                <li class="social list-inline-item ml-3">
+                    <a  type="button"  class="social"  > <img src="{{asset('assets/image/facebook.png')}}" class="social" alt="..."></a>
+                </li>
+                <li class="social list-inline-item ml-3">
+                    <a type="button" class="social"  > <img src="{{asset('assets/image/twitter.png')}}" class="social" alt="..."></a>
+                </li>
+                <li class="social list-inline-item ml-3">
+                    <a  type="button" class="social"  > <img src="{{asset('assets/image/linkedin.png')}}" class="social"  alt="..."></a>
+                </li>
+                <li class="social list-inline-item ml-3">
+                    <a  type="button" class="social"  > <img src="{{asset('assets/image/github.png')}}"  class="social" alt="..."></a>
+                </li>
+              </ul>
+              <!-- Social buttons -->
+        
+            </div>
+            <!-- Footer Elements -->
+        
+            <!-- Copyright -->
+            <div class="footer-copyright text-center bg-dark py-3">© 2019 Copyright:
+              <a href="https://mdbootstrap.com/education/bootstrap/"> Becycle.com</a>
+            </div>
+            <!-- Copyright -->
+        
+          </footer>
+          <!-- Footer -->
         <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="far fa-arrow-alt-circle-up"></i>&nbsp;&nbsp;Haut de page &nbsp;</button>
 
 
