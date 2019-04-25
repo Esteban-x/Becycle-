@@ -350,20 +350,3 @@ color: #68FAC8;
         
     }
 }
-
-/*
-@media (max-width: 768px){
-    .show {
-        display: none;
-    color:rgba(255, 255, 255, 0.8);
-}
-
-@media (min-width: 1200px){
-    #categories .list-group-item{
-        padding: 20px 30px;
-    }
-    .show {
-        display: none;
-    }
-
-*/
