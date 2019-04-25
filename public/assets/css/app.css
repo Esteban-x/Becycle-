@@ -456,7 +456,7 @@ a .story{
     font-family: 'Montserrat', sans-serif;
     color: #2A363B;
     text-decoration: none;
-    text-transform: uppercase:
+    text-transform: uppercase;
 }
 
 
@@ -544,9 +544,37 @@ a .story{
     transform: scale(2);
   }
 
+/* @media - home  < 768px */
+
+@media( max-width : 768px ) {
+    #txt-anim-home {
+        font-size: 18px;
+    }
+    .bien {
+        font-size: 25px;
+        text-align: left;
+    }
+
+    .product_example{
+        display: block!important;
+    }
+}
 
 
+/* @media - home  < 400px */
 
+@media( max-width : 400px ) {
+    #txt-anim-home {
+        font-size: 15px;
+    }
+    .bien {
+        font-size: 20px;
+        text-align: left;
+    }
+}
+
+  
+    
 
 
 

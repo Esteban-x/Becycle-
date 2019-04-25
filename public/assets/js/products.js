@@ -8,3 +8,5 @@ window.addEventListener("DOMContentLoaded", function() {
         document.getElementById("collapseCategories").className = "collapse show";
     }
 });
+
+
