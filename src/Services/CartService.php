@@ -157,11 +157,13 @@ class CartService
     }
     public function deleteCart(){
         $cart = $this->getCart();
-        foreach ($cart["products"] as $produ){
-            $this->om->remove($produ);
-        }
+        if($cart["products"] != null){
+            foreach ($cart["products"] as $produ){
+                $this->om->remove($produ);
+            }
         $this->om->remove($cart["order"]);
         $this->om->flush();
+        }
         return $this;
     }
     public function editCart(OrderProducts $product, $edit){
