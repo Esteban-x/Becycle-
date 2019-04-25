@@ -374,8 +374,9 @@ p {
     height: 500px;
     border-radius: 2%;
 }
-
-
+.item{
+    font-weight: bold;
+}
 .bien1{
     font-family: 'Montserrat', sans-serif;
     color: white;
