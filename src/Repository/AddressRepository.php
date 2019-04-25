@@ -22,7 +22,9 @@ class AddressRepository extends ServiceEntityRepository
     public function isActive($userid){
         return $this->createQueryBuilder('a')
             ->andWhere('a.active = :val')
+            ->andwhere('a.id_user = :user')
             ->setParameter('val', 2)
+            ->setParameter('user', $userid)
             ->getQuery()
             ->getOneOrNullResult()
             ;

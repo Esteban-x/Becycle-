@@ -56,8 +56,7 @@ class AccessoriesController extends AbstractController
     }
 
     /**
-     * @Route("/accessory/{id}", name="accessory", methods={"GET"})
-     * 
+     * @Route("/accessory/show/{id}", name="accessory", methods={"GET"})
      * @param Product $accessory
      * @return Response
      */
@@ -70,8 +69,14 @@ class AccessoriesController extends AbstractController
             $accessory = $em->getRepository(Product::class)->findOneBy(['id' => $id]);
         }
         return $this->render('/accessories/show.html.twig', [
-            'accessory' => $accessory
+            'product' => $accessory
         ]);
     }
+
+
+
+
+
+
 
 }
