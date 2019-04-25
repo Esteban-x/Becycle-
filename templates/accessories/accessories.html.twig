@@ -38,13 +38,15 @@
                             <div class="row">
                                     <h2 title="{{accessorie.price}}" class="price">{{accessorie.price}} &euro;</h2>
                                 <div class="col">
-                                    <a href="#" title="En savoir plus sur {{accessorie.name}}" class="btn btn-dark ">Plus d'infos</a>
+                                    <a href="{{ path('accessory', {'id': accessorie.id }) }}" title="En savoir plus sur {{accessorie.name}}" class="btn btn-dark ">Plus d'infos</a>
                                 </div>                               
                             </div>
                         </div>
                     </div>
                 </div>
                     {% endfor %}
+
+
                    
    <div class="col-12">
         <nav class="example" aria-label="...">
@@ -60,4 +62,8 @@
 
 
 
+{% endblock %}
+{% block javascript %}
+        {{ parent() }}
+        <script src="{{asset('assets/js/products.js')}}"></script>
 {% endblock %}
