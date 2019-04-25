@@ -1,3 +1,10 @@
+body {
+    padding-top: 55px;
+    overflow-x: hidden;
+}
+
+/* product-card */
+
 .card-text {
     text-align: left;
 }
@@ -6,17 +13,6 @@
     text-align: left;
 }
 
-.bike-logo {
-    margin-right: 30px;
-}
-
-body {
-    overflow-x: hidden;
-}
-
-::placeholder {
-    font-size: 15px;
-}
 
 .product-card {
     margin-bottom: 15px;
@@ -47,9 +43,13 @@ body {
     margin-top: 40px;
 }
 
+
+
 .licat {
     border: rgba(0, 0, 0, 0.3) 0.5px solid;
 }
+
+/* Catégories */
 
 .category-link {
     font-family: 'Francois One', cursive;
@@ -64,6 +64,25 @@ body {
     color: black;
     transition: 0.6s;
 }
+
+.bike-logo {
+    margin-right: 30px;
+}
+
+#categories .list-group-item {
+    padding: 20px 15px;
+}
+
+.bouton-categories {
+    color: white;
+    padding-right: 60px;
+}
+
+.bouton-categories:hover {
+    color: rgba(180, 180, 180, 1)
+}
+
+/* Pagination */
 
 .pagination-lg {
     margin-top: 20px;
@@ -119,11 +138,8 @@ a:hover {
     text-transform: uppercase;
 }
 
-body {
-    padding-top: 55px;
-}
 
-/* Home _ fade images */
+/* Home _ Slider */
 
 #brand {
     font-family: 'Francois One', sans-serif;
@@ -133,6 +149,7 @@ body {
 }
 
 /* Slider */
+
 .slide {
     height: 600px;
     position: relative;
@@ -239,29 +256,6 @@ h1 {
     font-size: 26px;
 }
 
-/*
-h4 .card-link{
-    font-family: 'Francois One', cursive;
-    font-size: 21px ;
-    color: #233D4D;
-    border-block-end: rgba(7, 45, 64, 0.1) 4px solid;
-    border-radius: 5px;
-    padding: 0;
-    margin: 0;
-}
-
-h4 .card-link:hover{
-    font-family: 'Francois One', cursive;
-    font-size: 21px ;
-    text-shadow: 1px 1px 20px black;
-    color: black; 
-    transition: 0.6s;  
-    border-block-end: rgba(7, 45, 64, 0.1) 5px solid;
-    border-radius: 8px;
-    padding: 0;
-    margin: 0;
-}
-*/
 
 .main-logo {
     border-radius: 7px;
@@ -277,6 +271,7 @@ p {
 }
 
 /* Bouton "haut de page" */
+
 #myBtn {
     display: none;
     position: fixed;
@@ -347,40 +342,9 @@ p {
     transform: scale(2);
   }
 
-/* Catégories */
-#categories .list-group-item {
-    padding: 20px 15px;
-}
 
-.bouton-categories {
-    color: white;
-    padding-right: 60px;
-}
 
-.bouton-categories:hover {
-    color: rgba(180, 180, 180, 1)
-}
 
-@media (min-width: 768px) {
-    #collapseCategories {}
 
-    #categories {}
-}
 
-/*
-@media (max-width: 768px){
-    .show {
-        display: none;
-    color:rgba(255, 255, 255, 0.8);
-}
-
-@media (min-width: 1200px){
-    #categories .list-group-item{
-        padding: 20px 30px;
-    }
-    .show {
-        display: none;
-    }
-
-*/
 

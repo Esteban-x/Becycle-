@@ -1,37 +1,3 @@
-// Scroll top button
-
-window.onscroll = function(){
-  scrollFunction();
-  scrollFuncNav();
-  scrollFuncCat();
-};
-
-function scrollFunction() {
-    console.log ("Le nombre de pixels que tu as scroll");
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("myBtn").style.display = "block";
-  } else {
-    document.getElementById("myBtn").style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
-// Scroll navbar
-
-function scrollFuncNav() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("scrollbar").style.top = "-60px";
-  } else {
-    document.getElementById("scrollbar").style.top = "0";
-  }
-}
-
-// --------------
-
 $(document).ready(()=>{
   var bikes = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace,
@@ -76,6 +42,42 @@ $(document).ready(()=>{
       }
   )
 })
+
+
+
+// Scroll top button
+
+window.onscroll = function(){
+  scrollFunction();
+  scrollFuncNav();
+  scrollFuncCat();
+};
+
+function scrollFunction() {
+    console.log ("Le nombre de pixels que tu as scroll");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+// Scroll navbar
+
+function scrollFuncNav() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("scrollbar").style.top = "-60px";
+  } else {
+    document.getElementById("scrollbar").style.top = "0";
+  }
+}
+
+
 
 /* toggle "Catégories" */
 
