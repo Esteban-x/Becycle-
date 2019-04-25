@@ -27,7 +27,7 @@ class AddressController extends AbstractController
     /**
      * @Route("/account/address/new", name="new_address")
      */
-    public function addAddress(Request $request){
+    public function addAddress(Request $request, AddressRepository $addrepo){
 
         $address = new Address();
         $form = $this->createForm(AddressType::class, $address);
@@ -38,12 +38,17 @@ class AddressController extends AbstractController
         {
 
             $user = $this->getUser();
+
+            $activeaddress  = $addrepo->isActive($user->getId());
+            if($activeaddress != null)
+            {
+                $activeaddress->setActive(0);
+            }
             $address->setIdUser($user);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($address);
             $manager->flush();
             $this->addFlash("success", "Adresse bien enregistré.");
-
             return $this->redirectToRoute('cart');
         }
 

@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-12">
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card mt-5">
+                            <h5 class="card-header">Info de la commande</h5>
+                            <div class="card-body">
+                                <p class="card-title">Numero de la commande : {{ order.id }}</p>
+                                <p class="card-text">Prix total : {{ order.total }} &euro;</p>
+                                <p class="card-text">Date de la commande : {{ order.orderDate|date('d-m-Y') }}</p>
+                                <p class="card-text">Etat de la commande :
+                                    {% if order.orderState == 0 %}
+                                        Dans le panier
+                                    {% elseif order.orderState == 1 %}
+                                        Commande prise en compte
+                                    {% elseif order.orderState == 2 %}
+                                        Commande envoyé
+                                    {% else %}
+                                        Problème avec la commande
+                                    {% endif %}</p>
+                                <p class="card-text">Etat de payment : {{ order.paymentState == "ok" ? "Paiement validé" : "En attente de paiement" }} </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card mt-5">
+                            <h5 class="card-header">Adresse de la commande</h5>
+                            <div class="card-body">
+                                <p class="card-title">Nom : {{ order.idAdress.name }}</p>
+                                <p class="card-text">Rue : {{ order.idAdress.street }}</p>
+                                <p class="card-text">Code postale : {{ order.idAdress.postalCode }}</p>
+                                <p class="card-text">Ville : {{ order.idAdress.city }}</p>
+                                <p class="card-text">Pays : {{ order.idAdress.country }}</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive mt-5">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Nom du produit</th>
+                            <th scope="col" class="text-center">Quantité</th>
+                            <th scope="col" class="text-center">prix unitaire</th>
+                            <th scope="col" class="text-center">prix total</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for product in products %}
+                            <tr>
+                                <td class="text-center">{{ product.idProducts.name }}</td>
+                                <td class="text-center">{{ product.qty }}</td>
+                                <td class="text-center">{{ product.idProducts.price }} &euro;</td>
+                                <td class="text-center">{{ product.total}} &euro;</td>
+                                <td class="text-right">
+                                    <a href="{{ product.idProducts.type == "bike"?
+                                    path('bike', {'id': product.idProducts.id }) :
+                                    path('accessory', {'id': product.idProducts.id }) }}"
+                                       class="btn btn btn-light">Voir le produit</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+
+
+{% endblock %}
+
